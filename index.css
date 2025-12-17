@@ -1,0 +1,655 @@
+/* trace.css */
+
+/* 基礎設定與佈局 */
+body {
+    font-family: 'Hachi Maru Pop', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f0f0; /* 預設背景色 */
+    color: #666; /* 預設文字顏色 */
+}
+
+.container {
+    display: flex;
+    /*flex: 1;*/
+    width: 100%;
+    overflow-x: hidden; /* 防左右滑 */
+}
+
+/* ====================================
+   Header 區塊
+   ==================================== */
+header {
+    /*background-color: #f8f8f8;*/
+    position: relative;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* 深色系漸層 */
+    color: #fff; /* Header 文字顏色 */
+}
+
+.header-banner {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.header-banner {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.language-switch {
+    position: absolute;
+    top: 10px;
+    right: 100px; /* 調整到音樂播放器左邊 */
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* 白色半透明背景 */
+    border-radius: 5px;
+    z-index: 20; /* 確保在最上層 */
+}
+
+.language-switch a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+/* Article 區塊樣式 */
+
+article .content {
+    font-size: 1.1rem;
+    color: #3835B0; /* 內容文字顏色 */
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-family: 'Hachi Maru Pop', sans-serif;
+}
+
+.article-h1 {
+    font-size: 1.6rem;
+    color: #46C2AC;
+    padding-bottom: 5px;
+    font-family: 'Hachi Maru Pop', sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Section1 區塊樣式 */
+.section1 h2 {
+    font-size: 1.25rem;
+    color: #D6AE72;
+    margin-top: 0.5rem; /* 每一個區塊中間都有一條0.5公分空隙 */
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #D6AE72;
+    font-family: 'Hachi Maru Pop', sans-serif;
+}
+
+.section1 .price-placeholder {
+    font-size: 1.25rem;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Hachi Maru Pop', sans-serif;
+}
+
+.section1-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 讓 section1 從左到右排列 */
+    gap: 20px; /* 設置 section1 之間的間距 */
+}
+
+.section1 {
+    width: calc(33.333% - 20px); /* 每個 section1 佔據 1/3 的寬度，並減去間距 */
+    box-sizing: border-box; /* 確保 padding 和 border 不會增加元素寬度 */
+    margin-bottom: 20px; /* 設置 section1 之間的垂直間距 */
+}
+
+/* 當螢幕寬度小於 768px 時，讓 section1 佔據 100% 的寬度 */
+@media (max-width: 768px) {
+    .section1 {
+        width: 100%;
+    }
+}
+
+/* 導覽列樣式 */
+
+aside {
+    width: 240px; /* 固定寬度 */
+    min-width: 240px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* 深色系漸層側邊欄 */
+    color: #fff; /* 導覽列文字顏色 */
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0; /* 確保導覽列貼在最左邊 */
+    height: 100vh;
+    transition: width 0.3s ease; /* 平滑動畫 */
+    font-family: 'Hachi Maru Pop', sans-serif; /* 使用指定字體 */
+}
+
+aside.menu-closed {
+    width: 60px; /* 折疊後的寬度 */
+}
+
+.menu-collapse {
+    display: none; /* 預設隱藏 */
+}
+
+aside.menu-open .menu-collapse {
+    display: block; /* 在展開的導覽列中顯示 */
+}
+
+aside.menu-closed .menu-collapse {
+    display: none; /* 在摺疊的導覽列中隱藏 */
+}
+
+aside nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+aside nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 透明白背景效果 */
+}
+
+aside nav ul li.active a {
+    background-color: rgba(255, 255, 255, 0.2); /* "active" 項目的背景高亮效果 */
+}
+
+aside nav ul li a i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #46C2AC; /* 導覽列圖案顏色 */
+    width: 1em; /* 確保圖案大小一致 */
+    height: 1em;
+    text-align: center;
+}
+
+aside {
+    width: 250px; /* 固定寬度 */
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* 深色系漸層側邊欄 */
+    color: #fff; /* 導覽列文字顏色 */
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0; /* 確保導覽列貼在最左邊 */
+    height: 100vh;
+    transition: width 0.3s ease; /* 平滑動畫 */
+    font-family: 'Hachi Maru Pop', sans-serif; /* 使用指定字體 */
+}
+
+
+aside.menu-closed {
+    width: 60px; /* 折疊後的寬度 */
+}
+
+aside nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+aside nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 透明白背景效果 */
+}
+
+aside nav ul li.active a {
+    background-color: rgba(255, 255, 255, 0.2); /* "active" 項目的背景高亮效果 */
+}
+
+aside nav ul li a i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #46C2AC; /* 導覽列圖案顏色 */
+    width: 1em; /* 確保圖案大小一致 */
+    height: 1em;
+    text-align: center;
+}
+
+
+/* 導覽列樣式 */
+
+aside {
+  width: 250px; /* 固定寬度 */
+  background: linear-gradient(135deg, #2c3e50, #34495e); /* 深色系漸層側邊欄 */
+  color: #fff; /* 導覽列文字顏色 */
+  padding: 20px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed; /* 修正導覽列固定位置 */
+  top: 0;
+  left: 0; /* 確保導覽列貼在最左邊 */
+  height: 100vh;
+  transition: width 0.3s ease; /* 平滑動畫 */
+}
+
+aside.menu-closed {
+  width: 60px; /* 折疊後的寬度 */
+}
+
+aside nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  display: flex;
+  align-items: center;
+  font-size: 1.25rem;
+}
+
+aside nav ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* 透明白背景效果 */
+}
+
+aside nav ul li.active a {
+  background-color: rgba(255, 255, 255, 0.2); /* "active" 項目的背景高亮效果 */
+}
+
+aside nav ul li a i {
+  margin-right: 10px;
+  font-size: 1rem;
+  color: #46C2AC; /* 導覽列圖案顏色 */
+}
+
+/* 導覽列樣式 */
+aside {
+    width: 250px; /* 固定寬度 */
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* 深色系漸層側邊欄 */
+    color: #fff; /* 導覽列文字顏色 */
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: fixed; /* 修正導覽列固定位置 */
+    top: 0;
+    left: 0; /* 確保導覽列貼在最左邊 */
+    height: 100vh;
+    transition: width 0.3s ease; /* 平滑動畫 */
+}
+
+aside.menu-closed {
+    width: 60px; /* 折疊後的寬度 */
+}
+
+aside nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+aside nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* 透明白背景效果 */
+}
+
+aside nav ul li.active a {
+    background-color: rgba(255, 255, 255, 0.2); /* "active" 項目的背景高亮效果 */
+}
+
+aside nav ul li a i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #46C2AC; /* 導覽列圖案顏色 */
+    width: 1em; /* 確保圖案大小一致 */
+    height: 1em;
+    text-align: center;
+}
+
+/* ... [aside 區塊樣式省略，與先前相同] ... */
+aside {
+    width: 250px;
+    background: linear-gradient(135deg, #2c3e50, #34495e); /* 深色系漸層側邊欄 */
+    color: #fff; /* 導覽列文字顏色 */
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+aside nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+aside nav ul li a i {
+    margin-right: 10px;
+    font-size: 1rem;
+    color: #46C2AC; /* 導覽列圖案顏色 */
+}
+
+aside nav ul li a:hover {
+    background-color: transparent;
+}
+
+/* 移除 hover 效果的背景色 */
+aside nav ul li a:hover {
+    background-color: transparent;
+    color: #46C2AC;
+}
+/* ====================================
+   Main 區塊
+   ==================================== */
+main {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    margin-left: 250px; /* 配合 sidebar 寬度 */
+    transition: margin-left 0.3s ease;
+    max-width: calc(100vw - 240px);/* 限制主內容區寬度 */
+    overflow-x: hidden;
+    margin-right: auto; /* 讓主內容區置中 */
+}
+
+.menu-closed main {
+    margin-left: 60px; /* sidebar 折疊後的 margin */
+}
+
+article {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.article-h1 {
+    font-size: 1.6rem;
+    color: #46C2AC; /* article 下的 H1 區塊文字顏色 */
+    padding-bottom: 5px;
+    font-family: 'Hachi Maru Pop', sans-serif;
+    margin-bottom: 20px;
+    color: #46C2AC; /* article 下的 H1 區塊文字顏色 */
+}
+
+article .content {
+    font-size: 1.1rem;
+    color: #3835B0;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-family: 'Hachi Maru Pop', sans-serif;
+    color: #3835B0;
+}
+
+/* ====================================
+   Section1 區塊 (產品資訊)
+   ==================================== */
+.section1 {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2); /* 卡片陰影 */
+    border-radius: 15px; /* 卡片圓角 */
+    transition: transform 0.3s ease; /* Hover 位移效果 */
+}
+
+.section1:hover {
+    transform: translateY(-5px); /* Hover 時向上位移 */
+}
+
+.section1 h2.product-name {
+    font-size: 1.25rem;
+    color: #D6AE72;
+    margin-top: 0.5rem; /*每一個區塊中間都有一條0.5公分空隙*/
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #D6AE72;
+    font-family: 'Hachi Maru Pop', sans-serif;
+}
+.section1 .price-placeholder {
+    font-size: 1.25rem;
+    color: #61FAE8; /* 價格文字顏色 */
+}
+
+
+.section1 .dashed-line {
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+}
+
+.product-info-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.product-image {
+    /* 修正: 將圖片容器寬度調整為 25% */
+    flex-basis: 25%;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.product-details {
+    /* 修正: 確保剩餘空間為 75% */
+    flex-basis: 75%;
+}
+
+.sgs-report-img {
+    /* 圖片填滿 25% 的容器 */
+    max-width: 100%; 
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.price-placeholder {
+    font-size: 1.25rem;
+    color: #262A66;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Hachi Maru Pop', sans-serif;
+}
+
+.dashed-line {
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+}
+
+/* ... [詳細資訊和表格樣式省略，與先前相同] ... */
+.product-details h3 {
+    color: #383580;
+    border-left: 5px solid #46C2AC;
+    padding-left: 10px;
+}
+
+.product-details h4 {
+    color: #D6AE72;
+    margin-top: 20px;
+}
+
+.product-details ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.product-details li {
+    margin-bottom: 5px;
+}
+
+.inspection-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.inspection-table th, .inspection-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.inspection-table th {
+    background-color: #f2f2f2;
+    color: #383580;
+}
+
+.inspection-table .report-details {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+}
+/* ====================================
+   Footer 區塊
+   ==================================== */
+footer {
+    background-color: #2c3e50; /* 深色背景 */
+    color: white;
+    padding: 15px 20px;
+    text-align: center;
+    margin-top: auto;
+    position: relative; /* 確保 footer 相對位置 */
+    z-index: 10; /* 確保 footer 在 aside 之上 */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.copyright {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.site-map a {
+    color: #61FAE8;
+    text-decoration: none; /* 移除連結底線 */
+    padding-right: 15px;
+}
+
+.social-media a {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    color: #D6AE72;
+}
+
+/* 響應式調整 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    aside {
+        width: 60px; /* sidebar 預設縮小成 60px */
+        padding: 10px 0;
+    }
+
+    .product-info-grid {
+        flex-direction: column;
+    }
+
+    .product-image, .product-details {
+        flex-basis: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .site-map, .copyright, .social-media {
+        padding: 5px 0;
+    }
+}
+
+/* 音樂播放器樣式 */
+.music-player {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* 白色半透明背景 */
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 20; /* 確保音樂播放器在最上層 */
+}
+
+/* 語言切換按鈕樣式 */
+.language-switch {
+    position: absolute;
+    top: 10px;
+    right: 100px; /* 調整到音樂播放器左邊 */
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.5); /* 白色半透明背景 */
+    border-radius: 5px;
+}
+
+.language-switch a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.section1-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 讓 section1 從左到右排列 */
+    gap: 20px; /* 設置 section1 之間的間距 */
+}
+
+.section1 {
+    width: calc(33.333% - 20px); /* 每個 section1 佔據 1/3 的寬度，並減去間距 */
+    box-sizing: border-box; /* 確保 padding 和 border 不會增加元素寬度 */
+    margin-bottom: 20px; /* 設置 section1 之間的垂直間距 */
+    max-width: 900px;
+    margin: 0 auto 80px auto;
+}
+
+/* 當螢幕寬度小於 768px 時，讓 section1 佔據 100% 的寬度 */
+@media (max-width: 768px) {
+    .section1 {
+        width: 100%;
+    }
+}
+/* 內文最大圖片*/
+.section1-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}

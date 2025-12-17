@@ -1,0 +1,11 @@
+{
+  "project": "fju-ra-Final",
+  "description": "Course project repository and deployment links",
+  "links": {
+    "repository": "https://github.com/katina3576-rabit/fju-ra-Final",
+    "pages": "https://katina3576-rabit.github.io/fju-ra-Final/"
+  },
+  "notes": {
+    "pagesSetup": "GitHub Settings → Pages → main / root"
+  }
+}

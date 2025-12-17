@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>西風的慢活哲學</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="Web.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+</head>
+<body>
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    fetch('./_internal/project-links.json')
+      .then(r => r.json())
+      .then(data => {
+        console.log(data);
+      });
+     });
+    </script>
+
+    <header>
+        <div class="banner-area">
+            <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
+        </div>
+        <div class="language-switch">
+            <button class="lang-btn">中文</button>
+            <div class="lang-dropdown">
+                <a href="#">中文</a>
+                <a href="#">EN</a>
+            </div>
+        </div>
+        <div class="music-player">
+           <audio id="background-music" src="media/webmusic.mp3" autoplay loop></audio>
+           <button id="music-control" class="pause"></button>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="menu-open">
+            <button class="menu-toggle">
+                <i class="fas fa-bars"></i>
+                <span></span>
+            </button>
+            <button class="menu-collapse">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="Web.html"><img src="images/資訊icon/首頁.jpg" alt="首頁"> 首頁</a></li>
+                    <li><a href="appetizers.html"><img src="images/資訊icon/前菜.jpg" alt="前菜"> 前菜</a></li>
+                    <li><a href="salads.html"><img src="images/資訊icon/沙拉.jpg" alt="沙拉"> 沙拉</a></li>
+                    <li><a href="soup.html"><img src="images/資訊icon/湯品.jpg" alt="湯品"> 湯品</a></li>
+                    <li><a href="side dishes.html"><img src="images/資訊icon/配菜.jpg" alt="配菜"> 配菜</a></li>
+                    <li><a href="main courses.html"><img src="images/資訊icon/主菜.jpg" alt="主菜"> 主菜</a></li>
+                    <li><a href="desserts.html"><img src="images/資訊icon/甜點.jpg" alt="甜點"> 甜點</a></li>
+                    <li><a href="drinks.html"><img src="images/資訊icon/飲品.jpg" alt="飲品"> 飲品</a></li>
+                    <li><a href="set.html"><img src="images/資訊icon/套餐.jpg" alt="套餐"> 套餐</a></li>
+                    <li><a href="begin.html"><img src="images/資訊icon/公司起源.jpg" alt="公司起源"> 公司起源</a></li>
+                    <li><a href="trace.html"><img src="images/資訊icon/生產朔源.jpg" alt="生產溯源"> 生產溯源</a></li>
+                    <li><a href="contactus.html"><img src="images/資訊icon/聯絡我們.jpg" alt="聯絡我們"> 聯絡我們</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main>
+            <article>
+                <h1 class="article-h1">西風的慢活哲學</h1>
+                
+                <div class="content">
+                    <p>
+                        「願您在【西風】的時光，成為旅程中最美好、最溫柔的回憶。」
+                        現在，請放慢您的呼吸，享受這趟屬於您的慢活美食之旅吧。我們已備妥佳餚，等候您的光臨。
+                    </p>
+                </div>
+                
+                <div class="section1-list">
+                    
+                    <section class="section1">
+                        <h2 class="product-name">歡迎每個來到這裡的旅人：西風的慢活哲學</h2>
+                        <div class="product-info-wrapper">
+                            <img src="images/welcome.jpg" alt="歡迎來到西風" class="section1-img">
+                            <hr class="dashed-line"> 
+                            <span class="price-placeholder">停駐在輔大的片刻寧靜</span>
+                            <div class="description">
+                                <p>
+                                    親愛的旅人，不論您是剛下課的輔大師生、在這座城市尋覓美味的過客，抑或是短暫放下忙碌、渴望喘息的當地居民，【西風】誠摯地歡迎您。
+                                </p>
+                                <p>
+                                    我們知道，生活就像一趟不斷前行的旅程。而我們，正是您在旅途中發現的一處溫暖港灣，一個能讓您卸下行囊、放慢腳步的心靈補給站。
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="section1">
+                        <h2 class="product-name">什麼是「西風」(West Wind)?</h2>
+                        <div class="product-info-wrapper">
+                            <img src="images/westwind.jpg" alt="西風的意象" class="section1-img">
+                            <hr class="dashed-line">
+                            <span class="price-placeholder">在希臘神話中，代表著溫柔、輕盈且和煦的微風。</span>
+                            <div class="description">
+                                [cite_start]<p>這正是我們想帶給您的感受:</p>
+                                <ul>
+                                   <li>輕柔的氛圍: 讓緊繃的心情得以放鬆。</li>
+                                    <li>和煦的款待: 讓您感受到無微不至的服務。</li>
+                                </ul>
+                               <p>在這裡，沒有喧囂和倉促，只有精心準備的佳餚、令人舒緩的爵士樂，以及窗外灑落的溫暖光影。</p>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <section class="section1">
+                        <h2 class="product-name">我們的承諾:用料理療癒旅途的疲憊</h2>
+                        <div class="product-info-wrapper">
+                            <img src="images/promise.jpg" alt="料理的承諾" class="section1-img">
+                            <hr class="dashed-line">
+                            <span class="price-placeholder">經典歐式美味與您的專屬角落</span>
+                            <div class="description">
+                                <h3>經典歐式美味:</h3>
+                                <p>我們的主廚堅持使用來自臺灣的優質豬肉和澳洲嚴選的頂級牛肉，結合經典法式和義式烹飪技法，為您呈現既道地又富有層次的西餐體驗。</p>
+                                <ul>
+                                    <li>一杯專屬飲品: 無論您需要一杯濃郁的義式咖啡振奮精神，還是一杯精選的佐餐紅酒來配襯美味，【西風】都能滿足您。 [cite: 42]</li>
+                                    <li>專屬您的角落: 我們的環境優雅而舒適，無論您是想享受一個人的寧靜獨處，還是與重要的人共享美好時光，都能找到最適合您的位置。</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="site-map">
+                <a href="sitemap.html">網站地圖</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 版權宣告. All Rights Reserved.
+            </div>
+            <div class="social-media">
+                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://line.me" target="_blank" title="Line"><i class="fa-brands fa-line"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('aside').classList.toggle('menu-closed');
+        document.querySelector('.menu-collapse').addEventListener('click', function() {
+            document.querySelector('aside').classList.toggle('menu-closed');
+            document.querySelector('main').classList.toggle('menu-closed');
+        });
+
+        // Music player control
+        const music = document.getElementById('background-music');
+        const musicControl = document.getElementById('music-control');
+
+        musicControl.addEventListener('click', () => {
+            if (music.paused) {
+                music.play();
+                musicControl.classList.remove('play');
+                musicControl.classList.add('pause');
+            } else {
+                music.pause();
+                musicControl.classList.remove('pause');
+                musicControl.classList.add('play');
+            }
+        });
+
+        // Language switch dropdown
+        const langBtn = document.querySelector('.lang-btn');
+        const langDropdown = document.querySelector('.lang-dropdown');
+
+        langBtn.addEventListener('click', () => {
+            langDropdown.style.display = langDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+        window.addEventListener('click', function(e) {
+            if (!langBtn.contains(e.target)) {
+                langDropdown.style.display = 'none';
+            }
+        });
+            document.querySelector('main').classList.toggle('menu-closed');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>飲品 - 天點</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="drinks.css" />
+</head>
+<body>
+    <aside id="sidebar">
+        <button id="toggleBtn"><i class="fas fa-bars"></i></button>
+        <nav>
+            <ul>
+                <li><a href="appetizers.html"><i class="fas fa-drumstick-bite"></i> 前菜</a></li>
+                <li><a href="main courses.html"><i class="fas fa-utensils"></i> 主菜</a></li>
+                <li><a href="side dishes.html"><i class="fas fa-carrot"></i> 配菜</a></li>
+                <li><a href="soup.html"><i class="fas fa-bowl-food"></i> 湯品</a></li>
+                <li><a href="salads.html"><i class="fas fa-seedling"></i> 沙拉</a></li>
+                <li><a href="desserts.html"><i class="fas fa-ice-cream"></i> 甜點</a></li>
+                <li><a href="drinks.html" class="active"><i class="fas fa-cocktail"></i> 飲品</a></li>
+                <li><a href="set menu.html"><i class="fas fa-list"></i> 套餐</a></li>
+                <li><a href="begin.html"><i class="fas fa-building"></i> 公司起源</a></li>
+                <li><a href="trace.html"><i class="fas fa-search"></i> 生產溯源</a></li>
+                <li><a href="contactus.html"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <header>
+        <div class="banner">
+            <img src="images/banner.jpg" alt="Banner" />
+            <div class="header-controls">
+                <select id="language">
+                    <option>繁體中文</option>
+                    <option>English</option>
+                </select>
+                <button id="musicBtn"><i class="fas fa-play"></i></button>
+                <audio id="bgMusic" src="media/webmusic.mp3" loop></audio>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <h1>飲品專區</h1>
+            <div class="content">
+                用心挑選的飲品，從健康果汁到香醇咖啡，滿足您不同時刻的渴望。
+            </div>
+        </article>
+
+        <div class="products">
+            <section class="section1">
+                <h2>酪梨香蕉奶昔</h2>
+                <img src="images/banana.jpg" alt="酪梨香蕉奶昔" />
+                <div class="price">95元</div>
+                <div class="description">酪梨香蕉奶昔是健康飲品，以酪梨和香蕉為核心，口感絲滑濃郁，營養豐富且自然甜美。</div>
+            </section>
+            <section class="section1">
+                <h2>西班牙拿鐵</h2>
+                <img src="images/Latte.jpg" alt="西班牙拿鐵" />
+                <div class="price">95元</div>
+                <div class="description">西班牙拿鐵是一種特色拿鐵咖啡，比傳統義式拿鐵甜度更高且濃郁，深受亞洲和中東區域喜愛。</div>
+            </section>
+            <section class="section1">
+                <h2>美式咖啡</h2>
+                <img src="images/coffee.jpg" alt="美式咖啡" />
+                <div class="price">95元</div>
+                <div class="description">美式咖啡強調濃縮咖啡原味，使用水稀釋，口感接近滴濾咖啡，簡單經典的義式咖啡飲料。</div>
+            </section>
+            <section class="section1">
+                <h2>玫瑰花茶</h2>
+                <img src="images/rose.jpg" alt="玫瑰花茶" />
+                <div class="price">95元</div>
+                <div class="description">歷史悠久的養生花草茶，以乾燥玫瑰花蕾沖泡，茶香迷人，具有多樣健康效益。</div>
+            </section>
+            <section class="section1">
+                <h2>柳橙汁</h2>
+                <img src="images/juice.jpg" alt="柳橙汁" />
+                <div class="price">85元</div>
+                <div class="description">新鮮柳橙榨取，橙色鮮豔，酸甜可口，富含營養，是全球普及的果汁飲品。</div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <a href="sitemap.html"><i class="fas fa-sitemap"></i> 網站地圖</a>
+        <div class="copyright">© 2025 西風餐廳 版權所有</div>
+        <div class="social">
+            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://line.me" target="_blank"><i class="fab fa-line"></i></a>
+        </div>
+    </footer>
+
+<script>
+    const sidebar = document.getElementById('sidebar');
+    const toggleBtn = document.getElementById('toggleBtn');
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('collapsed');
+    });
+
+    const musicBtn = document.getElementById('musicBtn');
+    const bgMusic = document.getElementById('bgMusic');
+    musicBtn.addEventListener('click', () => {
+        if (bgMusic.paused) {
+            bgMusic.play();
+            musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
+        } else {
+            bgMusic.pause();
+            musicBtn.innerHTML = '<i class="fas fa-play"></i>';
+        }
+    });
+</script>
+
+</body>
+</html>
