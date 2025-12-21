@@ -2,52 +2,173 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <!-- 思源宋體 -->
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+
+ <!-- 辰宇落雁體（本地字型） -->
+ <style>
+ @font-face {
+  font-family: "辰宇落雁體";
+  src: url("fonts/ChenYuluoyan.ttf") format("truetype");
+ }
+ </style>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>前菜 Appetizers</title>
-<link rel="stylesheet" href="appetizers.css" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+ <link rel="stylesheet" href="appetizers.css" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-<aside class="menu-open">
+  <button class="menu-toggle" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+  </button>
+
+
+
+<aside id="sideMenu" class="menu-open">
+  <div class="side-hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </div>
+
   <nav>
-    <ul>
-      <li><a href="appetizers.html"><i class="fas fa-cheese"></i> 前菜</a></li>
-      <li><a href="main courses.html"><i class="fas fa-utensils"></i> 主菜</a></li>
-      <li><a href="side dishes.html"><i class="fas fa-bowl-rice"></i> 配菜</a></li>
-      <li><a href="soup.html"><i class="fas fa-soup"></i> 湯品</a></li>
-      <li><a href="salads.html"><i class="fas fa-salad"></i> 沙拉</a></li>
-      <li><a href="desserts.html"><i class="fas fa-ice-cream"></i> 甜點</a></li>
-      <li><a href="drinks.html"><i class="fas fa-glass-water"></i> 飲品</a></li>
-      <li><a href="set menu.html"><i class="fas fa-bell-concierge"></i> 套餐</a></li>
-      <li><a href="begin.html"><i class="fas fa-flag"></i> 公司起源</a></li>
-      <li><a href="trace.html"><i class="fas fa-magnifying-glass-chart"></i> 生產溯源</a></li>
-      <li><a href="contactus.html"><i class="fas fa-address-book"></i> 聯絡我們</a></li>
-    </ul>
+    <ul> 
+      <li class="menu-title">
+    <span class="menu-label">菜單選項</span>
+     </li>
+
+      
+   <li>
+    <a href="index.html">
+      <img src="images/icon/index.png" class="menu-icon">
+      <span class="menu-text">首頁</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="salads.html">
+      <img src="images/icon/salads.png" class="menu-icon">
+      <span class="menu-text">沙拉</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="appetizers.html">
+      <img src="images/icon/appetizers.png" class="menu-icon">
+      <span class="menu-text">前菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="soup.html">
+      <img src="images/icon/soup.png" class="menu-icon">
+      <span class="menu-text">湯品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="side dishes.html">
+      <img src="images/icon/side_dishes.png" class="menu-icon">
+      <span class="menu-text">配菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="main courses.html">
+      <img src="images/icon/main_courses.png" class="menu-icon">
+      <span class="menu-text">主菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="add.html">
+      <img src="images/icon/add.png" class="menu-icon">
+      <span class="menu-text">主菜加價</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="drinks.html">
+      <img src="images/icon/drinks.png" class="menu-icon">
+      <span class="menu-text">飲品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="desserts.html">
+      <img src="images/icon/desserts.png" class="menu-icon">
+      <span class="menu-text">甜品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="set menu.html">
+      <img src="images/icon/set.png" class="menu-icon">
+      <span class="menu-text">套餐</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="child.html">
+      <img src="images/icon/child.png" class="menu-icon">
+      <span class="menu-text">兒童專區</span>
+    </a>
+   </li>
+  </ul>
+
   </nav>
 </aside>
 
-<header>
-  <div class="banner-area">
-    <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
+<header class="page-header">
+  <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
+<nav class="top-nav">
+  <div class="nav-left">
+    <a href="begin.html">
+      <img src="images/icon/begin.png" class="top-nav1">
+      <span class="menu-text">公司起源</span>
+    </a>
+    <a href="trace.html">
+      <img src="images/icon/trace.png" class="top-nav1">
+      <span class="menu-text">生產溯源</span>
+    </a>
+    <a href="contactus.html">
+      <img src="images/icon/contactus.png" class="top-nav1">
+      <span class="menu-text">聯絡我們</span>
+    </a>
   </div>
-  <div class="language-switch">
-    <a href="#">中文</a> | <a href="#">EN</a>
+
+  <div class="nav-right">
+    <a href="index.html" class="logo-link">
+        <div class="logo-center">
+      <img src="images/logo_main.png" alt="West Wind">
+       </div>
+    </a>
+    <div class="language-switch">
+     <button id="langBtn">繁體中文 ▾</button>
+     <ul id="langMenu">
+    <li data-lang="zh">繁體中文</li>
+    <li data-lang="en">English</li>
+    <li data-lang="jp">日本語</li>
+    </ul>
+   </div>
+
+    <div class="music-player">
+      <audio controls>
+        <source src="media/webmusic.mp3" type="audio/mpeg">
+      </audio>
+    </div>   
   </div>
-  <div class="music-player">
-    <audio controls loop>
-      <source src="media/webmusic.mp3" type="audio/mp3">
-      您的瀏覽器不支持音頻播放。
-    </audio>
-  </div>
+</nav>
 </header>
+
 
 <div class="container">
   <main>
     <article>
       <h1 class="article-h1">前菜</h1>
       <div class="content">
-        <p>歡迎品嚐我們多樣化的前菜選項，皆使用新鮮食材，精心製作。</p>
+        <p class="article-subtitle">
+        歡迎品嚐我們多樣化的前菜選項，皆使用新鮮食材，精心製作。
+        </p>
       </div>
 
       <div class="section1-list">
@@ -91,11 +212,8 @@
   </main>
 </div>
 
-<footer>
-  <div class="footer-content">
-    <div class="site-map">
-      <a href="sitemap.html">網站地圖</a>
-    </div>
+<footer class="site-footer">
+  <div class="footer-inner">
     <div class="copyright">
       &copy; 2024 版權宣告. All Rights Reserved.
     </div>
@@ -106,6 +224,38 @@
     </div>
   </div>
 </footer>
+  <script>
+     const topNav = document.querySelector('.top-nav');
 
+    window.addEventListener('scroll', () => {
+     if (window.scrollY <= 2) {
+     topNav.classList.add('show');
+   } else {
+     topNav.classList.remove('show');
+   }
+  });
+
+
+
+    function toggleMenu() {
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('menu-open');
+      menu.classList.toggle('collapsed');
+    }
+    
+    const btn = document.getElementById('langBtn');
+    const menu = document.getElementById('langMenu');
+
+    btn.onclick = () => {
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    };
+
+    menu.querySelectorAll('li').forEach(item => {
+     item.onclick = () => {
+     btn.textContent = item.textContent + ' ▾';
+     menu.style.display = 'none';
+     };
+     });
+  </script>
 </body>
 </html>
