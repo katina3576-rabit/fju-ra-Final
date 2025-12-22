@@ -1,117 +1,279 @@
+<!-- appetizers.html -->
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>飲品 - 天點</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="drinks.css" />
+  <!-- 思源宋體 -->
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+
+ <!-- 辰宇落雁體（本地字型） -->
+ <style>
+ @font-face {
+  font-family: "辰宇落雁體";
+  src: url("fonts/ChenYuluoyan.ttf") format("truetype");
+ }
+ </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>飲品 - drinks</title>
+ <link rel="stylesheet" href="appetizers.css" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <aside id="sidebar">
-        <button id="toggleBtn"><i class="fas fa-bars"></i></button>
-        <nav>
-            <ul>
-                <li><a href="appetizers.html"><i class="fas fa-drumstick-bite"></i> 前菜</a></li>
-                <li><a href="main courses.html"><i class="fas fa-utensils"></i> 主菜</a></li>
-                <li><a href="side dishes.html"><i class="fas fa-carrot"></i> 配菜</a></li>
-                <li><a href="soup.html"><i class="fas fa-bowl-food"></i> 湯品</a></li>
-                <li><a href="salads.html"><i class="fas fa-seedling"></i> 沙拉</a></li>
-                <li><a href="desserts.html"><i class="fas fa-ice-cream"></i> 甜點</a></li>
-                <li><a href="drinks.html" class="active"><i class="fas fa-cocktail"></i> 飲品</a></li>
-                <li><a href="set menu.html"><i class="fas fa-list"></i> 套餐</a></li>
-                <li><a href="begin.html"><i class="fas fa-building"></i> 公司起源</a></li>
-                <li><a href="trace.html"><i class="fas fa-search"></i> 生產溯源</a></li>
-                <li><a href="contactus.html"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
-            </ul>
-        </nav>
-    </aside>
+  <button class="menu-toggle" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+  </button>
 
-    <header>
-        <div class="banner">
-            <img src="images/banner.jpg" alt="Banner" />
-            <div class="header-controls">
-                <select id="language">
-                    <option>繁體中文</option>
-                    <option>English</option>
-                </select>
-                <button id="musicBtn"><i class="fas fa-play"></i></button>
-                <audio id="bgMusic" src="media/webmusic.mp3" loop></audio>
+
+
+<aside id="sideMenu" class="menu-open">
+  <nav>
+    <ul>
+   <li>
+    <a href="index.html">
+      <img src="./images/icon/index.svg" class="menu-icon">
+      <span class="menu-text">首頁</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="salads.html">
+      <img src="./images/icon/salads.svg" class="menu-icon">
+      <span class="menu-text">沙拉</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="appetizers.html">
+      <img src="./images/icon/appetizers.svg" class="menu-icon">
+      <span class="menu-text">前菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="soup.html">
+      <img src="./images/icon/soup.svg" class="menu-icon">
+      <span class="menu-text">湯品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="side dishes.html">
+      <img src="./images/icon/side_dishes.svg" class="menu-icon">
+      <span class="menu-text">配菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="main courses.html">
+      <img src="./images/icon/main_courses.svg" class="menu-icon">
+      <span class="menu-text">主菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="add.html">
+      <img src="./images/icon/add.svg" class="menu-icon">
+      <span class="menu-text">主菜加價</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="drinks.html">
+      <img src="./images/icon/drinks.svg" class="menu-icon">
+      <span class="menu-text">飲品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="desserts.html">
+      <img src="./images/icon/desserts.svg" class="menu-icon">
+      <span class="menu-text">甜品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="set menu.html">
+      <img src="./images/icon/set.svg" class="menu-icon">
+      <span class="menu-text">套餐</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="child.html">
+      <img src="./images/icon/child.svg" class="menu-icon">
+      <span class="menu-text">兒童專區</span>
+    </a>
+   </li>
+  </ul>
+
+  </nav>
+</aside>
+
+<header class="page-header">
+  <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
+<nav class="top-nav">
+  <div class="nav-left">
+    <a href="begin.html">
+      <img src="./images/icon/begin.svg" class="top-nav1">
+      <span class="menu-text">公司起源</span>
+    </a>
+    <a href="trace.html">
+      <img src="./images/icon/trace.svg" class="top-nav1">
+      <span class="menu-text">生產溯源</span>
+    </a>
+    <a href="contactus.html">
+      <img src="./images/icon/contactus.svg" class="top-nav1">
+      <span class="menu-text">聯絡我們</span>
+    </a>
+  </div>
+
+  
+    <a href="index.html" class="logo-link">
+        <div class="logo-center">
+      <img src="./images/logo_main.png" alt="West Wind">
+       </div>
+    </a>
+    
+  <div class="nav-right">
+    <div class="language-switch">
+     <button id="langBtn">繁體中文 ▾</button>
+     <ul id="langMenu">
+      <li data-lang="zh">繁體中文</li>
+      <li data-lang="en">English</li>
+      <li data-lang="jp">日本語</li>
+    </ul>
+   </div>
+
+    <div class="music-player">
+      <audio controls>
+        <source src="media/webmusic.mp3" type="audio/mpeg">
+      </audio>
+    </div>   
+  </div>
+</nav>
+</header>
+
+
+<div class="container">
+  <main>
+    <article>
+      <h1 class="article-h1">飲品專區</h1>
+      <div class="content">
+        <p class="article-subtitle">
+        用心挑選的飲品，從健康果汁到香醇咖啡，滿足您不同時刻的渴望。
+        </p>
+      </div>
+
+      <div class="section1-list">
+        <section class="section1">
+          <h2 class="product-name">酪梨香蕉奶昔</h2>
+          <div class="product-info-wrapper">
+            <img src="images/banana.jpg" alt="酪梨香蕉奶昔" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">95元</span>
+            <div class="description">
+              <p>酪梨香蕉奶昔是健康飲品，以酪梨和香蕉為核心，口感絲滑濃郁，營養豐富且自然甜美。</p>
             </div>
-        </div>
-    </header>
+          </div>
+        </section>
 
-    <main>
-        <article>
-            <h1>飲品專區</h1>
-            <div class="content">
-                用心挑選的飲品，從健康果汁到香醇咖啡，滿足您不同時刻的渴望。
+        <section class="section1">
+          <h2 class="product-name">西班牙拿鐵</h2>
+          <div class="product-info-wrapper">
+            <img src="images/Latte.jpg" alt="西班牙拿鐵" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">95元</span>
+            <div class="description">
+              <p>西班牙拿鐵是一種特色拿鐵咖啡，比傳統義式拿鐵甜度更高且濃郁，深受亞洲和中東區域喜愛。</p>
             </div>
-        </article>
+          </div>
+        </section>
 
-        <div class="products">
-            <section class="section1">
-                <h2>酪梨香蕉奶昔</h2>
-                <img src="images/banana.jpg" alt="酪梨香蕉奶昔" />
-                <div class="price">95元</div>
-                <div class="description">酪梨香蕉奶昔是健康飲品，以酪梨和香蕉為核心，口感絲滑濃郁，營養豐富且自然甜美。</div>
-            </section>
-            <section class="section1">
-                <h2>西班牙拿鐵</h2>
-                <img src="images/Latte.jpg" alt="西班牙拿鐵" />
-                <div class="price">95元</div>
-                <div class="description">西班牙拿鐵是一種特色拿鐵咖啡，比傳統義式拿鐵甜度更高且濃郁，深受亞洲和中東區域喜愛。</div>
-            </section>
-            <section class="section1">
-                <h2>美式咖啡</h2>
-                <img src="images/coffee.jpg" alt="美式咖啡" />
-                <div class="price">95元</div>
-                <div class="description">美式咖啡強調濃縮咖啡原味，使用水稀釋，口感接近滴濾咖啡，簡單經典的義式咖啡飲料。</div>
-            </section>
-            <section class="section1">
-                <h2>玫瑰花茶</h2>
-                <img src="images/rose.jpg" alt="玫瑰花茶" />
-                <div class="price">95元</div>
-                <div class="description">歷史悠久的養生花草茶，以乾燥玫瑰花蕾沖泡，茶香迷人，具有多樣健康效益。</div>
-            </section>
-            <section class="section1">
-                <h2>柳橙汁</h2>
-                <img src="images/juice.jpg" alt="柳橙汁" />
-                <div class="price">85元</div>
-                <div class="description">新鮮柳橙榨取，橙色鮮豔，酸甜可口，富含營養，是全球普及的果汁飲品。</div>
-            </section>
-        </div>
-    </main>
+        <section class="section1">
+          <h2 class="product-name">美式咖啡</h2>
+          <div class="product-info-wrapper">
+            <img src="images/coffee.jpg" alt="美式咖啡" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">95元</span>
+            <div class="description">
+              <p>>美式咖啡強調濃縮咖啡原味，使用水稀釋，口感接近滴濾咖啡，簡單經典的義式咖啡飲料。</p>
+            </div>
+          </div>
+        </section>
 
-    <footer>
-        <a href="sitemap.html"><i class="fas fa-sitemap"></i> 網站地圖</a>
-        <div class="copyright">© 2025 西風餐廳 版權所有</div>
-        <div class="social">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://line.me" target="_blank"><i class="fab fa-line"></i></a>
-        </div>
-    </footer>
+        <section class="section1">
+          <h2 class="product-name">玫瑰花茶</h2>
+          <div class="product-info-wrapper">
+            <img src="images/rose.jpg" alt="玫瑰花茶" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">95元</span>
+            <div class="description">
+              <p>歷史悠久的養生花草茶，以乾燥玫瑰花蕾沖泡，茶香迷人，具有多樣健康效益。</p>
+            </div>
+          </div>
+        </section>
 
-<script>
-    const sidebar = document.getElementById('sidebar');
-    const toggleBtn = document.getElementById('toggleBtn');
-    toggleBtn.addEventListener('click', () => {
-        sidebar.classList.toggle('collapsed');
-    });
+        <section class="section1">
+          <h2 class="product-name">柳橙汁</h2>
+          <div class="product-info-wrapper">
+            <img src="images/juice.jpg" alt="柳橙汁" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">85元</span>
+            <div class="description">
+              <p>新鮮柳橙榨取，橙色鮮豔，酸甜可口，富含營養，是全球普及的果汁飲品。</p>
+            </div>
+          </div>
+        </section>
 
-    const musicBtn = document.getElementById('musicBtn');
-    const bgMusic = document.getElementById('bgMusic');
-    musicBtn.addEventListener('click', () => {
-        if (bgMusic.paused) {
-            bgMusic.play();
-            musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-        } else {
-            bgMusic.pause();
-            musicBtn.innerHTML = '<i class="fas fa-play"></i>';
-        }
-    });
-</script>
+      </div>
+    </article>
+  </main>
+</div>
 
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="copyright">
+      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+    </div>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://line.me" target="_blank" title="Line"><i class="fa-brands fa-line"></i></a>
+    </div>
+  </div>
+</footer>
+  <script>
+     const topNav = document.querySelector('.top-nav');
+
+    window.addEventListener('scroll', () => {
+     if (window.scrollY <= 2) {
+     topNav.classList.add('show');
+   } else {
+     topNav.classList.remove('show');
+   }
+  });
+
+
+
+    function toggleMenu() {
+     // const menu = document.getElementById('sideMenu');
+     // menu.classList.toggle('menu-open');
+     // menu.classList.toggle('collapsed');
+    }
+    
+    const btn = document.getElementById('langBtn');
+    const menu = document.getElementById('langMenu');
+
+    btn.onclick = () => {
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    };
+
+    menu.querySelectorAll('li').forEach(item => {
+     item.onclick = () => {
+     btn.textContent = item.textContent + ' ▾';
+     menu.style.display = 'none';
+     };
+     });
+  </script>
 </body>
 </html>
