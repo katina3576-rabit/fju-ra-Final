@@ -1,291 +1,243 @@
-/* trace.css */
+/* ================================
+   West Wind ｜ 全站統一 CSS（重生版）
+   說明：
+   - 結構不改 HTML
+   - Sidebar 為唯一垂直軸心
+   - Header / Content / Footer 全部服從 Sidebar
+   - 註解標明「之後你可自己調的地方」
+================================ */
 
-/* 基礎設定與佈局 */
-body {
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex; /* 使用 Flexbox 進行整體佈局 */
-    flex-direction: column;
-    min-height: 100vh;
+/* ---------- ① 全域 Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    flex: 1; /* 讓 container 佔據剩餘空間 */
+html, body {
+  overflow-x: hidden;
+  background: #f5f5f5;
+  color: #333;
+
+  /* 【全站主要內文】之後要換字體就改這裡 */
+  font-family: "Noto Serif TC", "思源宋體", serif;
 }
 
-/* ====================================
-   Header 區塊
-   ==================================== */
-header {
-    background-color: #f8f8f8;
-    position: relative;
-    padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
-    display: flex;
-    justify-content: space-between; /* 使元素分散對齊 */
-    align-items: center;
+/* ---------- ② 全站變數（顏色 / 尺寸核心） ---------- */
+:root {
+  --sidebar-width: 220px;          /* 左側展開寬度 */
+  --sidebar-collapsed: 64px;       /* 左側收合寬度 */
+  --topnav-height: 90px;           /* 上方導覽高度 */
+
+  --color-main: #46C2AC;            /* 主色（重點字、價格） */
+  --color-dark: #2c3e50;            /* 深底（sidebar / footer） */
+  --color-dark-2: #34495e;
 }
 
+/* ==================================================
+   ③ 左側 Sidebar（唯一垂直軸）
+================================================== */
+#sideMenu {
+  position: fixed;
+  inset: 0 auto 0 0;
+  width: var(--sidebar-width);
+  background: linear-gradient(135deg, var(--color-dark), var(--color-dark-2));
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+
+  height: 100vh;
+  overflow: hidden;
+}
+
+#sideMenu nav {
+  flex: 1;
+  height: 100%;
+}
+
+
+#sideMenu nav ul {
+  height: 100%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  
+  justify-content: flex-start;
+  padding-top: 20px;
+}
+
+#sideMenu nav ul li a {
+  height: 44px;                 /* ❗統一高度 */
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 0 20px;
+  color: #fff;
+  text-decoration: none;
+
+  gap: 12px;
+  /* 【左側文字大小】 */
+  font-size: 16px;
+}
+/* 只補最後一顆（兒童） */
+#sideMenu nav ul li:last-child img.menu-icon {
+  transform: scale(1.35);
+}
+
+/* 左側導覽列 icon 統一尺寸（封印） */
+#sideMenu img.menu-icon {
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px;
+  min-height: 24px;
+
+  object-fit: contain;
+  display: block;
+
+  filter: brightness(0) invert(1);
+}
+
+
+#sideMenu nav ul li a:hover {
+    background: rgba(255,255,255,0.08);
+  color: var(--color-main);
+}
+
+/* ---------- Sidebar 收合狀態 ---------- */
+#sideMenu.collapsed {
+  width: var(--sidebar-collapsed);
+}
+
+#sideMenu.collapsed .menu-text {
+  display: none;        /* 只藏文字 */
+}
+
+#sideMenu.collapsed nav ul li a {
+  justify-content: center;
+}
+
+/* ==================================================
+   ④ Top Navigation（服從 Sidebar）
+================================================== */
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: var(--sidebar-width);
+  right: 0;
+  height: var(--topnav-height);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 32px;
+  background: rgba(255,255,255,0.35);
+  backdrop-filter: blur(14px);
+  z-index: 90;
+}
+
+#sideMenu.collapsed ~ header .top-nav {
+  left: var(--sidebar-collapsed);
+}
+
+.top-nav a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  color: #333;
+
+  /* 【上方導覽文字】 */
+  font-weight: 700;
+}
+
+/* 中央 Logo（視覺置中） */
+.logo-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.logo-center img {
+  width: 80px;   /* Logo 大小 */
+}
+
+/* ==================================================
+   ⑤ Header Banner
+================================================== */
 .header-banner {
-    /* 留一個banner區塊放置底圖, 底圖圖片來源位置:images/.jpg, 只需要25%的大小 */
-    width: 25%;
-    height: auto;
-    object-fit: cover;
+  width: 100%;
+  height: 250px;     /* 【Banner 高度】 */
+  object-fit: cover;
+  margin-top: var(--topnav-height);
 }
 
-.language-switch, .music-player {
-    /* 語系切換功能、音樂播放功能 */
-    padding: 0 10px;
+/* ==================================================
+   ⑥ 主要內容區
+================================================== */
+.container {
+  margin-left: var(--sidebar-width);
+  padding: 40px 30px;
 }
 
-/* ====================================
-   Aside 區塊 (側邊選單)
-   ==================================== */
-aside {
-    /* aside 區塊可以收合 (此處僅為展開狀態的樣式) */
-    width: 200px;
-    background-color: #383580; /* 選單內容字體顏色是 #383580，故將背景色設定為此，確保對比 */
-    color: white;
-    padding: 20px 0;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+#sideMenu.collapsed ~ .container {
+  margin-left: var(--sidebar-collapsed);
 }
 
-aside nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-aside nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    display: block;
-    /* 選單前方要有對應的icon圖示意 */
-    display: flex;
-    align-items: center;
-}
-
-aside nav ul li a i {
-    margin-right: 10px;
-    font-size: 1.1rem;
-}
-
-aside nav ul li a:hover {
-    background-color: #46C2AC;
-}
-
-/* ====================================
-   Main 區塊
-   ==================================== */
-main {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #fff;
-}
-
-/* article 區塊 */
-article {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-/* article 下的 H1 區塊 */
 .article-h1 {
-    /* H1 區塊文字大小 1.6rem, 字體顏色 #46C2AC */
-    font-size: 1.6rem;
-    color: #46C2AC;
-    border-bottom: 2px solid #46C2AC;
-    padding-bottom: 5px;
-    margin-bottom: 20px;
+  font-family: "辰宇落雁體", cursive;
+  font-size: 1.6rem;
+  color: var(--color-main);
+  margin-bottom: 12px;
 }
 
-/* content 區塊 (內文) */
-.content {
-    /* content 區塊文字大小 1.1rem, 字體顏色 #383580 */
-    font-size: 1.1rem;
-    color: #383580;
-    line-height: 1.6;
-    margin-bottom: 30px;
+.content p {
+  line-height: 1.8;
+  margin-bottom: 40px;
 }
 
-/* ====================================
-   Section1 區塊 (產品資訊)
-   ==================================== */
-.section1 {
-    /* section1 每一列最多 1 個 section1, 超過就換行 (此處僅以寬度控制佈局) */
-    margin-bottom: 40px;
-    padding: 20px;
-    border: 1px solid #eee;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
-}
-
-/* 產品名稱 H2 區塊 */
-.section1 .product-name {
-    /* H2 區塊, 文字大小 1.25rem, 文字顏色 #D6AE72 */
-    font-size: 1.25rem;
-    color: #D6AE72;
-    margin-top: 0;
-    padding-bottom: 5px;
-    border-bottom: 1px dashed #D6AE72;
-}
-
-.product-info-grid {
-    display: flex;
-    gap: 30px; /* 圖片和詳細資訊之間的間隔 */
-}
-
-.product-image {
-    flex-basis: 30%; /* 圖片佔比約 30% */
-    text-align: center;
-}
-
-.sgs-report-img {
-    /* 圖片來源:images/jpg, 假設圖片為 100% 寬度於其父容器中 */
-    max-width: 100%;
-    height: auto;
-    border: 1px solid #ddd;
-    padding: 5px;
-}
-
-.product-details {
-    flex-basis: 70%; /* 詳細資訊佔比約 70% */
-}
-
-.price-placeholder {
-    /* 價格的文字大小 1.25rem, 文字顏色 #61FAE8 */
-    font-size: 1.25rem;
-    color: #61FAE8;
-    font-weight: bold;
-    display: block; /* 讓價格獨佔一行 */
-    margin-bottom: 10px;
-}
-
-.dashed-line {
-    /* 圖片和價格之間有一條虛線間隔 (此處放在價格下方) */
-    border: none;
-    border-top: 1px dashed #ccc;
-    margin: 10px 0;
-}
-
-/* 詳細資訊樣式 */
-.product-details h3 {
-    color: #383580;
-    border-left: 5px solid #46C2AC;
-    padding-left: 10px;
-}
-
-.product-details h4 {
-    color: #D6AE72;
-    margin-top: 20px;
-}
-
-.product-details ul {
-    list-style: disc;
-    margin-left: 20px;
-    padding-left: 0;
-}
-
-.product-details li {
-    margin-bottom: 5px;
-}
-
-/* 檢驗表格樣式 */
-.inspection-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-}
-
-.inspection-table th, .inspection-table td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
-}
-
-.inspection-table th {
-    background-color: #f2f2f2;
-    color: #383580;
-}
-
-.inspection-table .report-details {
-    text-align: center;
-    font-size: 0.95rem;
-    line-height: 1.4;
-    background-color: #f9f9f9;
-}
-
-
-/* ====================================
-   Footer 區塊
-   ==================================== */
+/* ==================================================
+   ⑦ Footer（服從 Sidebar）
+================================================== */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
-    text-align: center;
-    margin-top: auto; /* 將 footer 推到底部 */
+  background: var(--color-dark);
+  color: #fff;
 }
 
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+.footer-inner {
+  margin-left: var(--sidebar-width);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.copyright {
-    /* 版權宣告放置中間 */
-    flex-grow: 1;
-    text-align: center;
+#sideMenu.collapsed ~ footer .footer-inner {
+  margin-left: var(--sidebar-collapsed);
 }
 
-.site-map a {
-    /* 左邊放置網站地圖 */
-    color: #46C2AC;
-    text-decoration: none;
-    padding-right: 15px;
+footer a {
+  color: #fff;
+  text-decoration: none;
 }
 
-.social-media a {
-    /* 右邊放置 Facebook、Instagram、Line 及其預設連結和對應 icon */
-    color: white;
-    font-size: 1.5rem;
-    margin-left: 15px;
-    text-decoration: none;
-}
-
-.social-media a:hover {
-    color: #D6AE72;
-}
-
-/* 響應式調整 (簡易範例) */
+/* ==================================================
+   ⑧ 響應式（手機簡化）
+================================================== */
 @media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
+  #sideMenu {
+    width: var(--sidebar-collapsed);
+  }
 
-    aside {
-        width: 100%;
-        padding: 10px 0;
-    }
+  .menu-text {
+    display: none;
+  }
 
-    .product-info-grid {
-        flex-direction: column;
-    }
-
-    .product-image, .product-details {
-        flex-basis: 100%;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-    }
-
-    .site-map, .copyright, .social-media {
-        padding: 5px 0;
-    }
+  .top-nav,
+  .container,
+  .footer-inner {
+    margin-left: var(--sidebar-collapsed);
+  }
 }
