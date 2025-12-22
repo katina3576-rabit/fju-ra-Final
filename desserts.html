@@ -1,127 +1,286 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<!DOCTYPE html>
+<html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>甜點 - 天點</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="desserts.css">
+  <!-- 思源宋體 -->
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+
+ <!-- 辰宇落雁體（本地字型） -->
+ <style>
+ @font-face {
+  font-family: "辰宇落雁體";
+  src: url("fonts/ChenYuluoyan.ttf") format("truetype");
+ }
+ </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>甜點 - desserts</title>
+ <link rel="stylesheet" href="appetizers.css" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <!-- Aside 選單區塊 (可收合) -->
-    <aside id="sidebar">
-        <button id="toggleBtn"><i class="fas fa-bars"></i></button>
-        <nav>
-            <ul>
-                <li><a href="appetizers.html"><i class="fas fa-drumstick-bite"></i> 前菜</a></li>
-                <li><a href="main courses.html"><i class="fas fa-utensils"></i> 主菜</a></li>
-                <li><a href="side dishes.html"><i class="fas fa-carrot"></i> 配菜</a></li>
-                <li><a href="soup.html"><i class="fas fa-bowl-food"></i> 湯品</a></li>
-                <li><a href="salads.html"><i class="fas fa-seedling"></i> 沙拉</a></li>
-                <li><a href="desserts.html"><i class="fas fa-ice-cream"></i> 甜點</a></li>
-                <li><a href="drinks.html"><i class="fas fa-cocktail"></i> 飲品</a></li>
-                <li><a href="set menu.html"><i class="fas fa-list"></i> 套餐</a></li>
-                <li><a href="begin.html"><i class="fas fa-building"></i> 公司起源</a></li>
-                <li><a href="trace.html"><i class="fas fa-search"></i> 生產溯源</a></li>
-                <li><a href="contactus.html"><i class="fas fa-envelope"></i> 聯絡我們</a></li>
-            </ul>
-        </nav>
-    </aside>
+  <button class="menu-toggle" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+  </button>
 
-    <!-- Header 區塊 -->
-    <header>
-        <div class="banner">
-            <img src="images/banner.jpg" alt="Banner">
-            <div class="header-controls">
-                <select id="language">
-                    <option>繁體中文</option>
-                    <option>English</option>
-                </select>
-                <button id="musicBtn"><i class="fas fa-play"></i></button>
-                <audio id="bgMusic" src="media/webmusic.mp3" loop></audio>
+
+
+<aside id="sideMenu" class="menu-open">
+  <img
+  src="https://raw.githubusercontent.com/katina3576-rabit/fju-ra-Final/main/images/icons/add.png"
+  class="menu-icon">
+
+  <nav>
+    <ul>
+   <li>
+    <a href="index.html">
+      <img src="./images/icon/index.png" class="menu-icon">
+      <span class="menu-text">首頁</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="salads.html">
+      <img src="./images/icon/salads.png" class="menu-icon">
+      <span class="menu-text">沙拉</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="appetizers.html">
+      <img src="./images/icon/appetizers.png" class="menu-icon">
+      <span class="menu-text">前菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="soup.html">
+      <img src="./images/icon/soup.png" class="menu-icon">
+      <span class="menu-text">湯品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="side dishes.html">
+      <img src="./images/icon/side_dishes.png" class="menu-icon">
+      <span class="menu-text">配菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="main courses.html">
+      <img src="./images/icon/main_courses.png" class="menu-icon">
+      <span class="menu-text">主菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="add.html">
+      <img src="./images/icon/add.png" class="menu-icon">
+      <span class="menu-text">主菜加價</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="drinks.html">
+      <img src="./images/icon/drinks.png" class="menu-icon">
+      <span class="menu-text">飲品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="desserts.html">
+      <img src="./images/icon/desserts.png" class="menu-icon">
+      <span class="menu-text">甜品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="set menu.html">
+      <img src="./images/icon/set.png" class="menu-icon">
+      <span class="menu-text">套餐</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="child.html">
+      <img src="./images/icon/child.png" class="menu-icon">
+      <span class="menu-text">兒童專區</span>
+    </a>
+   </li>
+  </ul>
+
+  </nav>
+</aside>
+
+<header class="page-header">
+  <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
+<nav class="top-nav">
+  <div class="nav-left">
+    <a href="begin.html">
+      <img src="./images/icon/begin.png" class="top-nav1">
+      <span class="menu-text">公司起源</span>
+    </a>
+    <a href="trace.html">
+      <img src="./images/icon/trace.png" class="top-nav1">
+      <span class="menu-text">生產溯源</span>
+    </a>
+    <a href="contactus.html">
+      <img src="./images/icon/contactus.png" class="top-nav1">
+      <span class="menu-text">聯絡我們</span>
+    </a>
+  </div>
+
+  
+    <a href="index.html" class="logo-link">
+        <div class="logo-center">
+      <img src="./images/logo_main.png" alt="West Wind">
+       </div>
+    </a>
+    
+  <div class="nav-right">
+    <div class="language-switch">
+     <button id="langBtn">繁體中文 ▾</button>
+     <ul id="langMenu">
+      <li data-lang="zh">繁體中文</li>
+      <li data-lang="en">English</li>
+      <li data-lang="jp">日本語</li>
+    </ul>
+   </div>
+
+    <div class="music-player">
+      <audio controls>
+        <source src="media/webmusic.mp3" type="audio/mpeg">
+      </audio>
+    </div>   
+  </div>
+</nav>
+</header>
+
+
+<div class="container">
+  <main>
+    <article>
+      <h1 class="article-h1">甜點專區</h1>
+      <div class="content">
+        <p class="article-subtitle">
+        精選法式經典甜點，完美結合傳統工藝與創新口感，每一口都是味蕾的極致享受。
+        </p>
+      </div>
+
+      <div class="section1-list">
+        <section class="section1">
+          <h2 class="product-name">法式巧克力醬糜蛋糕</h2>
+          <div class="product-info-wrapper">
+            <img src="images/chocolat.jpg" alt="法式巧克力醬糜蛋糕" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">95元</span>
+            <div class="description">
+              <p>Terrine 在法式料理中原本是指一種用陶製長方模具製作的凍派或肉醬凍，後來延伸到甜點領域，用來指代一種外型與法式肉醬凍相似、口感極為濃郁紮實的甜點。口感介於布朗尼和生巧克力之間的極致巧克力甜點。</p>
             </div>
-        </div>
-    </header>
+          </div>
+        </section>
 
-    <!-- Main 內容區 -->
-    <main>
-        <article>
-            <h1>甜點專區</h1>
-            <div class="content">
-                精選法式經典甜點，完美結合傳統工藝與創新口感，每一口都是味蕾的極致享受。
+        <section class="section1">
+          <h2 class="product-name">可麗露</h2>
+          <div class="product-info-wrapper">
+            <img src="images/canelé.jpg" alt="可麗露" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">95元</span>
+            <div class="description">
+              <p>可麗露 (Canelé)，全名為Canelé de Bordeaux，是源自法國西南部波爾多地區的經典修道院甜點。因其特殊的造型和口感對比，在台灣常被暱稱為「天使之鈴」或「天使之冠」。</p>
             </div>
-        </article>
+          </div>
+        </section>
 
-        <!-- Section1 產品區塊 -->
-        <div class="products">
-            <section class="section1">
-                <h2>法式巧克力醬糜蛋糕</h2>
-                <img src="images/chocolat.jpg" alt="法式巧克力醬糜蛋糕">
-                <div class="price">95元</div>
-                <div class="description">Terrine 在法式料理中原本是指一種用陶製長方模具製作的凍派或肉醬凍，後來延伸到甜點領域，用來指代一種外型與法式肉醬凍相似、口感極為濃郁紮實的甜點。口感介於布朗尼和生巧克力之間的極致巧克力甜點。</div>
-            </section>
+        <section class="section1">
+          <h2 class="product-name">義式巧克力香腸</h2>
+          <div class="product-info-wrapper">
+            <img src="images/italy.jpg" alt="義式巧克力香腸" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">95元</span>
+            <div class="description">
+              <p>義式巧克力香腸 (Salame di Cioccolato) 是一種源自義大利的經典甜點，並非真正的肉製品，而是因為其外形酷似義大利臘腸而得名。這是一種免烤甜點，製作過程簡單，口感豐富且充滿趣味。</p>
+            </div>
+          </div>
+        </section>
 
-            <section class="section1">
-                <h2>可麗露</h2>
-                <img src="images/canelé.jpg" alt="可麗露">
-                <div class="price">95元</div>
-                <div class="description">可麗露 (Canelé)，全名為Canelé de Bordeaux，是源自法國西南部波爾多地區的經典修道院甜點。因其特殊的造型和口感對比，在台灣常被暱稱為「天使之鈴」或「天使之冠」。</div>
-            </section>
+        <section class="section1">
+          <h2 class="product-name">蘋果肉桂捲</h2>
+          <div class="product-info-wrapper">
+            <img src="images/cinnamon.jpg" alt="蘋果肉桂捲" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">85元</span>
+            <div class="description">
+              <p>蘋果肉桂捲是在經典肉桂捲的基礎上進行的美味創新，將煮軟的蘋果切塊或蘋果泥融入到肉桂捲的內餡中，使得傳統肉桂捲的風味更加濕潤、清爽且充滿果香。</p>
+            </div>
+          </div>
+        </section>
 
-            <section class="section1">
-                <h2>義式巧克力香腸</h2>
-                <img src="images/italy.jpg" alt="義式巧克力香腸">
-                <div class="price">95元</div>
-                <div class="description">義式巧克力香腸 (Salame di Cioccolato) 是一種源自義大利的經典甜點，並非真正的肉製品，而是因為其外形酷似義大利臘腸而得名。這是一種免烤甜點，製作過程簡單，口感豐富且充滿趣味。</div>
-            </section>
+        <section class="section1">
+          <h2 class="product-name">費南雪</h2>
+          <div class="product-info-wrapper">
+            <img src="images/financier.jpg" alt="費南雪" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">90元</span>
+            <div class="description">
+              <p>費南雪 (Financier) 是一種經典的法式常溫小蛋糕，以其獨特的金磚造型、濕潤的口感和濃郁的堅果香氣而聞名。名字來自於它與金條相似的長方形外觀，以及在巴黎金融區受歡迎的歷史。</p>
+            </div>
+          </div>
+        </section>
 
-            <section class="section1">
-                <h2>蘋果肉桂捲</h2>
-                <img src="images/cinnamon.jpg" alt="蘋果肉桂捲">
-                <div class="price">85元</div>
-                <div class="description">蘋果肉桂捲是在經典肉桂捲的基礎上進行的美味創新，將煮軟的蘋果切塊或蘋果泥融入到肉桂捲的內餡中，使得傳統肉桂捲的風味更加濕潤、清爽且充滿果香。</div>
-            </section>
+      </div>
+    </article>
+  </main>
+</div>
 
-            <section class="section1">
-                <h2>費南雪</h2>
-                <img src="images/financier.jpg" alt="費南雪">
-                <div class="price">90元</div>
-                <div class="description">費南雪 (Financier) 是一種經典的法式常溫小蛋糕，以其獨特的金磚造型、濕潤的口感和濃郁的堅果香氣而聞名。名字來自於它與金條相似的長方形外觀，以及在巴黎金融區受歡迎的歷史。</div>
-            </section>
-        </div>
-    </main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="copyright">
+      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+    </div>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://line.me" target="_blank" title="Line"><i class="fa-brands fa-line"></i></a>
+    </div>
+  </div>
+</footer>
+  <script>
+     const topNav = document.querySelector('.top-nav');
 
-    <!-- Footer 區塊 -->
-    <footer>
-        <a href="sitemap.html"><i class="fas fa-sitemap"></i> 網站地圖</a>
-        <div class="copyright">© 2025 西風餐廳 版權所有</div>
-        <div class="social">
-            <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://line.me" target="_blank"><i class="fab fa-line"></i></a>
-        </div>
-    </footer>
+    window.addEventListener('scroll', () => {
+     if (window.scrollY <= 2) {
+     topNav.classList.add('show');
+   } else {
+     topNav.classList.remove('show');
+   }
+  });
 
-    <script>
-        // Aside 收合功能
-        const sidebar = document.getElementById('sidebar');
-        const toggleBtn = document.getElementById('toggleBtn');
-        toggleBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('collapsed');
-        });
 
-        // 音樂播放控制
-        const musicBtn = document.getElementById('musicBtn');
-        const bgMusic = document.getElementById('bgMusic');
-        musicBtn.addEventListener('click', () => {
-            if (bgMusic.paused) {
-                bgMusic.play();
-                musicBtn.innerHTML = '<i class="fas fa-pause"></i>';
-            } else {
-                bgMusic.pause();
-                musicBtn.innerHTML = '<i class="fas fa-play"></i>';
-            }
-        });
-    </script>
+
+    function toggleMenu() {
+     // const menu = document.getElementById('sideMenu');
+     // menu.classList.toggle('menu-open');
+     // menu.classList.toggle('collapsed');
+    }
+    
+    const btn = document.getElementById('langBtn');
+    const menu = document.getElementById('langMenu');
+
+    btn.onclick = () => {
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    };
+
+    menu.querySelectorAll('li').forEach(item => {
+     item.onclick = () => {
+     btn.textContent = item.textContent + ' ▾';
+     menu.style.display = 'none';
+     };
+     });
+  </script>
 </body>
 </html>
+
+
+

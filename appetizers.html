@@ -26,90 +26,85 @@
 
 
 <aside id="sideMenu" class="menu-open">
-  <div class="side-hamburger" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </div>
+  <img
+  src="https://raw.githubusercontent.com/katina3576-rabit/fju-ra-Final/main/images/icons/add.png"
+  class="menu-icon">
 
   <nav>
-    <ul> 
-      <li class="menu-title">
-    <span class="menu-label">菜單選項</span>
-     </li>
-
-      
+    <ul>
    <li>
     <a href="index.html">
-      <img src="./images/icon/index.png" alt="add">
+      <img src="./images/icon/index.svg" class="menu-icon">
       <span class="menu-text">首頁</span>
     </a>
    </li>
 
    <li>
     <a href="salads.html">
-      <img src="./images/icon/salads.png" alt="add">
+      <img src="./images/icon/salads.png" class="menu-icon">
       <span class="menu-text">沙拉</span>
     </a>
    </li>
 
    <li>
     <a href="appetizers.html">
-      <img src="./images/icon/appetizers.png" alt="add">
+      <img src="./images/icon/appetizers.png" class="menu-icon">
       <span class="menu-text">前菜</span>
     </a>
    </li>
 
    <li>
     <a href="soup.html">
-      <img src="./images/icon/soup.png" alt="add">
+      <img src="./images/icon/soup.png" class="menu-icon">
       <span class="menu-text">湯品</span>
     </a>
    </li>
 
    <li>
     <a href="side dishes.html">
-      <img src="./images/icon/side dishes.png" alt="add">
+      <img src="./images/icon/side_dishes.png" class="menu-icon">
       <span class="menu-text">配菜</span>
     </a>
    </li>
 
    <li>
     <a href="main courses.html">
-      <img src="./images/icon/main courses.png" alt="add">
+      <img src="./images/icon/main_courses.png" class="menu-icon">
       <span class="menu-text">主菜</span>
     </a>
    </li>
 
    <li>
     <a href="add.html">
-      <img src="./images/icon/add.png" alt="add">
+      <img src="./images/icon/add.png" class="menu-icon">
       <span class="menu-text">主菜加價</span>
     </a>
    </li>
 
    <li>
     <a href="drinks.html">
-      <img src="./images/icon/drinks.png" alt="add">
+      <img src="./images/icon/drinks.png" class="menu-icon">
       <span class="menu-text">飲品</span>
     </a>
    </li>
 
    <li>
     <a href="desserts.html">
-      <img src="./images/icon/desserts.png" alt="add">
+      <img src="./images/icon/desserts.png" class="menu-icon">
       <span class="menu-text">甜品</span>
     </a>
    </li>
 
    <li>
     <a href="set menu.html">
-      <img src="./images/icon/set menu.png" alt="add">
+      <img src="./images/icon/set.png" class="menu-icon">
       <span class="menu-text">套餐</span>
     </a>
    </li>
 
    <li>
     <a href="child.html">
-      <img src="./images/icon/child.png" alt="add">
+      <img src="./images/icon/child.png" class="menu-icon">
       <span class="menu-text">兒童專區</span>
     </a>
    </li>
@@ -123,31 +118,33 @@
 <nav class="top-nav">
   <div class="nav-left">
     <a href="begin.html">
-      <img src="./images/icon/begin.png" alt="add">
+      <img src="./images/icon/begin.png" class="top-nav1">
       <span class="menu-text">公司起源</span>
     </a>
     <a href="trace.html">
-      <img src="./images/icon/trace.png" alt="add">
+      <img src="./images/icon/trace.png" class="top-nav1">
       <span class="menu-text">生產溯源</span>
     </a>
     <a href="contactus.html">
-      <img src="./images/icon/contactus.png" alt="add">
+      <img src="./images/icon/contactus.png" class="top-nav1">
       <span class="menu-text">聯絡我們</span>
     </a>
   </div>
 
-  <div class="nav-right">
+  
     <a href="index.html" class="logo-link">
         <div class="logo-center">
-      <img src="images/logo_main.png" alt="West Wind">
+      <img src="./images/logo_main.png" alt="West Wind">
        </div>
     </a>
+    
+  <div class="nav-right">
     <div class="language-switch">
      <button id="langBtn">繁體中文 ▾</button>
      <ul id="langMenu">
-    <li data-lang="zh">繁體中文</li>
-    <li data-lang="en">English</li>
-    <li data-lang="jp">日本語</li>
+      <li data-lang="zh">繁體中文</li>
+      <li data-lang="en">English</li>
+      <li data-lang="jp">日本語</li>
     </ul>
    </div>
 
@@ -238,9 +235,9 @@
 
 
     function toggleMenu() {
-      const menu = document.getElementById('sideMenu');
-      menu.classList.toggle('menu-open');
-      menu.classList.toggle('collapsed');
+     // const menu = document.getElementById('sideMenu');
+     // menu.classList.toggle('menu-open');
+     // menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
