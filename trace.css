@@ -68,7 +68,7 @@ html, body {
 }
 
 #sideMenu nav ul li a {
-  height: 44px;                 /* ❗統一高度 */
+  height: 30px;                 /* ❗統一高度44 */
   display: flex;
   align-items: center;
   gap: 14px;
@@ -80,10 +80,7 @@ html, body {
   /* 【左側文字大小】 */
   font-size: 16px;
 }
-/* 只補最後一顆（兒童） */
-#sideMenu nav ul li:last-child img.menu-icon {
-  transform: scale(1.35);
-}
+
 
 /* 左側導覽列 icon 統一尺寸（封印） */
 #sideMenu img.menu-icon {
