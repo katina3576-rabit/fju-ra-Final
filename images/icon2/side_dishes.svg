@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 1344 768"
-  width="100%"
-  height="100%"
+  viewBox="0 0 24 24"
   preserveAspectRatio="xMidYMid meet"
 >
 <path d="M0,0 L16,2 L26,7 L36,17 L42,28 L44,39 L43,52 L39,62 L31,73 L21,80 L1,89 L-5,92 L-10,91 L-21,80 L-25,76 L-32,76 L-32,82 L-31,85 L-29,85 L-22,93 L-20,95 L-21,99 L-41,108 L-61,117 L-67,116 L-71,113 L-72,110 L-72,103 L-67,90 L-59,74 L-50,54 L-45,42 L-38,28 L-34,28 L-22,40 L-16,40 L-15,39 L-15,33 L-30,18 L-29,13 L-21,6 L-12,2 Z " fill="#1D3050" transform="translate(172,99)"/>

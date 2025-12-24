@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg
   xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 1344 768"
-  width="100%"
-  height="100%"
+  viewBox="0 0 24 24"
   preserveAspectRatio="xMidYMid meet"
 >
 <path d="M0,0 L7,0 L12,4 L14,9 L14,133 L11,141 L8,143 L-1,143 L-6,138 L-7,134 L-7,99 L-20,99 L-28,94 L-32,88 L-33,84 L-33,43 L-30,28 L-25,18 L-17,9 L-7,3 Z " fill="#1E3150" transform="translate(200,53)"/>
