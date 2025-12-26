@@ -1,13 +1,9 @@
 /* ================================
-   West Wind ｜ 全站統一 CSS（重生版）
-   說明：
-   - 結構不改 HTML
-   - Sidebar 為唯一垂直軸心
+   West Wind ｜ 修正版 CSS
+   - HTML 不需修改
+   - Sidebar 為唯一垂直軸
    - Header / Content / Footer 全部服從 Sidebar
-   - 註解標明「之後你可自己調的地方」
 ================================ */
-
-/* ---------- ① 全域 Reset ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -15,126 +11,141 @@
 }
 
 html, body {
+  width: 100%;
   overflow-x: hidden;
-  background: #eb4747;
+  font-family: "Noto Serif TC", serif;
   color: #333;
-
-  /* 【全站主要內文】之後要換字體就改這裡 */
-  font-family: "Noto Serif TC", "思源宋體", serif;
-}
-
-/* ---------- ② 全站變數（顏色 / 尺寸核心） ---------- */
-:root {
-  --sidebar-width: 220px;          /* 左側展開寬度 */
-  --sidebar-collapsed: 64px;       /* 左側收合寬度 */
-  --topnav-height: 90px;           /* 上方導覽高度 */
-
-  --color-main: #46C2AC;            /* 主色（重點字、價格） */
-  --color-dark: #2c3e50;            /* 深底（sidebar / footer） */
-  --color-dark-2: #34495e;
+  background: #fff;
 }
 
 /* ==================================================
-   ③ 左側 Sidebar（唯一垂直軸）
+   ② 全域變數（你之後只會動這）
 ================================================== */
-/*#sideMenu {
-  position: fixed;
-  inset: 0 auto 0 0;
-  width: var(--sidebar-width);
-  background: linear-gradient(135deg, #2c3e50, #34495e);
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
+:root {
+  --sidebar-width: 220px;        /* 左側展開寬度 */
+  --sidebar-collapsed: 64px;     /* 左側收合寬度 */
+  --topnav-height: 90px;
 
-  height: 100vh;
-  width: 220px;
-  overflow: hidden;
+  --sidebar-bg: #2c3e50;         /* 左側背景色（可改） */
+  --sidebar-hover: rgba(255,255,255,0.08);
+
+  --icon-size: 24px;             /* 🔥 icon 統一尺寸（只改這） */
+  --menu-font-size: 16px;        /* 左側文字大小 */
 }
-*/
+
+/* ==================================================
+   ③ Sidebar（左側導覽列）
+================================================== */
 #sideMenu {
+  outline: 2px solid red;
+
   position: fixed;
   top: 0;
   left: 0;
-
-  width: 220px;
+  width: var(--sidebar-width);
   height: 100vh;
+  background: var(--sidebar-bg);
+  z-index: 1000;
 
-  background: linear-gradient(135deg, #2c3e50, #34495e) !important;
-
-  z-index: 999;
-}
-#sideMenu nav {
-  flex: 1;
-  height: 100%;
-}
-
-
-#sideMenu nav ul {
-  list-style: none;
   display: flex;
   flex-direction: column;
-  padding: 12px 0;
-
-  padding-top: 20px;
-  gap: 0;              /* 保險，避免被其他 CSS 汙染 */
-  justify-content: flex-start;
 }
 
-#sideMenu nav ul li a {
-   min-height: 22px;      /* ⭐ 用 min-height，不用 height */ /* ❗統一高度44 */
-  line-height: normal;                    
+/* 清掉 nav 亂撐 */
+#sideMenu nav {
+  flex: 1;
+}
+
+#sideMenu ul {
+  list-style: none;
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 每一列 */
+#sideMenu li a {
   display: flex;
   align-items: center;
-  gap: 0px ;/* 12px */
-  padding: 0 20px;
-  color: #ffffff;
-  text-decoration: none;
-
   gap: 12px;
-  
-  font-size: 16px;
+
+  height: 44px;                 /* 🔥 鎖死高度，SVG 不能撐 */
+  padding: 0 12px;
+
+  text-decoration: none;
+  color: #fff;
+  font-size: var(--menu-font-size);
+
+  border-radius: 6px;
+}
+
+#sideMenu nav,
+#sideMenu nav ul {
+  width: 100%;
+  max-width: 100%;
 }
 
 
-/* 左側導覽列 icon 統一尺寸（封印） */
-#sideMenu img.menu-icon {
-  width: 22px !important;
-  height: 22px !important;/* 實際顯示大小 */
+#sideMenu li a:hover {
+  background: var(--sidebar-hover);
+}
 
-  min-width: 24px;
-  min-height: 24px;
-  display: inline-flex;
-  object-fit: contain;
+/* ===============================
+   icon 統一封印（重點）
+================================ */
+#sideMenu .menu-icon {
+  width: var(--icon-size);
+  height: var(--icon-size);
 
+  object-fit: contain;           /* 🔥 無視 SVG 畫布 */
   flex-shrink: 0;
+  display: block;
+}
+
+/* icon 外框（視覺統一關鍵） */
+.menu-icon-box {
+  width: 32px;      /* 🔥 你之後只改這裡 */
+  height: 32px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;  /* 強制垂直對齊filter: brightness(0) invert(1); */
-
-  
+}
+.menu-icon-box img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+#sideMenu img,
+#sideMenu svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+#sideMenu {
+  overflow-x: hidden;
 }
 
 
-#sideMenu nav ul li a:hover {
-    background: rgba(255,255,255,0.08);
-  color: var(--color-main);
-}
 
-/* ---------- Sidebar 收合狀態 ---------- */
+/* ==================================================
+   ④ Sidebar 收合狀態
+================================================== */
 #sideMenu.collapsed {
   width: var(--sidebar-collapsed);
 }
 
 #sideMenu.collapsed .menu-text {
-  display: none;        /* 只藏文字 */
+  display: none;
 }
 
-#sideMenu.collapsed nav ul li a {
+#sideMenu.collapsed li a {
   justify-content: center;
 }
 
 /* ==================================================
-   ④ Top Navigation（服從 Sidebar）
+   ⑤ Top Nav（一定要至頂）
 ================================================== */
 .top-nav {
   position: fixed;
@@ -147,36 +158,34 @@ html, body {
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 32px;
-  background: rgba(255,255,255,0.35);
-  backdrop-filter: blur(14px);
-  z-index: 90;
+  padding: 0 24px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+
+  z-index: 900;
 }
 
+/* Sidebar 收合時 */
 #sideMenu.collapsed ~ header .top-nav {
   left: var(--sidebar-collapsed);
 }
 
-.top-nav a {
-  height: 40px;              /* 統一一排高度 */
+/* 左右區 */
+.nav-left,
+.nav-right {
   display: flex;
   align-items: center;
-  gap: 6px;
-  text-decoration: none;
-  color: #333;
-
-  /* 【上方導覽文字】 */
-  font-weight: 700;
+  gap: 16px;
 }
 
-.top-nav img.top-nav1 {
+/* top icon */
+.top-nav img {
   width: 20px;
   height: 20px;
   object-fit: contain;
-  flex-shrink: 0;
 }
 
-/* 中央 Logo（視覺置中） */
+/* 中央 Logo */
 .logo-center {
   position: absolute;
   left: 50%;
@@ -185,54 +194,46 @@ html, body {
 }
 
 .logo-center img {
-  width: 80px;   /* Logo 大小 */
+  width: 80px;
+}
+header.page-header {
+  outline: 4px solid red !important;
 }
 
 /* ==================================================
-   ⑤ Header Banner
+   ⑥ Banner
 ================================================== */
 .header-banner {
   width: 100%;
-  height: 250px;     /* 【Banner 高度】 */
+  height: 240px;
   object-fit: cover;
   margin-top: var(--topnav-height);
 }
 
 /* ==================================================
-   ⑥ 主要內容區
+   ⑦ 主要內容
 ================================================== */
 .container {
   margin-left: var(--sidebar-width);
-  padding: 40px 30px;
+  padding: 40px 32px;
 }
 
 #sideMenu.collapsed ~ .container {
   margin-left: var(--sidebar-collapsed);
 }
 
-.article-h1 {
-  font-family: "辰宇落雁體", cursive;
-  font-size: 1.6rem;
-  color: var(--color-main);
-  margin-bottom: 12px;
-}
-
-.content p {
-  line-height: 1.8;
-  margin-bottom: 40px;
-}
-
 /* ==================================================
-   ⑦ Footer（服從 Sidebar）
+   ⑧ Footer
 ================================================== */
 footer {
-  background: var(--color-dark);
-  color: #ffffff;
+  background: #2c3e50;
+  color: #fff;
 }
 
 .footer-inner {
   margin-left: var(--sidebar-width);
-  padding: 20px 30px;
+  padding: 20px 32px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -242,13 +243,8 @@ footer {
   margin-left: var(--sidebar-collapsed);
 }
 
-footer a {
-  color: #fdfbfb;
-  text-decoration: none;
-}
-
 /* ==================================================
-   ⑧ 響應式（手機簡化）
+   ⑨ 手機（你同學那個「響應式」就是這）
 ================================================== */
 @media (max-width: 768px) {
   #sideMenu {
