@@ -1,9 +1,9 @@
 /* ================================
-   West Wind ｜ 修正版 CSS
-   - HTML 不需修改
-   - Sidebar 為唯一垂直軸
-   - Header / Content / Footer 全部服從 Sidebar
+   index CSS
+   僅負責首頁格式，不改內容
 ================================ */
+
+/* ---------- 全域設定 ---------- */
 * {
   margin: 0;
   padding: 0;
@@ -11,253 +11,548 @@
 }
 
 html, body {
-  width: 100%;
-  overflow-x: hidden;
-  font-family: "Noto Serif TC", serif;
+  overflow-x: hidden; /* 禁止左右晃動 */
+  font-family: "Noto Sans TC", Arial, sans-serif;
+  background-color: #f5f5f5;
   color: #333;
-  background: #fff;
 }
 
-/* ==================================================
-   ② 全域變數（你之後只會動這）
-================================================== */
-:root {
-  --sidebar-width: 220px;        /* 左側展開寬度 */
-  --sidebar-collapsed: 64px;     /* 左側收合寬度 */
-  --topnav-height: 90px;
-
-  --sidebar-bg: #2c3e50;         /* 左側背景色（可改） */
-  --sidebar-hover: rgba(255,255,255,0.08);
-
-  --icon-size: 24px;             /* 🔥 icon 統一尺寸（只改這） */
-  --menu-font-size: 16px;        /* 左側文字大小 */
+.top-nav img {
+  height: 90px;   /* 左圖大小 */
+  width: auto;
 }
 
-/* ==================================================
-   ③ Sidebar（左側導覽列）
-================================================== */
-#sideMenu {
-  outline: 2px solid red;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: var(--sidebar-width);
-  height: 100vh;
-  background: var(--sidebar-bg);
-  z-index: 1000;
-
-  display: flex;
-  flex-direction: column;
+#sidebar.collapsed ~ header .top-nav {
+    left: 70px;
 }
 
-/* 清掉 nav 亂撐 */
-#sideMenu nav {
-  flex: 1;
+/* ====== Top Navigation（沿用原本風格）====== */
+.page-header {
+  margin-top: 0;
+  
 }
 
-#sideMenu ul {
-  list-style: none;
-  padding: 16px 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-/* 每一列 */
-#sideMenu li a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-
-  height: 44px;                 /* 🔥 鎖死高度，SVG 不能撐 */
-  padding: 0 12px;
-
-  text-decoration: none;
-  color: #fff;
-  font-size: var(--menu-font-size);
-
-  border-radius: 6px;
-}
-
-#sideMenu nav,
-#sideMenu nav ul {
-  width: 100%;
-  max-width: 100%;
-}
-
-
-#sideMenu li a:hover {
-  background: var(--sidebar-hover);
-}
-
-/* ===============================
-   icon 統一封印（重點）
-================================ */
-#sideMenu .menu-icon {
-  width: var(--icon-size);
-  height: var(--icon-size);
-
-  object-fit: contain;           /* 🔥 無視 SVG 畫布 */
-  flex-shrink: 0;
-  display: block;
-}
-
-/* icon 外框（視覺統一關鍵） */
-.menu-icon-box {
-  width: 32px;      /* 🔥 你之後只改這裡 */
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.menu-icon-box img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  display: block;
-}
-#sideMenu img,
-#sideMenu svg {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-#sideMenu {
-  overflow-x: hidden;
-}
-
-
-
-/* ==================================================
-   ④ Sidebar 收合狀態
-================================================== */
-#sideMenu.collapsed {
-  width: var(--sidebar-collapsed);
-}
-
-#sideMenu.collapsed .menu-text {
-  display: none;
-}
-
-#sideMenu.collapsed li a {
-  justify-content: center;
-}
-
-/* ==================================================
-   ⑤ Top Nav（一定要至頂）
-================================================== */
 .top-nav {
   position: fixed;
   top: 0;
-  left: var(--sidebar-width);
+  left: 0;
   right: 0;
-  height: var(--topnav-height);
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  padding: 0 24px;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-
-  z-index: 900;
+  justify-content: space-between; /* ⭐ 左右兩邊分開 */
+  
+  padding-left: 252px;  /* sidebar 寬 + margin */
+  padding-right: 32px;  /* 右側空間 */
+  
+  height: 90px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px);
+  z-index: 50;
 }
 
-/* Sidebar 收合時 */
-#sideMenu.collapsed ~ header .top-nav {
-  left: var(--sidebar-collapsed);
+
+.top-nav.show {
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* 左右區 */
-.nav-left,
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
 .nav-right {
   display: flex;
   align-items: center;
   gap: 16px;
+  /* ❌ 刪掉 position absolute / top / right */
 }
 
-/* top icon */
-.top-nav img {
-  width: 20px;
-  height: 20px;
-  object-fit: contain;
+
+
+
+
+
+.top-nav a {
+  color: #2c2c2c;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+  
+  font-family: "Noto Serif TC", "思源宋體", serif;
+  font-weight: 700;        /* ⭐ 加粗 */
+  
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+}
+.top-nav {
+  z-index: 50;
 }
 
-/* 中央 Logo */
+.logo-link {
+  position: static;   /* ⭐ 不要讓 a 撐版 */
+}
+
+
 .logo-center {
   position: absolute;
-  left: 50%;
-  top: 50%;
+  left: 58%;
+  top: 42%;          /* 對齊 nav 高度 */
   transform: translate(-50%, -50%);
-}
+  pointer-events: none;
 
+  width: 30px;
+  height: 30px;
+
+  background: rgba(255,255,255,0.75);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .logo-center img {
   width: 80px;
-}
-header.page-header {
-  outline: 4px solid red !important;
+  height: auto;
 }
 
-/* ==================================================
-   ⑥ Banner
-================================================== */
+
+.top-nav1 {
+   width: 40px!important;          /* 想大就改這裡：22 / 24 / 26 */
+  height: 40px!important;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.top-nav a {
+  gap: 0px;   /* icon 跟文字距離 */
+}
+
+
+
+
+
+
+
+/* ---------- 左側導覽列 ---------- */
+/* ---------- 左側導覽列 ---------- */
+#sideMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 220px;
+  height: 100vh;
+  overflow: hidden; /* 防止整個 sidebar 捲動 */
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* 塞滿整個寬度 */
+  padding-top: 20px;    /* 避開最上方 */
+  z-index: 60;
+}
+
+/* 導覽列清單 */
+.menu-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+
+  /*outline: 1px solid red;
+  background: rgba(255,0,0,0.15);/*測試icon*/
+
+  /* 關鍵：不要再套任何 filter */
+  /*filter: none !important;*/
+}
+
+.menu-icon {
+  background-color: transparent;
+}
+
+
+#sideMenu nav {
+  flex: 1;
+  height: 90%;
+  /* overflow-y: auto;   ⭐ 清單自己滾 */
+}
+
+/*#sideMenu nav {
+  
+}*/
+
+#sideMenu nav ul {
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-between; /* ⭐ 真平均 */
+  justify-content: flex-start; /* ⭐ 關鍵：全部往上排 */
+  height: auto;                /* ⭐ 不撐滿 */
+  list-style: none;
+  padding: 20px 0;
+  margin: 0;
+  gap: 0px;    
+  
+  padding-bottom: 20px ; /* 給最後一個一點空間 */
+  /*height: 100%;*/
+}
+
+/* 每個項目 li */
+#sideMenu nav ul li {
+  width: 100%;
+}
+
+/* 每個連結 a */
+#sideMenu nav ul li a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 20px;
+  color: #ffffff !important; /* 永遠白色 */
+  font-size: 16px;
+  text-decoration: none;
+}
+aside#sideMenu a .menu-text {
+  color: #f5f6f8;
+}
+
+/* 文字 span */
+#sideMenu nav ul li a .menu-text {
+  color: #ffffff !important;
+}
+
+/* hover 不改顏色 */
+#sideMenu nav ul li a,
+#sideMenu nav ul li a .menu-text {
+  color: #ffffff !important; /* 強制白色，不受其他規則影響 */
+}
+
+/*#sideMenu nav ul li a:hover .menu-icon {
+  fill: #ffffff;
+}/* 左側導覽列 icon 固定大小46C2AC */
+
+/* 左側導覽列 icon 固定大小 */
+#sideMenu img.menu-icon {
+  width: auto;          /* 寬度自動 */
+  height: 2em;          /* ⭐ 跟字一樣高 */
+  margin-right: 0px;    /* icon 跟文字距離 */
+  vertical-align: middle;
+  
+  filter: brightness(0) invert(1);
+  /*object-fit: contain;
+  background: transparent;
+  filter: none !important;*/
+}
+
+#sideMenu > img.menu-icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 8px;
+}
+
+/* 左側導覽列 hover 顏色 */
+#sideMenu nav ul li a:hover {
+  color: #46C2AC;
+}
+/* 左側收合狀態 */
+#sideMenu.collapsed {
+  width: 64px; /* 只顯示 icon */
+}
+
+#sideMenu.collapsed nav ul li a {
+  justify-content: space-between;
+  height: 100%; /* 撐滿側邊欄 */
+  gap: 0;
+}
+
+#sideMenu.collapsed nav ul li a .menu-text {
+  display: none;
+}
+
+#sideMenu.collapsed nav ul li a img.menu-icon {
+  margin: 0 auto;
+  display: block;
+}
+
+
+/* 不做 hover 動畫，避免亂跳 *//*
+aside.menu-open nav ul li a:hover {
+  color: #46C2AC;
+  background: none;
+}*/
+
+
+/* 縮 *//*
+.menu-label {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+  transition: .3s;
+}
+
+#sideMenu.collapsed ~ header .menu-label {
+  opacity: 1;
+  width: auto;
+}
+
+/* 左側選單：收合狀態（只剩 icon） *//*
+#sideMenu.collapsed {
+  width: 64px;              /* 剛好塞下 icon *//*
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+#sideMenu.collapsed nav ul li a {
+  justify-content: center;
+  gap: 0;
+}
+
+#sideMenu.collapsed img.menu-icon {
+  margin: 0 auto;
+  display: block;
+}
+
+/* 只藏文字 *//*
+#sideMenu.collapsed .menu-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+#sideMenu.collapsed nav ul li a span,
+#sideMenu.collapsed nav ul li a img {
+  font-size: initial;
+}*/
+
+
+
+
+
+
+
+/* ---------- Header ---------- */
+.header {
+  margin-left: 220px;
+}
+
 .header-banner {
   width: 100%;
-  height: 240px;
+  height: 250px;
   object-fit: cover;
-  margin-top: var(--topnav-height);
+  display: block;      /* 避免 inline img 留縫 */
+  margin-top: 0;
 }
 
-/* ==================================================
-   ⑦ 主要內容
-================================================== */
-.container {
-  margin-left: var(--sidebar-width);
-  padding: 40px 32px;
+.header-controls {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 40;
 }
 
-#sideMenu.collapsed ~ .container {
-  margin-left: var(--sidebar-collapsed);
+
+/* 音樂播放器與語言切換 */
+.music-player {
+  padding: 10px 20px;
 }
 
-/* ==================================================
-   ⑧ Footer
-================================================== */
-footer {
-  background: #2c3e50;
+.language-switch {
+  position: relative;
+}
+
+#langBtn {
+  background: #f5f5f5;
+  color: #0e0101;
+  border: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#langMenu {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: white;
+  list-style: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+}
+
+#langMenu li {
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.language-switch {
+  display: flex;
+  gap: 8px;
+}
+
+.language-switch button {
+  background: #46C2AC;
   color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.music-player audio {
+  height: 32px;
+}
+
+
+/* ---------- 主要內容區 ---------- */
+.container {
+  margin-left: 220px;
+  padding: 40px 30px;
+  padding-top: calc(40px + 45px); /* ⭐ 關鍵 */
+}
+
+/* 主標：前菜 */
+.article-h1 {
+  font-family: "辰宇落雁體", cursive;
+  font-size: 1.6rem;          /* 與左邊一致 */
+  color: #46C2AC;
+  margin-bottom: 10px;
+}
+
+/* 副標說明文字 */
+.article-subtitle,
+article .content p {
+  font-family: "Noto Serif TC", "思源宋體", serif;
+  font-size: 1.1rem;
+  color: #3835B0;
+  line-height: 1.8;
+}
+
+body,
+.description p,
+.price-placeholder,
+footer,
+article p {
+  font-family: "Noto Serif TC", "思源宋體", serif;
+}
+
+/* 內容說明文字 */
+.content p {
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+/* ---------- 商品區（卡片結構） ---------- */
+.section1-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.section1 {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.product-name {
+  font-family: "辰宇落雁體", cursive;
+  font-size: 20px;
+  margin-bottom: 1.25rem;
+  color: #D6AE72; 
+  font-weight: normal;
+}
+
+.section1-img {
+    /* [cite_start]圖片來源:images/.jpg [cite: 41, 126] */
+    max-width: 80%; /* 讓圖片在容器中適當大小 */
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom: 15px;
+  /*width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 6px;*/
+}
+
+.dashed-line {
+  margin: 12px 0;
+  border: none;
+  border-top: 1px dashed #ccc;
+}
+
+.price-placeholder {
+  display: block;
+  font-weight: bold;
+  color: #46C2AC;
+  margin-bottom: 10px;
+}
+
+.description p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+
+
+/* Footer */
+footer {
+    margin-left: 0px;
+    background: #2c3e50;
 }
 
 .footer-inner {
-  margin-left: var(--sidebar-width);
-  padding: 20px 32px;
+  max-width: calc(100% - 0px);
+  padding: 20px 30px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  color: white;
+  margin-left: 220px; /* 內容對齊 */
 }
 
-#sideMenu.collapsed ~ footer .footer-inner {
-  margin-left: var(--sidebar-collapsed);
+#sidebar.collapsed ~ footer {
+    margin-left: 60px;
 }
 
-/* ==================================================
-   ⑨ 手機（你同學那個「響應式」就是這）
-================================================== */
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.social {
+    display: flex;
+    gap: 15px;
+}
+
+.social a {
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social a:hover {
+    color: #3498db;
+}
+
+/* 響應式設計 */
 @media (max-width: 768px) {
-  #sideMenu {
-    width: var(--sidebar-collapsed);
-  }
-
-  .menu-text {
-    display: none;
-  }
-
-  .top-nav,
-  .container,
-  .footer-inner {
-    margin-left: var(--sidebar-collapsed);
-  }
+    .section1 {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    
+    #sidebar {
+        width: 60px;
+    }
+    
+    header, main, footer {
+        margin-left: 60px;
+    }
 }
