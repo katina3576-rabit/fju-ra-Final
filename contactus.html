@@ -1,132 +1,291 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>聯絡我們 - Contact Us</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="contactus.css">
+  <!-- 思源宋體 -->
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+
+ <!-- 辰宇落雁體（本地字型） -->
+ <style>
+ @font-face {
+  font-family: "辰宇落雁體";
+  src: url("fonts/ChenYuluoyan.ttf") format("truetype");
+ }
+ </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>聯絡我們 - Contact Us</title>
+ <link rel="stylesheet" href="contactus.css" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-    <header>
-        <div class="banner-area">
-            <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
-        </div>
-        <div class="language-switch">
-            <a href="#">中文</a> | <a href="#">EN</a>
-        </div>
-        <div class="music-player">
-            <audio controls loop>
-                <source src="media/webmusic.mp3" type="audio/mp3">
-                您的瀏覽器不支持音頻播放。
-            </audio>
-        </div>
-    </header>
+  <button class="menu-toggle" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+  </button>
 
-    <div class="container">
-        <aside class="menu-open">
-            <nav>
-                <ul>
-                    <li><a href="appetizers.html"><i class="fas fa-cheese"></i> 前菜</a></li> <li><a href="main courses.html"><i class="fas fa-utensils"></i> 主菜</a></li> <li><a href="side dishes.html"><i class="fas fa-bowl-rice"></i> 配菜</a></li> <li><a href="soup.html"><i class="fas fa-soup"></i> 湯品</a></li> <li><a href="salads.html"><i class="fas fa-salad"></i> 沙拉</a></li> <li><a href="desserts.html"><i class="fas fa-ice-cream"></i> 甜點</a></li> <li><a href="drinks.html"><i class="fas fa-glass-water"></i> 飲品</a></li> <li><a href="set menu.html"><i class="fas fa-bell-concierge"></i> 套餐</a></li> <li><a href="begin.html"><i class="fas fa-flag"></i> 公司起源</a></li> <li><a href="trace.html"><i class="fas fa-magnifying-glass-chart"></i> 生產溯源</a></li> <li class="current-page"><a href="contactus.html"><i class="fas fa-address-book"></i> 聯絡我們</a></li> </ul>
-            </nav>
-        </aside>
 
-        <main>
-            <article>
-                <h1 class="article-h1">聯絡我們</h1>
-                
-                <div class="content">
-                    <p>
-                        感謝您對西風餐廳的支持與關注。您可以透過以下方式與我們聯繫，我們將盡快為您服務。
-                    </p>
-                </div>
-                
-                <div class="section1-grid">
-                    
-                    <section class="section1">
-                        <h2 class="product-name">電話</h2>
-                        <div class="product-info">
-                            <img src="images/phone.jpg" alt="電話圖示" class="sgs-report-img">
-                            <hr class="dashed-line"> 
-                            <span class="price-placeholder">(02)27894587</span> <div class="description">
+
+<aside id="sideMenu" class="menu-open">
+  <nav>
+    <ul>
+   <li>
+    <a href="index.html">
+      <img src="./images/icon/index.svg" class="menu-icon">
+      <span class="menu-text">首頁</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="salads.html">
+      <img src="./images/icon/salads.svg" class="menu-icon">
+      <span class="menu-text">沙拉</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="appetizers.html">
+      <img src="./images/icon/appetizers.svg" class="menu-icon">
+      <span class="menu-text">前菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="soup.html">
+      <img src="./images/icon/soup.svg" class="menu-icon">
+      <span class="menu-text">湯品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="side dishes.html">
+      <img src="./images/icon/side_dishes.svg" class="menu-icon">
+      <span class="menu-text">配菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="main courses.html">
+      <img src="./images/icon/main_courses.svg" class="menu-icon">
+      <span class="menu-text">主菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="add.html">
+      <img src="./images/icon/add.svg" class="menu-icon">
+      <span class="menu-text">主菜加價</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="drinks.html">
+      <img src="./images/icon/drinks.svg" class="menu-icon">
+      <span class="menu-text">飲品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="desserts.html">
+      <img src="./images/icon/desserts.svg" class="menu-icon">
+      <span class="menu-text">甜品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="set.html">
+      <img src="./images/icon/set.svg" class="menu-icon">
+      <span class="menu-text">套餐</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="child.html">
+      <img src="./images/icon/child.svg" class="menu-icon">
+      <span class="menu-text">兒童專區</span>
+    </a>
+   </li>
+  </ul>
+
+  </nav>
+</aside>
+
+<header class="page-header">
+  <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
+<nav class="top-nav">
+  <div class="nav-left">
+    <a href="begin.html">
+      <img src="./images/icon/begin.svg" class="top-nav1">
+      <span class="menu-text">公司起源</span>
+    </a>
+    <a href="trace.html">
+      <img src="./images/icon/trace.svg" class="top-nav1">
+      <span class="menu-text">生產溯源</span>
+    </a>
+    <a href="contactus.html">
+      <img src="./images/icon/contactus.svg" class="top-nav1">
+      <span class="menu-text">聯絡我們</span>
+    </a>
+  </div>
+
+  
+    <a href="index.html" class="logo-link">
+        <div class="logo-center">
+      <img src="./images/logo_main.png" alt="West Wind">
+       </div>
+    </a>
+    
+  <div class="nav-right">
+    <div class="language-switch">
+     <button id="langBtn">繁體中文 ▾</button>
+     <ul id="langMenu">
+      <li data-lang="zh">繁體中文</li>
+      <li data-lang="en">English</li>
+      <li data-lang="jp">日本語</li>
+    </ul>
+   </div>
+
+    <div class="music-player">
+      <audio controls>
+        <source src="media/webmusic.mp3" type="audio/mpeg">
+      </audio>
+    </div>   
+  </div>
+</nav>
+</header>
+
+
+    
+
+ 
+<div class="container">
+  <main>
+    <article>
+      <h1 class="article-h1">聯絡我們</h1>
+      <div class="content">
+        <p class="article-subtitle">
+        感謝您對西風餐廳的支持與關注。您可以透過以下方式與我們聯繫，我們將盡快為您服務。
+        </p>
+      </div>
+
+        <section class="section1">
+          <h2 class="product-name">電話</h2>
+          <div class="product-info-wrapper">
+            <img src="images/phone.jpg" alt="電話圖示" class="section1-img">
+            <hr class="dashed-line">
+             <span class="price-placeholder">客服專線：02-2905-1234</span> <div class="description">
                                 <p>歡迎在營業時間撥打電話預約或詢問。</p>
-                            </div>
-                        </div>
-                    </section>
+            <div class="description">
+                <p>您可以撥打我們的客服專線：<strong>02-2905-1234</strong>，服務時間為週一至週日，上午11:00至晚上9:00。</p>
+             </div>
+          </div>
+        </section>
 
-                    <section class="section1">
-                        <h2 class="product-name">地址</h2>
-                        <div class="product-info">
-                            <img src="images/place.jpg" alt="地址圖示" class="sgs-report-img">
-                            <hr class="dashed-line">
-                            <span class="price-placeholder">242新北市新莊區福營路35號</span> <div class="description">
-                                <p>新莊區福營路35號，鄰近新莊棒球場。</p>
-                            </div>
-                        </div>
-                    </section>
-                    
-                    <section class="section1">
-                        <h2 class="product-name">Line ID</h2>
-                        <div class="product-info">
-                            <img src="images/line.jpg" alt="Line 圖示" class="sgs-report-img">
-                            <hr class="dashed-line">
-                            <span class="price-placeholder">ID:West Wind</span> <div class="description">
+        <section class="section1">
+          <h2 class="product-name">地址</h2>
+          <div class="product-info-wrapper">
+            <img src="images/place.png" alt="地址圖示" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">位於新北市新莊區</span> <div class="description">
+                                <p>242新北市新莊區福營路35號</p>
+            <div class="description">
+                <p>新莊區福營路35號，鄰近新莊棒球場。</p>
+             </div>
+          </div>
+        </section>
+
+        <section class="section1">
+          <h2 class="product-name">Line ID</h2>
+          <div class="product-info-wrapper">
+            <img src="images/line.jpg" alt="Line 圖示" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">ID:West Wind</span> <div class="description">
                                 <p>加入我們的Line官方帳號，提供即時線上諮詢。</p>
-                            </div>
-                        </div>
-                    </section>
+            <div class="description">
+                <p>您可以加入我們的Line官方帳號：<strong>West Wind</strong>，服務時間為週一至週日，上午11:00至晚上9:00。</p>
+             </div>
+          </div>
+        </section>
 
-                    <section class="section1">
-                        <h2 class="product-name">Facebook</h2>
-                        <div class="product-info">
-                            <img src="images/fb.jpg" alt="Facebook 圖示" class="sgs-report-img">
-                            <hr class="dashed-line">
-                            <span class="price-placeholder">FB名稱:西風</span> <div class="description">
+        <section class="section1">
+          <h2 class="product-name">Facebook</h2>
+          <div class="product-info-wrapper">
+            <img src="images/fb.jpg" alt="Facebook 圖示" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">FB名稱:西風</span> <div class="description">
                                 <p>追蹤我們的 Facebook 粉絲專頁，獲得最新優惠資訊。</p>
-                            </div>
-                        </div>
-                    </section>
+          </div>
+        </section>
 
-                    <section class="section1">
-                        <h2 class="product-name">Instagram</h2>
-                        <div class="product-info">
-                            <img src="images/ig.jpg" alt="Instagram 圖示" class="sgs-report-img">
-                            <hr class="dashed-line">
-                            <span class="price-placeholder">IG帳號:West Wind Restaurant</span> <div class="description">
+        <section class="section1">
+          <h2 class="product-name">Instagram</h2>
+          <div class="product-info-wrapper">
+            <img src="images/ig.jpg" alt="Instagram 圖示" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">IG帳號:West Wind Restaurant</span> <div class="description">
                                 <p>欣賞我們的美食照片和影片！</p>
-                            </div>
-                        </div>
-                    </section>
+          </div>
+        </section>
 
-                    <section class="section1">
-                        <h2 class="product-name">信箱</h2>
-                        <div class="product-info">
-                            <img src="images/mail.jpg" alt="信箱圖示" class="sgs-report-img">
-                            <hr class="dashed-line">
-                            <span class="price-placeholder">WestWind@gmail.com</span> <div class="description">
+<section class="section1">
+          <h2 class="product-name">信箱</h2>
+          <div class="product-info-wrapper">
+            <img src="images/mail.jpg" alt="信箱圖示" class="section1-img">
+            <hr class="dashed-line">
+            <span class="price-placeholder">電子信箱:WestWind@gmail.com</span> <div class="description">
                                 <p>商務合作請透過信箱聯繫我們。</p>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </article>
-        </main>
-    </div>
+          </div>
+        </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="site-map">
-                <a href="sitemap.html">網站地圖</a>
-            </div>
-            <div class="copyright">
-                &copy; 2024 版權宣告. All Rights Reserved.
-            </div>
-            <div class="social-media">
-                <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="https://line.me" target="_blank" title="Line"><i class="fa-brands fa-line"></i></a>
-            </div>
-        </div>
-    </footer>
+
+
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="copyright">
+      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+    </div>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://line.me" target="_blank" title="Line"><i class="fa-brands fa-line"></i></a>
+    </div>
+  </div>
+</footer>
+  <script>
+     const topNav = document.querySelector('.top-nav');
+
+    window.addEventListener('scroll', () => {
+     if (window.scrollY <= 2) {
+     topNav.classList.add('show');
+   } else {
+     topNav.classList.remove('show');
+   }
+  });
+
+
+
+    function toggleMenu() {
+      //const menu = document.getElementById('sideMenu');
+     // menu.classList.toggle('menu-open');
+      //menu.classList.toggle('collapsed');
+    }
+    
+    const btn = document.getElementById('langBtn');
+    const menu = document.getElementById('langMenu');
+
+    btn.onclick = () => {
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    };
+
+    menu.querySelectorAll('li').forEach(item => {
+     item.onclick = () => {
+     btn.textContent = item.textContent + ' ▾';
+     menu.style.display = 'none';
+     };
+     });
+  </script>
 </body>
 </html>

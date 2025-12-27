@@ -2,103 +2,281 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
+  <!-- 思源宋體 -->
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap" rel="stylesheet">
+
+ <!-- 辰宇落雁體（本地字型） -->
+ <style>
+ @font-face {
+  font-family: "辰宇落雁體";
+  src: url("fonts/ChenYuluoyan.ttf") format("truetype");
+ }
+ </style>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>公司起源 Begin</title>
-<link rel="stylesheet" href="begin.css" />
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+ <link rel="stylesheet" href="appetizers.css" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
-<aside id="sidebar">
+  <button class="menu-toggle" onclick="toggleMenu()">
+  <i class="fas fa-bars"></i>
+  </button>
+
+
+
+<aside id="sideMenu" class="menu-open">
   <nav>
     <ul>
-      <li><i class="fas fa-utensils"></i> <a href="appetizers.html">前菜</a></li>
-      <li><i class="fas fa-drumstick-bite"></i> <a href="main courses.html">主菜</a></li>
-      <li><i class="fas fa-carrot"></i> <a href="side dishes.html">配菜</a></li>
-      <li><i class="fas fa-soup"></i> <a href="soup.html">湯品</a></li>
-      <li><i class="fas fa-leaf"></i> <a href="salads.html">沙拉</a></li>
-      <li><i class="fas fa-cookie-bite"></i> <a href="desserts.html">甜點</a></li>
-      <li><i class="fas fa-wine-glass"></i> <a href="drinks.html">飲品</a></li>
-      <li><i class="fas fa-box"></i> <a href="set.html">套餐</a></li>
-      <li><i class="fas fa-building"></i> <a href="begin.html" aria-current="page">公司起源</a></li>
-      <li><i class="fas fa-scroll"></i> <a href="trace.html">生產溯源</a></li>
-      <li><i class="fas fa-envelope"></i> <a href="contactus.html">聯絡我們</a></li>
-    </ul>
+   <li>
+    <a href="index.html">
+      <img src="./images/icon/index.svg" class="menu-icon">
+      <span class="menu-text">首頁</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="salads.html">
+      <img src="./images/icon/salads.svg" class="menu-icon">
+      <span class="menu-text">沙拉</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="appetizers.html">
+      <img src="./images/icon/appetizers.svg" class="menu-icon">
+      <span class="menu-text">前菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="soup.html">
+      <img src="./images/icon/soup.svg" class="menu-icon">
+      <span class="menu-text">湯品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="side dishes.html">
+      <img src="./images/icon/side_dishes.svg" class="menu-icon">
+      <span class="menu-text">配菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="main courses.html">
+      <img src="./images/icon/main_courses.svg" class="menu-icon">
+      <span class="menu-text">主菜</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="add.html">
+      <img src="./images/icon/add.svg" class="menu-icon">
+      <span class="menu-text">主菜加價</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="drinks.html">
+      <img src="./images/icon/drinks.svg" class="menu-icon">
+      <span class="menu-text">飲品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="desserts.html">
+      <img src="./images/icon/desserts.svg" class="menu-icon">
+      <span class="menu-text">甜品</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="set.html">
+      <img src="./images/icon/set.svg" class="menu-icon">
+      <span class="menu-text">套餐</span>
+    </a>
+   </li>
+
+   <li>
+    <a href="child.html">
+      <img src="./images/icon/child.svg" class="menu-icon">
+      <span class="menu-text">兒童專區</span>
+    </a>
+   </li>
+  </ul>
+
   </nav>
 </aside>
 
-<header>
-  <div class="banner">
-    <img src="images/banner.jpg" alt="網站橫幅圖" />
+<header class="page-header">
+  <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
+<nav class="top-nav">
+  <div class="nav-left">
+    <a href="begin.html">
+      <img src="./images/icon/begin.svg" class="top-nav1">
+      <span class="menu-text">公司起源</span>
+    </a>
+    <a href="trace.html">
+      <img src="./images/icon/trace.svg" class="top-nav1">
+      <span class="menu-text">生產溯源</span>
+    </a>
+    <a href="contactus.html">
+      <img src="./images/icon/contactus.svg" class="top-nav1">
+      <span class="menu-text">聯絡我們</span>
+    </a>
   </div>
-  <div class="header-controls">
-    <button id="lang-switch">中文 / EN</button>
-    <audio controls src="media/webmusic.mp3"></audio>
+
+  
+    <a href="index.html" class="logo-link">
+        <div class="logo-center">
+      <img src="./images/logo_main.png" alt="West Wind">
+       </div>
+    </a>
+    
+  <div class="nav-right">
+    <div class="language-switch">
+     <button id="langBtn">繁體中文 ▾</button>
+     <ul id="langMenu">
+      <li data-lang="zh">繁體中文</li>
+      <li data-lang="en">English</li>
+      <li data-lang="jp">日本語</li>
+    </ul>
+   </div>
+
+    <div class="music-player">
+      <audio controls>
+        <source src="media/webmusic.mp3" type="audio/mpeg">
+      </audio>
+    </div>   
   </div>
+</nav>
 </header>
 
-<main>
-  <article>
-    <h1>公司起源</h1>
-    <p class="content">西風西式料理的誕生故事與發展歷程。</p>
+
     
-    <section class="section1">
-      <h2>起源與歷史</h2>
-      <img src="images/history.jpg" alt="起源與歷史" />
-      <div class="desc">
-        <h3>西風 [Zephyr Western Cuisine]</h3>
-        <ul>
-          <li><strong>創立時間：</strong>2018 年秋季</li>
-          <li><strong>地理位置：</strong>鄰近輔仁大學校區，位於新莊區中正路上某一巷弄內</li>
-        </ul>
-        <p><strong>起源故事：</strong>「西風」的創立，源於一位資深餐飲人與一位熱衷於歐洲文化的輔大校友的共同夢想。他們觀察到輔大周邊雖然有許多美食，但缺乏一家能提供經典、道地且具備質感的西式餐飲空間，讓師生和社區居民能有一個安靜舒適的環境，品嚐精緻料理，享受慢活時光。</p>
-        <p><strong>初期歷史：</strong>創立初期，西風主打以實惠的價格和嚴謹的製作工藝為口碑。我們堅持每日採購新鮮食材，不使用半成品，將每一道菜都視為藝術品般對待。</p>
-        <p><strong>目標：</strong>成為輔仁大學周邊最具代表性、最受推崇的西式餐飲品牌。</p>
-        <p><strong>願景：</strong>透過精緻的餐飲和溫馨的服務，創造一個能讓顧客「放慢腳步，享受當下」的美食空間。我們致力於將歐洲餐桌上那種注重儀式感和分享的用餐文化帶給每一位來訪的客人。</p>
-    </section>
 
-    <section class="section1">
-      <h2>高層介紹</h2>
-      <img src="images/office.jpg" alt="高層介紹" />
-      <div class="desc">
-        <h3>總經理兼主廚：李杰森 [Jason Li]</h3>
-        <p><strong>專長背景：</strong>擁有超過 20 年的西餐烹飪經驗，曾任職於國內多家五星級飯店的西餐廳主廚。精通法式、義式料理精髓，尤其擅長低溫慢煮和醬汁調製。</p>
-        <p><strong>經營理念：</strong>「食材的本味永遠是最好的調味料。」他堅持使用最簡單卻最優質的原料，以精準的火候和細膩的技巧，呈現食材最純粹、最令人感動的味道。</p>
-        <p><strong>與西風的關係：</strong>西風的菜單設計、廚房管理和烹飪標準皆由他一手建立，是西風「高品質」的代名詞。</p>
-
-        <h3>營運總監：林雅雯 [Yvonne Lin]</h3>
-        <p><strong>專長背景：</strong>輔大餐飲管理系畢業校友，具有深厚的服務業管理與行銷經驗。對於顧客體驗和環境氛圍的營造有獨到的見解。</p>
-        <p><strong>經營理念：</strong>「西風不只賣食物，我們賣的是美好的用餐體驗。」她負責前場服務培訓、環境美學、顧客關係維護，確保每一位顧客從踏進門的那一刻起，就能感受到溫暖與專業。</p>
-        <p><strong>與西風的關係：</strong>她是將輔大的青春活力和社區的溫馨感注入西風靈魂的人物。</p>
+ 
+<div class="container">
+  <main>
+    <article>
+      <h1 class="article-h1">公司起源</h1>
+      <div class="content">
+        <p class="article-subtitle">
+        西風西式料理的誕生故事與發展歷程。
+        </p>
       </div>
-    </section>
 
-    <section class="section1">
-      <h2>環境介紹</h2>
-      <img src="images/environment.jpg" alt="環境介紹" />
-      <div class="desc">
-        <p>「西風」的店面設計，旨在營造一個經典、舒適且帶有歐式小酒館氛圍的空間。</p>
-        <p><strong>裝潢風格：</strong>以沉穩的墨綠色搭配溫潤的胡桃木色，並點綴暖色調的黃銅燈具。整體風格典雅，沒有過度花俏的裝飾，強調簡潔與質感。</p>
-        <ul>
-          <li><strong>落地窗景：</strong>店面正面採用大面積的落地窗，引入自然光線，讓客人能一邊用餐一邊欣賞周邊的街景。</li>
-          <li><strong>開放式廚房 (部分)：</strong>設有部分開放的廚房區域，讓顧客能看到主廚們在專業且乾淨的環境中專注地進行烹飪，增加信任感和用餐的樂趣。</li>
-          <li><strong>社區角落：</strong>特別設置一處小型書架，提供與歐洲文化、烹飪歷史相關的書籍，鼓勵等候或獨自用餐的客人隨意翻閱。</li>
-          <li><strong>輔大連結：</strong>由於鄰近輔大，環境設計也考慮到學術氛圍。背景音樂以輕柔的古典樂或爵士樂為主，提供一個適合深度交談、閱讀報告或安靜獨處的優質環境，深受教授和學生群體的喜愛。</li>
-        </ul>
+        <section class="section1">
+          <h2 class="product-name">起源與歷史</h2>
+          <div class="product-info-wrapper">
+            <img src="images/history.jpg" alt="起源與歷史" class="section1-img">
+            <hr class="dashed-line">
+            
+            <div class="description">
+              <h3>西風 (Zephyr Western Cuisine)</h3>
+            
+              <p><strong>創立時間：</strong>2018 年秋季</p>
+              <p><strong>地理位置：</strong>鄰近輔仁大學校區，位於新莊區中正路上某一巷弄內</p>
+            
+               <p><strong>起源故事：</strong>「西風」的創立，源於一位資深餐飲人與一位熱衷於歐洲文化的輔大校友的共同夢想。他們觀察到輔大周邊雖然有許多美食，但缺乏一家能提供經典、道地且具備質感的西式餐飲空間，讓師生和社區居民能有一個安靜舒適的環境，品嚐精緻料理，享受慢活時光。</p>
+               <p><strong>初期歷史：</strong>創立初期，西風主打以實惠的價格和嚴謹的製作工藝為口碑。我們堅持每日採購新鮮食材，不使用半成品，將每一道菜都視為藝術品般對待。</p>
+               <p><strong>目標：</strong>成為輔仁大學周邊最具代表性、最受推崇的西式餐飲品牌。</p>
+               <p><strong>願景：</strong>透過精緻的餐飲和溫馨的服務，創造一個能讓顧客「放慢腳步，享受當下」的美食空間。我們致力於將歐洲餐桌上那種注重儀式感和分享的用餐文化帶給每一位來訪的客人。</p>
+             </div>
+          </div>
+        </section>
+
+        <section class="section1">
+          <h2 class="product-name">高層介紹</h2>
+          <div class="product-info-wrapper">
+            <img src="images/office.jpg" alt="高層介紹" class="section1-img">
+            <hr class="dashed-line">
+            
+            <div class="description">
+              
+              <h3>總經理兼主廚：李杰森 (Jason Li)</h3>
+                 <p><strong>專長背景：</strong>擁有超過 20 年的西餐烹飪經驗，曾任職於國內多家五星級飯店的西餐廳主廚。精通法式、義式料理精髓，尤其擅長低溫慢煮和醬汁調製。</p>
+                 <p><strong>經營理念：</strong>「食材的本味永遠是最好的調味料。」他堅持使用最簡單卻最優質的原料，以精準的火候和細膩的技巧，呈現食材最純粹、最令人感動的味道。</p>
+                 <p><strong>與西風的關係：</strong>西風的菜單設計、廚房管理和烹飪標準皆由他一手建立，是西風「高品質」的代名詞。</p>
+                 
+              <h3>營運總監：林雅雯 (Yvonne Lin)</h3>
+                 <p><strong>專長背景：</strong>輔大餐飲管理系畢業校友，具有深厚的服務業管理與行銷經驗。對於顧客體驗和環境氛圍的營造有獨到的見解。</p>
+                 <p><strong>經營理念：</strong>「西風不只賣食物，我們賣的是美好的用餐體驗。」她負責前場服務培訓、環境美學、顧客關係維護，確保每一位顧客從踏進門的那一刻起，就能感受到溫暖與專業。</p>
+                 <p><strong>與西風的關係：</strong>她是將輔大的青春活力和社區的溫馨感注入西風靈魂的人物。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section1">
+          <h2 class="product-name">環境介紹</h2>
+          <div class="product-info-wrapper">
+            <img src="images/environment.jpg" alt="環境介紹" class="section1-img">
+            <hr class="dashed-line">
+            
+            <div class="description">
+             
+                <h3>我們的的店面設計</h3>
+                <p>旨在營造一個經典、舒適且帶有歐式小酒館氛圍的空間。</p>
+              
+               <p><strong>裝潢風格：</strong>以沉穩的墨綠色搭配溫潤的胡桃木色，並點綴暖色調的黃銅燈具。整體風格典雅，沒有過度花俏的裝飾，強調簡潔與質感。</p>
+                <p><strong>落地窗景：</strong>店面正面採用大面積的落地窗，引入自然光線，讓客人能一邊用餐一邊欣賞周邊的街景。</p>
+                <p><strong>開放式廚房 (部分)：</strong>設有部分開放的廚房區域，讓顧客能看到主廚們在專業且乾淨的環境中專注地進行烹飪，增加信任感和用餐的樂趣。</p>
+                <p><strong>社區角落：</strong>特別設置一處小型書架，提供與歐洲文化、烹飪歷史相關的書籍，鼓勵等候或獨自用餐的客人隨意翻閱。</p>
+                <p><strong>輔大連結：</strong>由於鄰近輔大，環境設計也考慮到學術氛圍。背景音樂以輕柔的古典樂或爵士樂為主，提供一個適合深度交談、閱讀報告或安靜獨處的優質環境，深受教授和學生群體的喜愛。</p>
+                
+            </div>
+          </div>
+        </section>
       </div>
-    </section>
-  </article>
-</main>
+    </article>
+  </main>
+</div>
 
-<footer>
-  <a href="sitemap.html" class="footer-left"><i class="fas fa-sitemap"></i> 網站地圖</a>
-  <p class="footer-center">© 2025 版權所有</p>
-  <div class="footer-right">
-    <a href="https://facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-    <a href="https://instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://line.me" target="_blank" aria-label="Line"><i class="fab fa-line"></i></a>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="copyright">
+      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+    </div>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://line.me" target="_blank" title="Line"><i class="fa-brands fa-line"></i></a>
+    </div>
   </div>
 </footer>
+  <script>
+     const topNav = document.querySelector('.top-nav');
 
+    window.addEventListener('scroll', () => {
+     if (window.scrollY <= 2) {
+     topNav.classList.add('show');
+   } else {
+     topNav.classList.remove('show');
+   }
+  });
+
+
+
+    function toggleMenu() {
+      //const menu = document.getElementById('sideMenu');
+     // menu.classList.toggle('menu-open');
+      //menu.classList.toggle('collapsed');
+    }
+    
+    const btn = document.getElementById('langBtn');
+    const menu = document.getElementById('langMenu');
+
+    btn.onclick = () => {
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    };
+
+    menu.querySelectorAll('li').forEach(item => {
+     item.onclick = () => {
+     btn.textContent = item.textContent + ' ▾';
+     menu.style.display = 'none';
+     };
+     });
+  </script>
 </body>
 </html>
