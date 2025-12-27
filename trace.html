@@ -1,4 +1,4 @@
-<!-- appetizers.html -->
+<!-- trace.html -->
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -14,17 +14,13 @@
  </style>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>生產溯源 - Traceability</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
- <link rel="stylesheet" href="trave.css"/>
+<title>西風 Fine Dining</title>
+ <link rel="stylesheet" href="trace.css" />
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
   <button class="menu-toggle" onclick="toggleMenu()">
-   <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-    <rect y="4" width="24" height="2"/>
-    <rect y="11" width="24" height="2"/>
-    <rect y="18" width="24" height="2"/>
-  </svg>
+  <i class="fas fa-bars"></i>
   </button>
 
 
@@ -34,99 +30,77 @@
     <ul>
    <li>
     <a href="index.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/index.svg">
-        </div>
+      <img src="./images/icon/index.svg" class="menu-icon">
       <span class="menu-text">首頁</span>
     </a>
    </li>
 
    <li>
     <a href="salads.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/salads.svg">
-        </div>
+      <img src="./images/icon/salads.svg" class="menu-icon">
       <span class="menu-text">沙拉</span>
     </a>
    </li>
 
    <li>
     <a href="appetizers.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/appetizers.svg">
-        </div>
+      <img src="./images/icon/appetizers.svg" class="menu-icon">
       <span class="menu-text">前菜</span>
     </a>
    </li>
 
    <li>
     <a href="soup.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/soup.svg">
-        </div>
+      <img src="./images/icon/soup.svg" class="menu-icon">
       <span class="menu-text">湯品</span>
     </a>
    </li>
 
    <li>
     <a href="side dishes.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/side_dishes.svg">
-        </div>
+      <img src="./images/icon/side_dishes.svg" class="menu-icon">
       <span class="menu-text">配菜</span>
     </a>
    </li>
 
    <li>
     <a href="main courses.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/main_courses.svg">
-        </div>
+      <img src="./images/icon/main_courses.svg" class="menu-icon">
       <span class="menu-text">主菜</span>
     </a>
    </li>
 
    <li>
     <a href="add.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/add.svg">
-        </div>
+      <img src="./images/icon/add.svg" class="menu-icon">
       <span class="menu-text">主菜加價</span>
     </a>
    </li>
 
    <li>
     <a href="drinks.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/drinks.svg">
-        </div>
+      <img src="./images/icon/drinks.svg" class="menu-icon">
       <span class="menu-text">飲品</span>
     </a>
    </li>
 
    <li>
     <a href="desserts.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/desserts.svg">
-        </div>
+      <img src="./images/icon/desserts.svg" class="menu-icon">
       <span class="menu-text">甜品</span>
     </a>
    </li>
 
    <li>
     <a href="set.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/set.svg">
-        </div>
+      <img src="./images/icon/set.svg" class="menu-icon">
       <span class="menu-text">套餐</span>
     </a>
    </li>
 
    <li>
     <a href="child.html">
-        <div class="menu-icon-box">
-          <img src="./images/icon/child.svg">
-        </div>
+      <img src="./images/icon/child.svg" class="menu-icon">
       <span class="menu-text">兒童專區</span>
     </a>
    </li>
@@ -137,7 +111,7 @@
 
 <header class="page-header">
   <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
- <nav class="top-nav">
+<nav class="top-nav">
   <div class="nav-left">
     <a href="begin.html">
       <img src="./images/icon/begin.svg" class="top-nav1">
@@ -179,27 +153,29 @@
 </nav>
 </header>
 
-    <div class="container">
-        
-        <main>
-            <article>
-                <h1 class="article-h1">生產溯源</h1>
-                <div class="content">
-                    <p>
-                        我們對於食材的選用與來源透明度有著嚴格的要求，確保每一位顧客都能安心享用。
+
+<div class="container">
+  <main>
+    <article>
+      <h1 class="article-h1">生產溯源 Traceability</h1>
+      <div class="content">
+        <p class="article-subtitle">
+        我們對於食材的選用與來源透明度有著嚴格的要求，確保每一位顧客都能安心享用。
                         本頁面詳細紀錄了主要肉品（豬肉與牛肉）的進貨與檢驗資訊。
-                    </p>
-                </div>
-                
-                <section class="section1">
-                    <h2 class="product-name">台灣特選梅花豬 (去骨)</h2>
-                    <div class="product-info-grid">
-                        <div class="product-image">
-                            <img src="images/sgspork.jpg" alt="豬肉檢驗報告" class="sgs-report-img">
-                        </div>
-                        <div class="product-details">
-                            <span class="price-placeholder">價格請洽門市</span>
-                            <hr class="dashed-line"> <p>主要用於燉煮、香煎豬排</p>
+        </p>
+      </div>
+
+      <div class="section1-list">
+                            <section class="section1">
+                        <h2 class="product-name">台灣特選梅花豬 (去骨)</h2>
+                        <div class="product-info-wrapper">
+                            <img src="images/sgspork.jpg" alt="豬肉檢驗報告" class="section1-img">
+                            <hr class="dashed-line"> 
+                            <span class="price-placeholder">主要用於燉煮、香煎豬排</span>
+                            <div class="description">
+
+
+
                             <h3>豬肉類進貨資訊：台灣豬隻</h3>
                             
                             <h4>1. 產品規格與產地證明</h4>
@@ -212,7 +188,7 @@
                             </ul>
                             
                             <h4>2. 臺灣豬隻品質與檢驗報告</h4>
-                            <table border="1" class="inspection-table">
+                            
                                 <thead>
                                     <tr>
                                         <th>項目</th>
@@ -239,22 +215,26 @@
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-                
-                <section class="section1">
-                    <h2 class="product-name">澳洲精選嫩肩牛/沙朗牛</h2>
-                    <div class="product-info-grid">
-                        <div class="product-image">
-                            <img src="images/sgsbeef.jpg" alt="牛肉檢驗報告" class="sgs-report-img">
-                        </div>
-                        <div class="product-details">
-                            <span class="price-placeholder">價格請洽門市</span>
-                            <hr class="dashed-line"> <p>主要用於牛排主餐</p>
-                            <h3>牛肉類進貨資訊：澳洲牛肉</h3>
 
+
+
+                            </div>
+                        </div>
+                    </section>
+
+
+                     <section class="section1">
+                        <h2 class="product-name">澳洲精選嫩肩牛/沙朗牛</h2>
+                        <div class="product-info-wrapper">
+                            <img src="images/sgsbeef.jpg" alt="牛肉檢驗報告" class="section1-img">
+                            <hr class="dashed-line"> 
+                            <span class="price-placeholder">主要用於牛排主餐</span>
+                            <div class="description">
+
+
+
+                            <h3>牛肉類進貨資訊：澳洲牛肉</h3>
+                            
                             <h4>1. 產品規格與產地證明</h4>
                             <ul>
                                 <li>肉品名稱：澳洲精選嫩肩牛/沙朗牛 (冷藏/真空包)</li>
@@ -266,7 +246,7 @@
                             </ul>
                             
                             <h4>2. 澳洲牛肉品質與檢驗報告</h4>
-                            <table border="1" class="inspection-table">
+                            
                                 <thead>
                                     <tr>
                                         <th>項目</th>
@@ -276,27 +256,37 @@
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>額外檢驗</td>
-                                        <td>重金屬、特定病原體等零檢出</td>
+                                        <td>品質標準</td>
+                                        <td>CAS 臺灣優良農產品 (或同等認證)</td>
+                                        <td>CAS 驗證書號</td>
+                                    </tr>
+                                    <tr>
+                                        <td>藥物殘留檢驗</td>
+                                        <td>零檢出 (萊克多巴胺、抗生素等)</td>
                                         <td>SGS 檢驗報告 (或同級認證機構)</td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" class="report-details">
-                                            證明文件名稱：牛肉進口衛生檢驗報告 <br>
-                                            報告號碼：AUS-B-20251025 (範例) <br>
-                                            檢驗日期：隨批次進口更新 (最近一次：2025/10/25)
+                                            證明文件名稱：豬肉藥物殘留檢驗報告 <br>
+                                            報告號碼：TWD-P-20251101 (範例) <br>
+                                            檢驗日期：每季定期更新 (最近一次：2025/11/01)
                                         </td>
                                     </tr>
                                 </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </section>
-            </article>
-        </main>
-    </div>
 
-    <footer class="site-footer">
+
+
+                            </div>
+                        </div>
+                    </section>
+
+        
+      </div>
+    </article>
+  </main>
+</div>
+
+<footer class="site-footer">
   <div class="footer-inner">
     <div class="copyright">
       &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
@@ -308,17 +298,23 @@
     </div>
   </div>
 </footer>
-
-
   <script>
      const topNav = document.querySelector('.top-nav');
 
+    window.addEventListener('scroll', () => {
+     if (window.scrollY <= 2) {
+     topNav.classList.add('show');
+   } else {
+     topNav.classList.remove('show');
+   }
+  });
+
+
 
     function toggleMenu() {
-      const menu = document.getElementById('sideMenu');
-      
-      menu.classList.toggle('menu-open');
-      menu.classList.toggle('collapsed');
+      //const menu = document.getElementById('sideMenu');
+     // menu.classList.toggle('menu-open');
+      //menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
@@ -327,6 +323,13 @@
     btn.onclick = () => {
     menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
     };
+
+    menu.querySelectorAll('li').forEach(item => {
+     item.onclick = () => {
+     btn.textContent = item.textContent + ' ▾';
+     menu.style.display = 'none';
+     };
+     });
   </script>
 </body>
 </html>
