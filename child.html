@@ -28,6 +28,13 @@
 <aside id="sideMenu" class="menu-open">
   <nav>
     <ul>
+
+      <li class="menu-toggle-item">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      </li>
+
    <li>
     <a href="index.html">
       <img src="./images/icon/index.svg" class="menu-icon">
@@ -113,6 +120,11 @@
   <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
 <nav class="top-nav">
   <div class="nav-left">
+    
+    <button id="menuHint" onclick="toggleMenu()">
+      ← 閱讀我們的菜單
+    </button>
+
     <a href="begin.html">
       <img src="./images/icon/begin.svg" class="top-nav1">
       <span class="menu-text">公司起源</span>
@@ -154,52 +166,80 @@
 </header>
 
 
-<div class="container">
+<div class="container" >
   <main>
     <article>
-      <h1 class="article-h1">兒童專區 Child</h1>
+      <h1 class="article-h1" data-zh>兒童專區 Child</h1>
+      <h1 class="article-h1" data-en hidden>兒童專區 Child</h1>
+      <h1 class="article-h1" data-jp hidden>兒童專區 Child</h1>
       <div class="content">
-        <p class="article-subtitle">
+        <p class="article-subtitle"data-zh>
         本區精選兒童餐點，讓孩子享受營養美味、豐富多樣的餐點體驗。
         </p>
-      </div>
-
+         <p class="article-subtitle" data-en hidden>
+        本區精選兒童餐點，讓孩子享受營養美味、豐富多樣的餐點體驗。
+        </p>
+        <p class="article-subtitle" data-jp hidden>
+        本區精選兒童餐點，讓孩子享受營養美味、豐富多樣的餐點體驗。
+        </p>
+         </div>
       <div class="section1-list">
         <section class="section1">
-          <h2 class="product-name">香烤迷你雞腿排</h2>
+          <h2 class="product-name" data-zh>香烤迷你雞腿排</h2>
+          <h2 class="product-name" data-en hidden>香烤迷你雞腿排</h2>
+          <h2 class="product-name" data-jp hidden>香烤迷你雞腿排</h2>
           <div class="product-info-wrapper">
             <img src="images/aminichicken.png" alt="香烤迷你雞腿排" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
+            <span class="price-placeholder">95元
+              <span class="currency">NT$95</span>
+            </span>
             <div class="description">
-              <p>精選小巧雞腿排，外皮微酥、肉質多汁，搭配彩虹蔬菜，讓孩子開心享受營養又美味的餐點。</p>
+              <p data-zh>精選小巧雞腿排，外皮微酥、肉質多汁，搭配彩虹蔬菜，讓孩子開心享受營養又美味的餐點。</p>
+              <p data-en hidden>精選小巧雞腿排，外皮微酥、肉質多汁，搭配彩虹蔬菜，讓孩子開心享受營養又美味的餐點。</p>
+              <p data-jp hidden>精選小巧雞腿排，外皮微酥、肉質多汁，搭配彩虹蔬菜，讓孩子開心享受營養又美味的餐點。</p>
             </div>
-          </div>
+            </div>
+        
         </section>
 
         <section class="section1">
-          <h2 class="product-name">奶油豬五花小卷</h2>
+          <h2 class="product-name" data-zh>奶油豬五花小卷</h2>
+          <h2 class="product-name" data-en hidden>奶油豬五花小卷</h2>
+          <h2 class="product-name" data-jp hidden>奶油豬五花小卷</h2>
           <div class="product-info-wrapper">
             <img src="images/creamyroll.png" alt="奶油豬五花小卷" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
+            <span class="price-placeholder">95元
+              <span class="currency">NT$95</span>
+            </span>
             <div class="description">
-              <p>軟嫩豬五花捲入香滑奶油醬汁，口感豐富，甜鹹適中，完美迎合小朋友味蕾。</p>
+              <p data-zh>軟嫩豬五花捲入香滑奶油醬汁，口感豐富，甜鹹適中，完美迎合小朋友味蕾。</p>
+              <p data-en hidden>軟嫩豬五花捲入香滑奶油醬汁，口感豐富，甜鹹適中，完美迎合小朋友味蕾。</p>
+              <p data-jp hidden>軟嫩豬五花捲入香滑奶油醬汁，口感豐富，甜鹹適中，完美迎合小朋友味蕾。</p>
             </div>
           </div>
         </section>
 
         <section class="section1">
-          <h2 class="product-name">香煎魚排金黃堡</h2>
+          <h2 class="product-name" data-zh>香煎魚排金黃堡</h2>
+          <h2 class="product-name" data-en hidden>香煎魚排金黃堡</h2>
+          <h2 class="product-name" data-jp hidden>香煎魚排金黃堡</h2>
           <div class="product-info-wrapper">
             <img src="images/minifishbergur.png" alt="香煎魚排金黃堡" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">105元</span>
+            <span class="price-placeholder">105元
+              <span class="currency">NT$105</span>
+              </span>
             <div class="description">
-              <p>金黃酥脆的魚排搭配鬆軟小麵包，內含鮮甜魚肉，讓孩子吃得開心又安心。</p>
+              <p data-zh>金黃酥脆的魚排搭配鬆軟小麵包，內含鮮甜魚肉，讓孩子吃得開心又安心。</p>
+              <p data-en hidden>金黃酥脆的魚排搭配鬆軟小麵包，內含鮮甜魚肉，讓孩子吃得開心又安心。</p>
+              <p data-jp hidden>金黃酥脆的魚排搭配鬆軟小麵包，內含鮮甜魚肉，讓孩子吃得開心又安心。</p>
             </div>
           </div>
         </section>
+        </div>
+       </article>
       </div>
     </article>
   </main>
@@ -208,7 +248,8 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="copyright">
-      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+      <p>&copy; 2025 版權宣告. All Rights Reserved.</p>
+      <p>為學校教學使用非營利性質之網站.This website is for educational and non-profit use only.</p>
     </div>
     <div class="social-media">
       <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -231,24 +272,58 @@
 
 
     function toggleMenu() {
-     // const menu = document.getElementById('sideMenu');
-     // menu.classList.toggle('menu-open');
-     // menu.classList.toggle('collapsed');
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('menu-open');
+      menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
 
-    btn.onclick = () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    };
+    /* 開關語言選單 */
+btn.onclick = () => {
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+};
 
-    menu.querySelectorAll('li').forEach(item => {
-     item.onclick = () => {
-     btn.textContent = item.textContent + ' ▾';
-     menu.style.display = 'none';
-     };
-     });
+/* 點語言時 */
+menu.querySelectorAll('li').forEach(item => {
+  item.onclick = () => {
+    const lang = item.dataset.lang; // zh / en / jp
+
+    /* 🔤 切換語言顯示 */
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.hidden = lang !== 'zh';
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.hidden = lang !== 'en';
+    });
+    document.querySelectorAll('[data-jp]').forEach(el => {
+      el.hidden = lang !== 'jp';
+    });
+
+    /* 改按鈕文字 */
+    btn.textContent = item.textContent + ' ▾';
+
+    /* 關閉選單 */
+    menu.style.display = 'none';
+  };
+});
+
+
+function toggleMenu() {
+  const sideMenu = document.getElementById('sideMenu');
+  const hint = document.getElementById('menuHint');
+
+  sideMenu.classList.toggle('collapsed');
+
+  if (sideMenu.classList.contains('collapsed')) {
+    hint.style.display = 'block';   // 收合 → 顯示 ← 菜單
+  } else {
+    hint.style.display = 'none';    // 展開 → 隱藏
+  }
+}
+
+
   </script>
 </body>
 </html>

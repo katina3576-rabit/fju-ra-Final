@@ -28,6 +28,12 @@
 <aside id="sideMenu" class="menu-open">
   <nav>
     <ul>
+      <li class="menu-toggle-item">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      </li>
+
    <li>
     <a href="index.html">
       <img src="./images/icon/index.svg" class="menu-icon">
@@ -113,6 +119,12 @@
   <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
 <nav class="top-nav">
   <div class="nav-left">
+
+    <button id="menuHint" onclick="toggleMenu()">
+      ← 閱讀我們的菜單
+    </button>
+    
+
     <a href="begin.html">
       <img src="./images/icon/begin.svg" class="top-nav1">
       <span class="menu-text">公司起源</span>
@@ -157,46 +169,72 @@
 <div class="container">
   <main>
     <article>
-      <h1 class="article-h1">配菜 Side Dishes</h1>
+      <h1 class="article-h1" data-zh>配菜 Side Dishes</h1>
+      <h1 class="article-h1" data-en hidden>配菜 Side Dishes</h1>
+      <h1 class="article-h1" data-jp hidden>配菜 Side Dishes</h1>
       <div class="content">
-        <p class="article-subtitle">
+        <p class="article-subtitle" data-zh>
+        精心挑選的配菜，為主餐增添風味層次。
+        </p>
+        <p class="article-subtitle" data-en hidden>
+        精心挑選的配菜，為主餐增添風味層次。
+        </p>
+        <p class="article-subtitle" data-jp hidden>
         精心挑選的配菜，為主餐增添風味層次。
         </p>
       </div>
 
       <div class="section1-list">
         <section class="section1">
-          <h2 class="product-name">烤抱子甘藍</h2>
+          <h2 class="product-name" data-zh>烤抱子甘藍</h2>
+          <h2 class="product-name" data-en hidden>烤抱子甘藍</h2>
+          <h2 class="product-name" data-jp hidden>烤抱子甘藍</h2>
           <div class="product-info-wrapper">
             <img src="images/cabbage.jpg" alt="烤抱子甘藍" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">99元</span>
+             <span class="price-placeholder">99元
+              <span class="currency">NT$99</span>
+            </span>
             <div class="description">
-              <p>烤抱子甘藍是一道極受歡迎的經典西式配菜，它將抱子甘藍從過去苦澀形象中徹底解放，轉化為外層焦脆、內裡甜嫩的美味佳餚。</p>
+              <p data-zh>烤抱子甘藍是一道極受歡迎的經典西式配菜，它將抱子甘藍從過去苦澀形象中徹底解放，轉化為外層焦脆、內裡甜嫩的美味佳餚。</p>
+              <p data-en hidden>烤抱子甘藍是一道極受歡迎的經典西式配菜，它將抱子甘藍從過去苦澀形象中徹底解放，轉化為外層焦脆、內裡甜嫩的美味佳餚。</p>
+              <p data-jp hidden>烤抱子甘藍是一道極受歡迎的經典西式配菜，它將抱子甘藍從過去苦澀形象中徹底解放，轉化為外層焦脆、內裡甜嫩的美味佳餚。</p>
             </div>
           </div>
         </section>
 
         <section class="section1">
-          <h2 class="product-name">英式香腸捲</h2>
+          <h2 class="product-name" data-zh>英式香腸捲</h2>
+          <h2 class="product-name" data-en hidden>英式香腸捲</h2>
+          <h2 class="product-name" data-jp hidden>英式香腸捲</h2>
           <div class="product-info-wrapper">
             <img src="images/sausage.jpg" alt="英式香腸捲" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">99元</span>
+             <span class="price-placeholder">99元
+              <span class="currency">NT$99</span>
+            </span>
             <div class="description">
-              <p>英式香腸捲是一種經典英式鹹味酥點小食，以酥脆外皮包裹鹹香多汁的香腸肉餡。</p>
+              <p data-zh>英式香腸捲是一種經典英式鹹味酥點小食，以酥脆外皮包裹鹹香多汁的香腸肉餡。</p>
+              <p data-en hidden>英式香腸捲是一種經典英式鹹味酥點小食，以酥脆外皮包裹鹹香多汁的香腸肉餡。</p>
+              <p data-jp hidden>英式香腸捲是一種經典英式鹹味酥點小食，以酥脆外皮包裹鹹香多汁的香腸肉餡。</p>
             </div>
           </div>
         </section>
 
         <section class="section1">
-          <h2 class="product-name">鷹嘴豆泥</h2>
+          <h2 class="product-name" data-zh>鷹嘴豆泥</h2>
+          <h2 class="product-name" data-en hidden>鷹嘴豆泥</h2>
+          <h2 class="product-name" data-jp hidden>鷹嘴豆泥</h2>
           <div class="product-info-wrapper">
             <img src="images/chickpeas.jpg" alt="鷹嘴豆泥" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">99元</span>
+             <span class="price-placeholder">99元
+              <span class="currency">NT$99</span>
+            </span>
             <div class="description">
-              <p>法拉費是源自中東的經典街頭小吃，由磨碎的鷹嘴豆混合香草香料製成，油炸後外脆內嫩。</p>
+              <p data-zh>法拉費是源自中東的經典街頭小吃，由磨碎的鷹嘴豆混合香草香料製成，油炸後外脆內嫩。</p>
+              <p data-en hidden>法拉費是源自中東的經典街頭小吃，由磨碎的鷹嘴豆混合香草香料製成，油炸後外脆內嫩。</p>
+              <p data-jp hidden>法拉費是源自中東的經典街頭小吃，由磨碎的鷹嘴豆混合香草香料製成，油炸後外脆內嫩。</p>
             </div>
           </div>
         </section>
@@ -208,7 +246,8 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="copyright">
-      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+      <p>&copy; 2025 版權宣告. All Rights Reserved.</p>
+      <p>為學校教學使用非營利性質之網站.This website is for educational and non-profit use only.</p>
     </div>
     <div class="social-media">
       <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -231,24 +270,58 @@
 
 
     function toggleMenu() {
-     // const menu = document.getElementById('sideMenu');
-     // menu.classList.toggle('menu-open');
-     // menu.classList.toggle('collapsed');
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('menu-open');
+      menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
 
-    btn.onclick = () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    };
+    /* 開關語言選單 */
+btn.onclick = () => {
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+};
 
-    menu.querySelectorAll('li').forEach(item => {
-     item.onclick = () => {
-     btn.textContent = item.textContent + ' ▾';
-     menu.style.display = 'none';
-     };
-     });
+/* 點語言時 */
+menu.querySelectorAll('li').forEach(item => {
+  item.onclick = () => {
+    const lang = item.dataset.lang; // zh / en / jp
+
+    /* 🔤 切換語言顯示 */
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.hidden = lang !== 'zh';
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.hidden = lang !== 'en';
+    });
+    document.querySelectorAll('[data-jp]').forEach(el => {
+      el.hidden = lang !== 'jp';
+    });
+
+    /* 改按鈕文字 */
+    btn.textContent = item.textContent + ' ▾';
+
+    /* 關閉選單 */
+    menu.style.display = 'none';
+  };
+});
+
+
+function toggleMenu() {
+  const sideMenu = document.getElementById('sideMenu');
+  const hint = document.getElementById('menuHint');
+
+  sideMenu.classList.toggle('collapsed');
+
+  if (sideMenu.classList.contains('collapsed')) {
+    hint.style.display = 'block';   // 收合 → 顯示 ← 菜單
+  } else {
+    hint.style.display = 'none';    // 展開 → 隱藏
+  }
+}
+
+
   </script>
 </body>
 </html>

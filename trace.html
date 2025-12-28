@@ -28,6 +28,12 @@
 <aside id="sideMenu" class="menu-open">
   <nav>
     <ul>
+      <li class="menu-toggle-item">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      </li>
+
    <li>
     <a href="index.html">
       <img src="./images/icon/index.svg" class="menu-icon">
@@ -113,6 +119,11 @@
   <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
 <nav class="top-nav">
   <div class="nav-left">
+    
+    <button id="menuHint" onclick="toggleMenu()">
+      ← 閱讀我們的菜單
+    </button>
+    
     <a href="begin.html">
       <img src="./images/icon/begin.svg" class="top-nav1">
       <span class="menu-text">公司起源</span>
@@ -157,9 +168,19 @@
 <div class="container">
   <main>
     <article>
-      <h1 class="article-h1">生產溯源 Traceability</h1>
+      <h1 class="article-h1" data-zh>生產溯源 Traceability</h1>
+      <h1 class="article-h1" data-en hidden>生產溯源 Traceability</h1>
+      <h1 class="article-h1" data-jp hidden>生產溯源 Traceability</h1>
       <div class="content">
-        <p class="article-subtitle">
+        <p class="article-subtitle" data-zh>
+        我們對於食材的選用與來源透明度有著嚴格的要求，確保每一位顧客都能安心享用。
+                        本頁面詳細紀錄了主要肉品（豬肉與牛肉）的進貨與檢驗資訊。
+        </p>
+        <p class="article-subtitle" data-en hidden>
+        我們對於食材的選用與來源透明度有著嚴格的要求，確保每一位顧客都能安心享用。
+                        本頁面詳細紀錄了主要肉品（豬肉與牛肉）的進貨與檢驗資訊。
+        </p>
+        <p class="article-subtitle" data-jp hidden>
         我們對於食材的選用與來源透明度有著嚴格的要求，確保每一位顧客都能安心享用。
                         本頁面詳細紀錄了主要肉品（豬肉與牛肉）的進貨與檢驗資訊。
         </p>
@@ -167,48 +188,91 @@
 
       <div class="section1-list">
                             <section class="section1">
-                        <h2 class="product-name">台灣特選梅花豬 (去骨)</h2>
+                        <h2 class="product-name" data-zh>台灣特選梅花豬 (去骨)</h2>
+                        <h2 class="product-name" data-en hidden>台灣特選梅花豬 (去骨)</h2>
+                        <h2 class="product-name" data-jp hidden>台灣特選梅花豬 (去骨)</h2>
                         <div class="product-info-wrapper">
                             <img src="images/sgspork.jpg" alt="豬肉檢驗報告" class="section1-img">
                             <hr class="dashed-line"> 
-                            <span class="price-placeholder">主要用於燉煮、香煎豬排</span>
+                            
                             <div class="description">
 
 
 
-                            <h3>豬肉類進貨資訊：台灣豬隻</h3>
+                            <h3 data-zh>主要用於燉煮、香煎豬排
+                                豬肉類進貨資訊：台灣豬隻</h3>
+                                <h3 data-en hidden>主要用於燉煮、香煎豬排
+                                豬肉類進貨資訊：台灣豬隻</h3>
+                                <h3 data-jp hidden>主要用於燉煮、香煎豬排
+                                豬肉類進貨資訊：台灣豬隻</h3>
                             
-                            <h4>1. 產品規格與產地證明</h4>
+                            <h4 data-zh>1. 產品規格與產地證明</h4>
+                            <h4 data-en hidden>1. 產品規格與產地證明</h4>
+                            <h4 data-jp hidden>1. 產品規格與產地證明</h4>
                             <ul>
-                                <li>肉品名稱：台灣特選梅花豬 (去骨)</li>
-                                <li>生產地：中華民國臺灣 (特定合作牧場：雲林/屏東) 確保本地新鮮供應鏈</li>
-                                <li>生產證明：畜牧場登記證影本、牧場出貨單</li>
-                                <li>進貨商：信安食品有限公司 (合格肉品供應商)</li>
-                                <li>進貨頻率：每週兩次，確保新鮮度</li>
+                                <li data-zh>肉品名稱：台灣特選梅花豬 (去骨)</li>
+                                <li data-zh>生產地：中華民國臺灣 (特定合作牧場：雲林/屏東) 確保本地新鮮供應鏈</li>
+                                <li data-zh>生產證明：畜牧場登記證影本、牧場出貨單</li>
+                                <li data-zh>進貨商：信安食品有限公司 (合格肉品供應商)</li>
+                                <li data-zh>進貨頻率：每週兩次，確保新鮮度</li>
+                                   <li data-en hidden>肉品名稱：台灣特選梅花豬 (去骨)</li>
+                                <li data-en hidden>生產地：中華民國臺灣 (特定合作牧場：雲林/屏東) 確保本地新鮮供應鏈</li>
+                                <li data-en hidden>生產證明：畜牧場登記證影本、牧場出貨單</li>
+                                <li data-en hidden>進貨商：信安食品有限公司 (合格肉品供應商)</li>
+                                <li data-en hidden>進貨頻率：每週兩次，確保新鮮度</li>
+                                   <li data-jp hidden>肉品名稱：台灣特選梅花豬 (去骨)</li>
+                                <li data-jp hidden>生產地：中華民國臺灣 (特定合作牧場：雲林/屏東) 確保本地新鮮供應鏈</li>
+                                <li data-jp hidden>生產證明：畜牧場登記證影本、牧場出貨單</li>
+                                <li data-jp hidden>進貨商：信安食品有限公司 (合格肉品供應商)</li>
+                                <li data-jp hidden>進貨頻率：每週兩次，確保新鮮度</li>
                             </ul>
                             
-                            <h4>2. 臺灣豬隻品質與檢驗報告</h4>
+                            <h4 data-zh>2. 臺灣豬隻品質與檢驗報告</h4>
+                            <h4 data-en hidden>2. 臺灣豬隻品質與檢驗報告</h4>
+                            <h4 data-jp hidden>2. 臺灣豬隻品質與檢驗報告</h4>
                             
                                 <thead>
                                     <tr>
-                                        <th>項目</th>
-                                        <th>內容</th>
-                                        <th>證明文件</th>
+                                        <th data-zh>項目</th><th data-en hidden>項目</th><th data-jp hidden>項目</th>
+                                        <th data-zh>內容</th><th data-en hidden>內容</th><th data-jp hidden>內容</th>
+                                        <th data-zh>證明文件</th><th data-en hidden>證明文件</th><th data-jp hidden>證明文件</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>品質標準</td>
-                                        <td>CAS 臺灣優良農產品 (或同等認證)</td>
-                                        <td>CAS 驗證書號</td>
+                                        <td data-zh>品質標準</td>
+                                        <td data-zh>CAS 臺灣優良農產品 (或同等認證)</td>
+                                        <td data-zh>CAS 驗證書號</td>
+                                        <td data-en hidden>品質標準</td>
+                                        <td data-en hidden>CAS 臺灣優良農產品 (或同等認證)</td>
+                                        <td data-en hidden>CAS 驗證書號</td>
+                                        <td data-jp hidden>品質標準</td>
+                                        <td data-jp hidden>CAS 臺灣優良農產品 (或同等認證)</td>
+                                        <td data-jp hidden>CAS 驗證書號</td>
                                     </tr>
                                     <tr>
-                                        <td>藥物殘留檢驗</td>
-                                        <td>零檢出 (萊克多巴胺、抗生素等)</td>
-                                        <td>SGS 檢驗報告 (或同級認證機構)</td>
+                                        <td data-zh>藥物殘留檢驗</td>
+                                        <td data-zh>零檢出 (萊克多巴胺、抗生素等)</td>
+                                        <td data-zh>SGS 檢驗報告 (或同級認證機構)</td>
+                                        <td data-en hidden>藥物殘留檢驗</td>
+                                        <td data-en hidden>零檢出 (萊克多巴胺、抗生素等)</td>
+                                        <td data-en hidden>SGS 檢驗報告 (或同級認證機構)</td>
+                                        <td data-jp hidden>藥物殘留檢驗</td>
+                                        <td data-jp hidden>零檢出 (萊克多巴胺、抗生素等)</td>
+                                        <td data-jp hidden>SGS 檢驗報告 (或同級認證機構)</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" class="report-details">
+                                        <td colspan="3" class="report-details" data-zh>
+                                            證明文件名稱：豬肉藥物殘留檢驗報告 <br>
+                                            報告號碼：TWD-P-20251101 (範例) <br>
+                                            檢驗日期：每季定期更新 (最近一次：2025/11/01)
+                                        </td>
+                                        <td colspan="3" class="report-details" data-en hidden>
+                                            證明文件名稱：豬肉藥物殘留檢驗報告 <br>
+                                            報告號碼：TWD-P-20251101 (範例) <br>
+                                            檢驗日期：每季定期更新 (最近一次：2025/11/01)
+                                        </td>
+                                        <td colspan="3" class="report-details" data-jp hidden>
                                             證明文件名稱：豬肉藥物殘留檢驗報告 <br>
                                             報告號碼：TWD-P-20251101 (範例) <br>
                                             檢驗日期：每季定期更新 (最近一次：2025/11/01)
@@ -224,49 +288,94 @@
 
 
                      <section class="section1">
-                        <h2 class="product-name">澳洲精選嫩肩牛/沙朗牛</h2>
+                        <h2 class="product-name" data-zh>澳洲精選嫩肩牛/沙朗牛</h2>
+                        <h2 class="product-name" data-en hidden>澳洲精選嫩肩牛/沙朗牛</h2>
+                        <h2 class="product-name" data-jp hidden>澳洲精選嫩肩牛/沙朗牛</h2>
                         <div class="product-info-wrapper">
                             <img src="images/sgsbeef.jpg" alt="牛肉檢驗報告" class="section1-img">
                             <hr class="dashed-line"> 
-                            <span class="price-placeholder">主要用於牛排主餐</span>
+                            
                             <div class="description">
 
 
 
-                            <h3>牛肉類進貨資訊：澳洲牛肉</h3>
+                            <h3 data-zh>主要用於牛排主餐
+                                牛肉類進貨資訊：澳洲牛肉</h3>
+                                <h3 data-en hidden>主要用於牛排主餐
+                                牛肉類進貨資訊：澳洲牛肉</h3>
+                                <h3 data-jp hidden>主要用於牛排主餐
+                                牛肉類進貨資訊：澳洲牛肉</h3>
                             
-                            <h4>1. 產品規格與產地證明</h4>
+                            <h4 data-zh>1. 產品規格與產地證明</h4>
+                            <h4 data-en hidden>1. 產品規格與產地證明</h4>
+                            <h4 data-jp hidden>1. 產品規格與產地證明</h4>
                             <ul>
-                                <li>肉品名稱：澳洲精選嫩肩牛/沙朗牛 (冷藏/真空包)</li>
-                                <li>生產地：澳洲 (Australia) (主要產區：昆士蘭/新南威爾斯) 著名肉牛飼養區</li>
-                                <li>生產證明：澳洲官方認證出口衛生證明 (Australian Government Health Certificate) 證明肉品符合出口檢疫標準</li>
-                                <li>進貨商：海貿國際貿易公司 (合格肉類進口商)</li>
-                                <li>進貨頻率：每月一次，恆溫冷藏運輸</li>
-                                <li>追溯編號：(肉品進口報單號碼/批次號碼)</li>
+                                <li data-zh>肉品名稱：澳洲精選嫩肩牛/沙朗牛 (冷藏/真空包)</li>
+                                <li data-zh>生產地：澳洲 (Australia) (主要產區：昆士蘭/新南威爾斯) 著名肉牛飼養區</li>
+                                <li data-zh>生產證明：澳洲官方認證出口衛生證明 (Australian Government Health Certificate) 證明肉品符合出口檢疫標準</li>
+                                <li data-zh>進貨商：海貿國際貿易公司 (合格肉類進口商)</li>
+                                <li data-zh>進貨頻率：每月一次，恆溫冷藏運輸</li>
+                                <li data-zh>追溯編號：(肉品進口報單號碼/批次號碼)</li>
+                                     <li data-en hidden>肉品名稱：澳洲精選嫩肩牛/沙朗牛 (冷藏/真空包)</li>
+                                <li data-en hidden>生產地：澳洲 (Australia) (主要產區：昆士蘭/新南威爾斯) 著名肉牛飼養區</li>
+                                <li data-en hidden>生產證明：澳洲官方認證出口衛生證明 (Australian Government Health Certificate) 證明肉品符合出口檢疫標準</li>
+                                <li data-en hidden>進貨商：海貿國際貿易公司 (合格肉類進口商)</li>
+                                <li data-en hidden>進貨頻率：每月一次，恆溫冷藏運輸</li>
+                                <li data-en hidden>追溯編號：(肉品進口報單號碼/批次號碼)</li>
+                                      <li data-jp hidden>肉品名稱：澳洲精選嫩肩牛/沙朗牛 (冷藏/真空包)</li>
+                                <li data-jp hidden>生產地：澳洲 (Australia) (主要產區：昆士蘭/新南威爾斯) 著名肉牛飼養區</li>
+                                <li data-jp hidden>生產證明：澳洲官方認證出口衛生證明 (Australian Government Health Certificate) 證明肉品符合出口檢疫標準</li>
+                                <li data-jp hidden>進貨商：海貿國際貿易公司 (合格肉類進口商)</li>
+                                <li data-jp hidden>進貨頻率：每月一次，恆溫冷藏運輸</li>
+                                <li data-jp hidden>追溯編號：(肉品進口報單號碼/批次號碼)</li>
                             </ul>
                             
-                            <h4>2. 澳洲牛肉品質與檢驗報告</h4>
+                            <h4 data-zh>2. 澳洲牛肉品質與檢驗報告</h4>
+                             <h4 data-en hidden>2. 澳洲牛肉品質與檢驗報告</h4>
+                              <h4 data-jp hidden>2. 澳洲牛肉品質與檢驗報告</h4>
                             
                                 <thead>
                                     <tr>
-                                        <th>項目</th>
-                                        <th>內容</th>
-                                        <th>證明文件</th>
+                                         <th data-zh>項目</th><th data-en hidden>項目</th><th data-jp hidden>項目</th>
+                                         <th data-zh>內容</th><th data-en hidden>內容</th><th data-jp hidden>內容</th>
+                                         <th data-zh>證明文件</th><th data-en hidden>證明文件</th><th data-jp hidden>證明文件</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>品質標準</td>
-                                        <td>CAS 臺灣優良農產品 (或同等認證)</td>
-                                        <td>CAS 驗證書號</td>
+                                        <td data-zh>品質標準</td>
+                                        <td data-zh>CAS 臺灣優良農產品 (或同等認證)</td>
+                                        <td data-zh>CAS 驗證書號</td>
+                                        <td data-en hidden>品質標準</td>
+                                        <td data-en hidden>CAS 臺灣優良農產品 (或同等認證)</td>
+                                        <td data-en hidden>CAS 驗證書號</td>
+                                        <td data-jp hidden>品質標準</td>
+                                        <td data-jp hidden>CAS 臺灣優良農產品 (或同等認證)</td>
+                                        <td data-jp hidden>CAS 驗證書號</td>
                                     </tr>
                                     <tr>
-                                        <td>藥物殘留檢驗</td>
-                                        <td>零檢出 (萊克多巴胺、抗生素等)</td>
-                                        <td>SGS 檢驗報告 (或同級認證機構)</td>
+                                        <td data-zh>藥物殘留檢驗</td>
+                                        <td data-zh>零檢出 (萊克多巴胺、抗生素等)</td>
+                                        <td data-zh>SGS 檢驗報告 (或同級認證機構)</td>
+                                        <td data-en hidden>藥物殘留檢驗</td>
+                                        <td data-en hidden>零檢出 (萊克多巴胺、抗生素等)</td>
+                                        <td data-en hidden>SGS 檢驗報告 (或同級認證機構)</td>
+                                        <td data-jp hidden>藥物殘留檢驗</td>
+                                        <td data-jp hidden>零檢出 (萊克多巴胺、抗生素等)</td>
+                                        <td data-jp hidden>SGS 檢驗報告 (或同級認證機構)</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" class="report-details">
+                                        <td colspan="3" class="report-details" data-zh>
+                                            證明文件名稱：豬肉藥物殘留檢驗報告 <br>
+                                            報告號碼：TWD-P-20251101 (範例) <br>
+                                            檢驗日期：每季定期更新 (最近一次：2025/11/01)
+                                        </td>
+                                        <td colspan="3" class="report-details" data-en hidden>
+                                            證明文件名稱：豬肉藥物殘留檢驗報告 <br>
+                                            報告號碼：TWD-P-20251101 (範例) <br>
+                                            檢驗日期：每季定期更新 (最近一次：2025/11/01)
+                                        </td>
+                                        <td colspan="3" class="report-details" data-jp hidden>
                                             證明文件名稱：豬肉藥物殘留檢驗報告 <br>
                                             報告號碼：TWD-P-20251101 (範例) <br>
                                             檢驗日期：每季定期更新 (最近一次：2025/11/01)
@@ -289,7 +398,8 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="copyright">
-      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+      <p>&copy; 2025 版權宣告. All Rights Reserved.</p>
+      <p>為學校教學使用非營利性質之網站.This website is for educational and non-profit use only.</p>
     </div>
     <div class="social-media">
       <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -312,24 +422,58 @@
 
 
     function toggleMenu() {
-      //const menu = document.getElementById('sideMenu');
-     // menu.classList.toggle('menu-open');
-      //menu.classList.toggle('collapsed');
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('menu-open');
+      menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
 
-    btn.onclick = () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    };
+    /* 開關語言選單 */
+btn.onclick = () => {
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+};
 
-    menu.querySelectorAll('li').forEach(item => {
-     item.onclick = () => {
-     btn.textContent = item.textContent + ' ▾';
-     menu.style.display = 'none';
-     };
-     });
+/* 點語言時 */
+menu.querySelectorAll('li').forEach(item => {
+  item.onclick = () => {
+    const lang = item.dataset.lang; // zh / en / jp
+
+    /* 🔤 切換語言顯示 */
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.hidden = lang !== 'zh';
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.hidden = lang !== 'en';
+    });
+    document.querySelectorAll('[data-jp]').forEach(el => {
+      el.hidden = lang !== 'jp';
+    });
+
+    /* 改按鈕文字 */
+    btn.textContent = item.textContent + ' ▾';
+
+    /* 關閉選單 */
+    menu.style.display = 'none';
+  };
+});
+
+
+function toggleMenu() {
+  const sideMenu = document.getElementById('sideMenu');
+  const hint = document.getElementById('menuHint');
+
+  sideMenu.classList.toggle('collapsed');
+
+  if (sideMenu.classList.contains('collapsed')) {
+    hint.style.display = 'block';   // 收合 → 顯示 ← 菜單
+  } else {
+    hint.style.display = 'none';    // 展開 → 隱藏
+  }
+}
+
+
   </script>
 </body>
 </html>

@@ -28,6 +28,12 @@
 <aside id="sideMenu" class="menu-open">
   <nav>
     <ul>
+      <li class="menu-toggle-item">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      </li>
+
    <li>
     <a href="index.html">
       <img src="./images/icon/index.svg" class="menu-icon">
@@ -113,6 +119,12 @@
   <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
 <nav class="top-nav">
   <div class="nav-left">
+
+    <button id="menuHint" onclick="toggleMenu()">
+      ← 閱讀我們的菜單
+    </button>
+    
+
     <a href="begin.html">
       <img src="./images/icon/begin.svg" class="top-nav1">
       <span class="menu-text">公司起源</span>
@@ -157,9 +169,17 @@
 <div class="container">
   <main>
     <article>
-      <h1 class="article-h1">沙拉 Salads</h1>
+      <h1 class="article-h1" data-zh>沙拉 Salads</h1>
+      <h1 class="article-h1" data-en hidden>沙拉 Salads</h1>
+      <h1 class="article-h1" data-jp hidden>沙拉 Salads</h1>
       <div class="content">
-        <p class="article-subtitle">
+        <p class="article-subtitle" data-zh>
+        新鮮健康沙拉選擇，結合多元風味與豐富營養。
+        </p>
+        <p class="article-subtitle" data-en hidden>
+        新鮮健康沙拉選擇，結合多元風味與豐富營養。
+        </p>
+        <p class="article-subtitle" data-jp hidden>
         新鮮健康沙拉選擇，結合多元風味與豐富營養。
         </p>
       </div>
@@ -167,37 +187,55 @@
 
        <div class="section1-list">
         <section class="section1">
-          <h2 class="product-name">彩椒番茄醬生菜沙拉</h2>
+          <h2 class="product-name" data-zh>彩椒番茄醬生菜沙拉</h2>
+          <h2 class="product-name" data-en hidden>彩椒番茄醬生菜沙拉</h2>
+          <h2 class="product-name" data-jp hidden>彩椒番茄醬生菜沙拉</h2>
           <div class="product-info-wrapper">
             <img src="images/peppers.jpg" alt="彩椒番茄醬生菜沙拉" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
+             <span class="price-placeholder">90元
+              <span class="currency">NT$95</span>
+            </span>
             <div class="description">
-              <p>彩椒番茄醬生菜沙拉是以新鮮生菜為基底，使用彩椒和番茄混合製作的醬汁調味。這種組合強調天然蔬菜的鮮甜、清脆口感以及輕盈健康的調味，醬汁由新鮮或烤過的彩椒番茄打成泥，風味清新自然。</p>
+              <p data-zh>彩椒番茄醬生菜沙拉是以新鮮生菜為基底，使用彩椒和番茄混合製作的醬汁調味。這種組合強調天然蔬菜的鮮甜、清脆口感以及輕盈健康的調味，醬汁由新鮮或烤過的彩椒番茄打成泥，風味清新自然。</p>
+              <p data-en hidden>彩椒番茄醬生菜沙拉是以新鮮生菜為基底，使用彩椒和番茄混合製作的醬汁調味。這種組合強調天然蔬菜的鮮甜、清脆口感以及輕盈健康的調味，醬汁由新鮮或烤過的彩椒番茄打成泥，風味清新自然。</p>
+              <p data-jp hidden>彩椒番茄醬生菜沙拉是以新鮮生菜為基底，使用彩椒和番茄混合製作的醬汁調味。這種組合強調天然蔬菜的鮮甜、清脆口感以及輕盈健康的調味，醬汁由新鮮或烤過的彩椒番茄打成泥，風味清新自然。</p>
             </div>
           </div>
         </section>
       
         <section class="section1">
-          <h2 class="product-name">香煎培根&奶油杏鮑菇溫沙拉</h2>
+          <h2 class="product-name" data-zh>香煎培根&奶油杏鮑菇溫沙拉</h2>
+          <h2 class="product-name" data-en hidden>香煎培根&奶油杏鮑菇溫沙拉</h2>
+          <h2 class="product-name" data-jp hidden>香煎培根&奶油杏鮑菇溫沙拉</h2>
           <div class="product-info-wrapper">
             <img src="images/bacon.jpg" alt="香煎培根&奶油杏鮑菇溫沙拉" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
+             <span class="price-placeholder">95元
+              <span class="currency">NT$95</span>
+            </span>
             <div class="description">
-              <p>香煎培根與奶油杏鮑菇溫沙拉是一道結合了豐富口感、多層次風味和適中溫度的沙拉。它打破了傳統沙拉冰冷的印象，將溫熱的主食與新鮮蔬菜結合，特別適合秋季或冬季的輕食主菜或精緻配菜。</p>
+              <p data-zh>香煎培根與奶油杏鮑菇溫沙拉是一道結合了豐富口感、多層次風味和適中溫度的沙拉。它打破了傳統沙拉冰冷的印象，將溫熱的主食與新鮮蔬菜結合，特別適合秋季或冬季的輕食主菜或精緻配菜。</p>
+              <p data-en hidden>香煎培根與奶油杏鮑菇溫沙拉是一道結合了豐富口感、多層次風味和適中溫度的沙拉。它打破了傳統沙拉冰冷的印象，將溫熱的主食與新鮮蔬菜結合，特別適合秋季或冬季的輕食主菜或精緻配菜。</p>
+              <p data-jp hidden>香煎培根與奶油杏鮑菇溫沙拉是一道結合了豐富口感、多層次風味和適中溫度的沙拉。它打破了傳統沙拉冰冷的印象，將溫熱的主食與新鮮蔬菜結合，特別適合秋季或冬季的輕食主菜或精緻配菜。</p>
             </div>
           </div>
         </section>
         
         <section class="section1">
-          <h2 class="product-name">摩洛哥香草醬雞肉蕃茄蔬菜沙拉</h2>
+          <h2 class="product-name" data-zh>摩洛哥香草醬雞肉蕃茄蔬菜沙拉</h2>
+          <h2 class="product-name" data-en hidden>摩洛哥香草醬雞肉蕃茄蔬菜沙拉</h2>
+          <h2 class="product-name" data-jp hidden>摩洛哥香草醬雞肉蕃茄蔬菜沙拉</h2>
           <div class="product-info-wrapper">
             <img src="images/chermoula.jpg" alt="摩洛哥香草醬雞肉蕃茄蔬菜沙拉" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">105元</span>
+             <span class="price-placeholder">105元
+              <span class="currency">NT$105</span>
+            </span>
             <div class="description">
-              <p>這道沙拉結合了清新的摩洛哥香草醬[Chermoula]、烤雞肉和豐富的蔬菜，是一道極具北非地中海風味的主食沙拉。以Chermoula醬的酸、香、辣為雞肉和蔬菜提味，風味強烈而開胃。</p>
+              <p data-zh>這道沙拉結合了清新的摩洛哥香草醬[Chermoula]、烤雞肉和豐富的蔬菜，是一道極具北非地中海風味的主食沙拉。以Chermoula醬的酸、香、辣為雞肉和蔬菜提味，風味強烈而開胃。</p>
+              <p data-en hidden>這道沙拉結合了清新的摩洛哥香草醬[Chermoula]、烤雞肉和豐富的蔬菜，是一道極具北非地中海風味的主食沙拉。以Chermoula醬的酸、香、辣為雞肉和蔬菜提味，風味強烈而開胃。</p>
+              <p data-jp hidden>這道沙拉結合了清新的摩洛哥香草醬[Chermoula]、烤雞肉和豐富的蔬菜，是一道極具北非地中海風味的主食沙拉。以Chermoula醬的酸、香、辣為雞肉和蔬菜提味，風味強烈而開胃。</p>
             </div>
           </div>
         </section>
@@ -209,7 +247,8 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="copyright">
-      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+      <p>&copy; 2025 版權宣告. All Rights Reserved.</p>
+      <p>為學校教學使用非營利性質之網站.This website is for educational and non-profit use only.</p>
     </div>
     <div class="social-media">
       <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -232,24 +271,58 @@
 
 
     function toggleMenu() {
-     // const menu = document.getElementById('sideMenu');
-     // menu.classList.toggle('menu-open');
-     // menu.classList.toggle('collapsed');
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('menu-open');
+      menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
 
-    btn.onclick = () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    };
+    /* 開關語言選單 */
+btn.onclick = () => {
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+};
 
-    menu.querySelectorAll('li').forEach(item => {
-     item.onclick = () => {
-     btn.textContent = item.textContent + ' ▾';
-     menu.style.display = 'none';
-     };
-     });
+/* 點語言時 */
+menu.querySelectorAll('li').forEach(item => {
+  item.onclick = () => {
+    const lang = item.dataset.lang; // zh / en / jp
+
+    /* 🔤 切換語言顯示 */
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.hidden = lang !== 'zh';
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.hidden = lang !== 'en';
+    });
+    document.querySelectorAll('[data-jp]').forEach(el => {
+      el.hidden = lang !== 'jp';
+    });
+
+    /* 改按鈕文字 */
+    btn.textContent = item.textContent + ' ▾';
+
+    /* 關閉選單 */
+    menu.style.display = 'none';
+  };
+});
+
+
+function toggleMenu() {
+  const sideMenu = document.getElementById('sideMenu');
+  const hint = document.getElementById('menuHint');
+
+  sideMenu.classList.toggle('collapsed');
+
+  if (sideMenu.classList.contains('collapsed')) {
+    hint.style.display = 'block';   // 收合 → 顯示 ← 菜單
+  } else {
+    hint.style.display = 'none';    // 展開 → 隱藏
+  }
+}
+
+
   </script>
 </body>
 </html>

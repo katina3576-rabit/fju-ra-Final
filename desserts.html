@@ -28,6 +28,12 @@
 <aside id="sideMenu" class="menu-open">
   <nav>
     <ul>
+      <li class="menu-toggle-item">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      </li>
+
    <li>
     <a href="index.html">
       <img src="./images/icon/index.svg" class="menu-icon">
@@ -113,6 +119,12 @@
   <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
 <nav class="top-nav">
   <div class="nav-left">
+
+    <button id="menuHint" onclick="toggleMenu()">
+      ← 閱讀我們的菜單
+    </button>
+    
+
     <a href="begin.html">
       <img src="./images/icon/begin.svg" class="top-nav1">
       <span class="menu-text">公司起源</span>
@@ -157,70 +169,108 @@
 <div class="container">
   <main>
     <article>
-      <h1 class="article-h1">甜點 desserts</h1>
+      <h1 class="article-h1" data-zh>甜點 desserts</h1>
+      <h1 class="article-h1" data-en hidden>甜點 desserts</h1>
+      <h1 class="article-h1" data-jp hidden>甜點 desserts</h1>
       <div class="content">
-        <p class="article-subtitle">
+        <p class="article-subtitle" data-zh>
+        精選法式經典甜點，完美結合傳統工藝與創新口感，每一口都是味蕾的極致享受。
+        </p>
+        <p class="article-subtitle" data-jp hidden>
+        精選法式經典甜點，完美結合傳統工藝與創新口感，每一口都是味蕾的極致享受。
+        </p>
+        <p class="article-subtitle" data-en hidden>
         精選法式經典甜點，完美結合傳統工藝與創新口感，每一口都是味蕾的極致享受。
         </p>
       </div>
 
       <div class="section1-list">
         <section class="section1">
-          <h2 class="product-name">法式巧克力醬糜蛋糕</h2>
-          <div class="product-info-wrapper">
-            <img src="images/chocolat.jpg" alt="法式巧克力醬糜蛋糕" class="section1-img">
-            <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
-            <div class="description">
-              <p>Terrine 在法式料理中原本是指一種用陶製長方模具製作的凍派或肉醬凍，後來延伸到甜點領域，用來指代一種外型與法式肉醬凍相似、口感極為濃郁紮實的甜點。口感介於布朗尼和生巧克力之間的極致巧克力甜點。</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section1">
-          <h2 class="product-name">可麗露</h2>
-          <div class="product-info-wrapper">
-            <img src="images/canelé.jpg" alt="可麗露" class="section1-img">
-            <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
-            <div class="description">
-              <p>可麗露 (Canelé)，全名為Canelé de Bordeaux，是源自法國西南部波爾多地區的經典修道院甜點。因其特殊的造型和口感對比，在台灣常被暱稱為「天使之鈴」或「天使之冠」。</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section1">
-          <h2 class="product-name">義式巧克力香腸</h2>
-          <div class="product-info-wrapper">
-            <img src="images/italy.jpg" alt="義式巧克力香腸" class="section1-img">
-            <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
-            <div class="description">
-              <p>義式巧克力香腸 (Salame di Cioccolato) 是一種源自義大利的經典甜點，並非真正的肉製品，而是因為其外形酷似義大利臘腸而得名。這是一種免烤甜點，製作過程簡單，口感豐富且充滿趣味。</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section1">
-          <h2 class="product-name">蘋果肉桂捲</h2>
+          <h2 class="product-name" data-zh>蘋果肉桂捲</h2>
+          <h2 class="product-name" data-en hidden>蘋果肉桂捲</h2>
+          <h2 class="product-name" data-jp hidden>蘋果肉桂捲</h2>
           <div class="product-info-wrapper">
             <img src="images/cinnamon.jpg" alt="蘋果肉桂捲" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">85元</span>
+             <span class="price-placeholder">85元
+              <span class="currency">NT$85</span>
+            </span>
             <div class="description">
-              <p>蘋果肉桂捲是在經典肉桂捲的基礎上進行的美味創新，將煮軟的蘋果切塊或蘋果泥融入到肉桂捲的內餡中，使得傳統肉桂捲的風味更加濕潤、清爽且充滿果香。</p>
+              <p data-zh>蘋果肉桂捲是在經典肉桂捲的基礎上進行的美味創新，將煮軟的蘋果切塊或蘋果泥融入到肉桂捲的內餡中，使得傳統肉桂捲的風味更加濕潤、清爽且充滿果香。</p>
+              <p data-en hidden>蘋果肉桂捲是在經典肉桂捲的基礎上進行的美味創新，將煮軟的蘋果切塊或蘋果泥融入到肉桂捲的內餡中，使得傳統肉桂捲的風味更加濕潤、清爽且充滿果香。</p>
+              <p data-jp hidden>蘋果肉桂捲是在經典肉桂捲的基礎上進行的美味創新，將煮軟的蘋果切塊或蘋果泥融入到肉桂捲的內餡中，使得傳統肉桂捲的風味更加濕潤、清爽且充滿果香。</p>
             </div>
           </div>
         </section>
 
         <section class="section1">
-          <h2 class="product-name">費南雪</h2>
+          <h2 class="product-name" data-zh>費南雪</h2>
+          <h2 class="product-name" data-en hidden>費南雪</h2>
+          <h2 class="product-name" data-jp hidden>費南雪</h2>
           <div class="product-info-wrapper">
             <img src="images/financier.jpg" alt="費南雪" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">90元</span>
+             <span class="price-placeholder">90元
+              <span class="currency">NT$90</span>
+            </span>
             <div class="description">
-              <p>費南雪 (Financier) 是一種經典的法式常溫小蛋糕，以其獨特的金磚造型、濕潤的口感和濃郁的堅果香氣而聞名。名字來自於它與金條相似的長方形外觀，以及在巴黎金融區受歡迎的歷史。</p>
+              <p data-zh>費南雪 (Financier) 是一種經典的法式常溫小蛋糕，以其獨特的金磚造型、濕潤的口感和濃郁的堅果香氣而聞名。名字來自於它與金條相似的長方形外觀，以及在巴黎金融區受歡迎的歷史。</p>
+              <p data-en hidden>費南雪 (Financier) 是一種經典的法式常溫小蛋糕，以其獨特的金磚造型、濕潤的口感和濃郁的堅果香氣而聞名。名字來自於它與金條相似的長方形外觀，以及在巴黎金融區受歡迎的歷史。</p>
+              <p data-jp hidden>費南雪 (Financier) 是一種經典的法式常溫小蛋糕，以其獨特的金磚造型、濕潤的口感和濃郁的堅果香氣而聞名。名字來自於它與金條相似的長方形外觀，以及在巴黎金融區受歡迎的歷史。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section1">
+          <h2 class="product-name" data-zh>法式巧克力醬糜蛋糕</h2>
+          <h2 class="product-name" data-en hidden>法式巧克力醬糜蛋糕</h2>
+          <h2 class="product-name" data-jp hidden>法式巧克力醬糜蛋糕</h2>
+          <div class="product-info-wrapper">
+            <img src="images/chocolat.jpg" alt="法式巧克力醬糜蛋糕" class="section1-img">
+            <hr class="dashed-line">
+             <span class="price-placeholder">95元
+              <span class="currency">NT$95</span>
+            </span>
+            <div class="description">
+              <p data-zh>Terrine 在法式料理中原本是指一種用陶製長方模具製作的凍派或肉醬凍，後來延伸到甜點領域，用來指代一種外型與法式肉醬凍相似、口感極為濃郁紮實的甜點。口感介於布朗尼和生巧克力之間的極致巧克力甜點。</p>
+              <p data-en hidden>Terrine 在法式料理中原本是指一種用陶製長方模具製作的凍派或肉醬凍，後來延伸到甜點領域，用來指代一種外型與法式肉醬凍相似、口感極為濃郁紮實的甜點。口感介於布朗尼和生巧克力之間的極致巧克力甜點。</p>
+              <p data-jp hidden>Terrine 在法式料理中原本是指一種用陶製長方模具製作的凍派或肉醬凍，後來延伸到甜點領域，用來指代一種外型與法式肉醬凍相似、口感極為濃郁紮實的甜點。口感介於布朗尼和生巧克力之間的極致巧克力甜點。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section1">
+          <h2 class="product-name" data-zh>可麗露</h2>
+          <h2 class="product-name" data-en hidden>可麗露</h2>
+          <h2 class="product-name" data-jp hidden>可麗露</h2>
+          <div class="product-info-wrapper">
+            <img src="images/canelé.jpg" alt="可麗露" class="section1-img">
+            <hr class="dashed-line">
+             <span class="price-placeholder">95元
+              <span class="currency">NT$95</span>
+            </span>
+            <div class="description">
+              <p data-zh>可麗露 (Canelé)，全名為Canelé de Bordeaux，是源自法國西南部波爾多地區的經典修道院甜點。因其特殊的造型和口感對比，在台灣常被暱稱為「天使之鈴」或「天使之冠」。</p>
+              <p data-en hidden>可麗露 (Canelé)，全名為Canelé de Bordeaux，是源自法國西南部波爾多地區的經典修道院甜點。因其特殊的造型和口感對比，在台灣常被暱稱為「天使之鈴」或「天使之冠」。</p>
+              <p data-jp hidden>可麗露 (Canelé)，全名為Canelé de Bordeaux，是源自法國西南部波爾多地區的經典修道院甜點。因其特殊的造型和口感對比，在台灣常被暱稱為「天使之鈴」或「天使之冠」。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section1">
+          <h2 class="product-name" data-zh>義式巧克力香腸</h2>
+          <h2 class="product-name" data-en hidden>義式巧克力香腸</h2>
+          <h2 class="product-name" data-jp hidden>義式巧克力香腸</h2>
+          <div class="product-info-wrapper">
+            <img src="images/italy.jpg" alt="義式巧克力香腸" class="section1-img">
+            <hr class="dashed-line">
+             <span class="price-placeholder">95元
+              <span class="currency">NT$95</span>
+            </span>
+            <div class="description">
+              <p data-zh>義式巧克力香腸 (Salame di Cioccolato) 是一種源自義大利的經典甜點，並非真正的肉製品，而是因為其外形酷似義大利臘腸而得名。這是一種免烤甜點，製作過程簡單，口感豐富且充滿趣味。</p>
+              <p data-en hidden>義式巧克力香腸 (Salame di Cioccolato) 是一種源自義大利的經典甜點，並非真正的肉製品，而是因為其外形酷似義大利臘腸而得名。這是一種免烤甜點，製作過程簡單，口感豐富且充滿趣味。</p>
+              <p data-jp hidden>義式巧克力香腸 (Salame di Cioccolato) 是一種源自義大利的經典甜點，並非真正的肉製品，而是因為其外形酷似義大利臘腸而得名。這是一種免烤甜點，製作過程簡單，口感豐富且充滿趣味。</p>
             </div>
           </div>
         </section>
@@ -233,7 +283,8 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="copyright">
-      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+      <p>&copy; 2025 版權宣告. All Rights Reserved.</p>
+      <p>為學校教學使用非營利性質之網站.This website is for educational and non-profit use only.</p>
     </div>
     <div class="social-media">
       <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -256,27 +307,58 @@
 
 
     function toggleMenu() {
-     // const menu = document.getElementById('sideMenu');
-     // menu.classList.toggle('menu-open');
-     // menu.classList.toggle('collapsed');
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('menu-open');
+      menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
 
-    btn.onclick = () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    };
+    /* 開關語言選單 */
+btn.onclick = () => {
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+};
 
-    menu.querySelectorAll('li').forEach(item => {
-     item.onclick = () => {
-     btn.textContent = item.textContent + ' ▾';
-     menu.style.display = 'none';
-     };
-     });
+/* 點語言時 */
+menu.querySelectorAll('li').forEach(item => {
+  item.onclick = () => {
+    const lang = item.dataset.lang; // zh / en / jp
+
+    /* 🔤 切換語言顯示 */
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.hidden = lang !== 'zh';
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.hidden = lang !== 'en';
+    });
+    document.querySelectorAll('[data-jp]').forEach(el => {
+      el.hidden = lang !== 'jp';
+    });
+
+    /* 改按鈕文字 */
+    btn.textContent = item.textContent + ' ▾';
+
+    /* 關閉選單 */
+    menu.style.display = 'none';
+  };
+});
+
+
+function toggleMenu() {
+  const sideMenu = document.getElementById('sideMenu');
+  const hint = document.getElementById('menuHint');
+
+  sideMenu.classList.toggle('collapsed');
+
+  if (sideMenu.classList.contains('collapsed')) {
+    hint.style.display = 'block';   // 收合 → 顯示 ← 菜單
+  } else {
+    hint.style.display = 'none';    // 展開 → 隱藏
+  }
+}
+
+
   </script>
 </body>
 </html>
-
-
-

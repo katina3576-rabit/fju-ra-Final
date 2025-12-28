@@ -1,5 +1,5 @@
 /* ================================
-   index CSS
+   treac CSS
    僅負責首頁格式，不改內容
 ================================ */
 
@@ -104,7 +104,7 @@ html, body {
   left: 58%;
   top: 42%;          /* 對齊 nav 高度 */
   transform: translate(-50%, -50%);
-  pointer-events: none;
+  pointer-events: auto;
 
   width: 30px;
   height: 30px;
@@ -152,7 +152,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: stretch; /* 塞滿整個寬度 */
-  padding-top: 20px;    /* 避開最上方 */
+  padding-top: 0px;    /* 避開最上方 */
   z-index: 60;
 }
 
@@ -176,7 +176,7 @@ html, body {
 
 #sideMenu nav {
   flex: 1;
-  height: 90%;
+  height: 80%;
   /* overflow-y: auto;   ⭐ 清單自己滾 */
 }
 
@@ -236,7 +236,7 @@ aside#sideMenu a .menu-text {
 /* 左側導覽列 icon 固定大小 */
 #sideMenu img.menu-icon {
   width: auto;          /* 寬度自動 */
-  height: 2em;          /* ⭐ 跟字一樣高 */
+  height: 1.8em;          /* ⭐ 跟字一樣高 */
   margin-right: 0px;    /* icon 跟文字距離 */
   vertical-align: middle;
   
@@ -277,14 +277,14 @@ aside#sideMenu a .menu-text {
 }
 
 
-/* 不做 hover 動畫，避免亂跳 *//*
+/* 不做 hover 動畫，避免亂跳 */
 aside.menu-open nav ul li a:hover {
   color: #46C2AC;
   background: none;
-}*/
+}
 
 
-/* 縮 *//*
+/* 縮 */
 .menu-label {
   opacity: 0;
   width: 0;
@@ -297,9 +297,9 @@ aside.menu-open nav ul li a:hover {
   width: auto;
 }
 
-/* 左側選單：收合狀態（只剩 icon） *//*
+/* 左側選單：收合狀態（只剩 icon） */
 #sideMenu.collapsed {
-  width: 64px;              /* 剛好塞下 icon *//*
+  width: 64px;              /* 剛好塞下 icon */
   background: linear-gradient(135deg, #2c3e50, #34495e);
 }
 
@@ -313,7 +313,7 @@ aside.menu-open nav ul li a:hover {
   display: block;
 }
 
-/* 只藏文字 *//*
+/* 只藏文字 */
 #sideMenu.collapsed .menu-text {
   opacity: 0;
   width: 0;
@@ -322,7 +322,88 @@ aside.menu-open nav ul li a:hover {
 #sideMenu.collapsed nav ul li a span,
 #sideMenu.collapsed nav ul li a img {
   font-size: initial;
-}*/
+}
+
+/* 三條線那一列 */
+.menu-toggle-item {
+  display: flex;
+  justify-content: center;   /* 水平置中 */
+  align-items: center;       /* 垂直置中 */
+  padding: 12px 0;
+}
+.menu-toggle {
+  background: transparent;      /* 不要白底 */
+  border: none;                 /* 不要外框 */
+  color: #ffffff;               /* 跟 icon 一樣白 */
+  font-size: 20px;              /* 三條線大小 */
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.menu-toggle:hover {
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+}
+#sideMenu.collapsed .menu-toggle-item {
+  justify-content: center;
+}
+#menuHint {
+  
+  position: fixed;
+  top: 30px;
+  left: 80px;
+  z-index: 2000;
+
+  /*background: rgba(44, 62, 80, 0.85);*/
+
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* 外框微微提亮，不是黑框 */
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+
+  display: none;              /* 預設不顯示 */
+}
+
+#menuHint:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+#menuHint {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+#menuHint,
+#menuHint:hover,
+#menuHint:active,
+#menuHint:focus,
+#menuHint:focus-visible {
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  color: #1f2d3d;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  box-shadow: none;
+  outline: none;
+}
+
+
 
 
 
@@ -447,9 +528,9 @@ article p {
 
 /* ---------- 商品區（卡片結構） ---------- */
 .section1-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .section1 {
@@ -468,7 +549,9 @@ article p {
 
 .section1-img {
     /* [cite_start]圖片來源:images/.jpg [cite: 41, 126] */
-    max-width: 80%; /* 讓圖片在容器中適當大小 */
+    max-width: none; /* 讓圖片在容器中適當大小 */
+    width: 260px;
+    flex-shrink: 0;
     height: auto;
     border: 1px solid #ddd;
     padding: 5px;
@@ -478,6 +561,9 @@ article p {
   object-fit: cover;
   border-radius: 6px;*/
 }
+
+
+
 
 .dashed-line {
   margin: 12px 0;
@@ -496,6 +582,97 @@ article p {
   font-size: 14px;
   line-height: 1.6;
 }
+.description {
+  flex: 1;                    /* 只是撐寬，不改排列 */
+}
+/* 詳細資訊樣式 */
+.product-info-wrapper {
+     display: flex;              /* 只管圖片 vs 文字 */
+     align-items: flex-start;
+    gap: 30px; /* 圖片和詳細資訊之間的間隔 */
+}
+
+.product-image {
+    flex-basis: 30%; /* 圖片佔比約 30% */
+    text-align: center;
+}
+
+.sgs-report-img {
+    /* 圖片來源:images/jpg, 假設圖片為 100% 寬度於其父容器中 */
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.product-details {
+    flex-basis: 70%; /* 詳細資訊佔比約 70% */
+}
+
+.price-placeholder {
+    /* 價格的文字大小 1.25rem, 文字顏色 #61FAE8 */
+    font-size: 1.25rem;
+    color: #61FAE8;
+    font-weight: bold;
+    display: block; /* 讓價格獨佔一行 */
+    margin-bottom: 10px;
+}
+
+.dashed-line {
+    /* 圖片和價格之間有一條虛線間隔 (此處放在價格下方) */
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+}
+
+/* 詳細資訊樣式 */
+.product-details h3 {
+    color: #383580;
+    border-left: 5px solid #46C2AC;
+    padding-left: 10px;
+}
+
+.product-details h4 {
+    color: #D6AE72;
+    margin-top: 20px;
+}
+
+.product-details ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.product-details li {
+    margin-bottom: 5px;
+}
+
+/* 檢驗表格樣式 */
+.inspection-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.inspection-table th, .inspection-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.inspection-table th {
+    background-color: #f2f2f2;
+    color: #383580;
+}
+
+.inspection-table .report-details {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+}
+
+
 
 
 
@@ -540,6 +717,119 @@ footer a {
 .social a:hover {
     color: #3498db;
 }
+
+/* ====================================
+   Section1 區塊 (產品資訊)   原稿複製
+   ==================================== *//*
+.section1 {
+    /* section1 每一列最多 1 個 section1, 超過就換行 (此處僅以寬度控制佈局) *//*
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* 產品名稱 H2 區塊 *//*
+.section1 .product-name {
+    /* H2 區塊, 文字大小 1.25rem, 文字顏色 #D6AE72 *//*
+    font-size: 1.25rem;
+    color: #D6AE72;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed #D6AE72;
+}
+
+.product-info-grid {
+    display: flex;
+    gap: 30px; /* 圖片和詳細資訊之間的間隔 *//*
+}
+
+.product-image {
+    flex-basis: 30%; /* 圖片佔比約 30% *//*
+    text-align: center;
+}
+
+.sgs-report-img {
+    /* 圖片來源:images/jpg, 假設圖片為 100% 寬度於其父容器中 *//*
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.product-details {
+    flex-basis: 70%; /* 詳細資訊佔比約 70% *//*
+}
+
+.price-placeholder {
+    /* 價格的文字大小 1.25rem, 文字顏色 #61FAE8 *//*
+    font-size: 1.25rem;
+    color: #61FAE8;
+    font-weight: bold;
+    display: block; /* 讓價格獨佔一行 *//*
+    margin-bottom: 10px;
+}
+
+.dashed-line {
+    /* 圖片和價格之間有一條虛線間隔 (此處放在價格下方) *//*
+    border: none;
+    border-top: 1px dashed #ccc;
+    margin: 10px 0;
+}
+
+/* 詳細資訊樣式 *//*
+.product-details h3 {
+    color: #383580;
+    border-left: 5px solid #46C2AC;
+    padding-left: 10px;
+}
+
+.product-details h4 {
+    color: #D6AE72;
+    margin-top: 20px;
+}
+
+.product-details ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.product-details li {
+    margin-bottom: 5px;
+}
+
+/* 檢驗表格樣式 *//*
+.inspection-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.inspection-table th, .inspection-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.inspection-table th {
+    background-color: #f2f2f2;
+    color: #383580;
+}
+
+.inspection-table .report-details {
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    background-color: #f9f9f9;
+}
+*/
+
+
+
+
+
+
 
 /* 響應式設計 */
 @media (max-width: 768px) {

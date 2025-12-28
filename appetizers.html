@@ -25,9 +25,16 @@
 
 
 
-<aside id="sideMenu" class="menu-open">
+<aside id="sideMenu">
   <nav>
     <ul>
+
+      <li class="menu-toggle-item">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </li>
+
    <li>
     <a href="index.html">
       <img src="./images/icon/index.svg" class="menu-icon">
@@ -113,6 +120,10 @@
   <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
 <nav class="top-nav">
   <div class="nav-left">
+    <button id="menuHint" onclick="toggleMenu()">
+      ← 閱讀我們的菜單
+    </button>
+
     <a href="begin.html">
       <img src="./images/icon/begin.svg" class="top-nav1">
       <span class="menu-text">公司起源</span>
@@ -145,7 +156,7 @@
    </div>
 
     <div class="music-player">
-      <audio controls>
+      <audio id="bgm" controls loop>
         <source src="media/webmusic.mp3" type="audio/mpeg">
       </audio>
     </div>   
@@ -157,46 +168,80 @@
 <div class="container">
   <main>
     <article>
-      <h1 class="article-h1">前菜 Appetizers</h1>
+      <h1 class="article-h1"data-zh>前菜 Appetizers</h1>
+      <h1 class="article-h1" data-en hidden>Appetizers</h1>
+      <h1 class="article-h1" data-jp hidden>前菜</h1>
       <div class="content">
-        <p class="article-subtitle">
+        <p class="article-subtitle" data-zh>
         歡迎品嚐我們多樣化的前菜選項，皆使用新鮮食材，精心製作。
+        </p>
+        <p class="article-subtitle" data-en hidden>
+          Welcome to our diverse selection of appetizers, all carefully prepared with fresh ingredients.
+        </p>
+        <p class="article-subtitle" data-jp hidden>
+          新鮮な食材を使用し、丁寧に仕上げた多彩な前菜をご堪能ください。
         </p>
       </div>
 
       <div class="section1-list">
         <section class="section1">
-          <h2 class="product-name">卡布里沙拉</h2>
+          <h2 class="product-name" data-zh>卡布里沙拉</h2>
+          <h2 class="product-name" data-en hidden>Caprese Salad</h2>
+          <h2 class="product-name" data-jp hidden>カプレーゼサラダ</h2>
           <div class="product-info-wrapper">
             <img src="images/cheese.jpg" alt="卡布里沙拉" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
+            <span class="price-placeholder">95元
+              <span class="currency">NT$95</span>
+            </span>
             <div class="description">
-              <p>卡布里沙拉的名稱來自義大利卡布里島 (Capri)。它是一道無需烹煮的冷盤前菜，完美展現了「少即是多」的美食哲學。</p>
+              <p data-zh>卡布里沙拉的名稱來自義大利卡布里島 (Capri)。它是一道無需烹煮的冷盤前菜，完美展現了「少即是多」的美食哲學。</p>
+              <p data-en hidden>The name Caprese Salad comes from the Italian island of Capri.
+                              It is a no-cook cold appetizer that perfectly represents the culinary philosophy of “less is more.”</p>
+              <p data-jp hidden>カプレーゼサラダの名称は、イタリアのカプリ島（Capri）に由来しています。
+                              加熱を必要としない冷製前菜で、「少ないほど豊か」という料理哲学を体現した一品です。</p>
             </div>
           </div>
         </section>
 
         <section class="section1">
-          <h2 class="product-name">義式普切塔</h2>
+          <h2 class="product-name" data-zh>義式普切塔</h2>
+          <h2 class="product-name" data-en hidden>Italian Bruschetta</h2>
+          <h2 class="product-name" data-jp hidden>イタリアン・ブルスケッタ</h2>
           <div class="product-info-wrapper">
             <img src="images/bread.jpg" alt="義式普切塔" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">95元</span>
+            <span class="price-placeholder">95元
+              <span class="currency">NT$95</span>
+            </span>
             <div class="description">
-              <p>普切塔(Bruschetta)這個詞來自羅馬方言“bruscare”，意指「在炭火上烤」，它最初是義大利農民用來處理剩餘麵包的簡單方法。</p>
+              <p data-zh>普切塔(Bruschetta)這個詞來自羅馬方言“bruscare”，意指「在炭火上烤」，它最初是義大利農民用來處理剩餘麵包的簡單方法。</p>
+              <p data-en hidden>The word Bruschetta comes from the Roman dialect “bruscare,” meaning “to grill over charcoal.”
+                    It was originally a simple way for Italian farmers to make use of leftover bread.</p>
+              <p data-jp hidden>「ブルスケッタ（Bruschetta）」という言葉は、
+                   ローマ方言の「bruscare（炭火で焼く）」に由来しています。
+                   もともとは、イタリアの農民が残ったパンを活用するために生まれた料理です。</p>
             </div>
           </div>
         </section>
 
         <section class="section1">
-          <h2 class="product-name">義式芝心肉丸</h2>
+          <h2 class="product-name" data-zh>義式芝心肉丸</h2>
+          <h2 class="product-name" data-en hidden>Mozzarella-Stuffed Italian Meatballs</h2>
+          <h2 class="product-name" data-jp hidden>イタリアン チーズ入りミートボール</h2>
           <div class="product-info-wrapper">
             <img src="images/meatballs.jpg" alt="義式芝心肉丸" class="section1-img">
             <hr class="dashed-line">
-            <span class="price-placeholder">105元</span>
+            <span class="price-placeholder">105元
+              <span class="currency">NT$105</span>
+            </span>
             <div class="description">
-              <p>義式肉丸(Polpette)是義大利家庭餐桌上常見的主食或配菜，尤其常搭配番茄醬和義大利麵一起食用。</p>
+              <p data-zh>義式肉丸(Polpette)是義大利家庭餐桌上常見的主食或配菜，尤其常搭配番茄醬和義大利麵一起食用。</p>
+              <p data-en hidden>Italian meatballs (Polpette) are a common staple or side dish on Italian family tables,
+                      often served with tomato sauce and pasta.</p>
+              <p data-jp hidden>イタリアンミートボール（ポルペッテ／Polpette）は、
+                    イタリアの家庭の食卓でよく親しまれている主菜または副菜で、
+                    トマトソースやパスタと一緒に提供されることが多い料理です。</p>
             </div>
           </div>
         </section>
@@ -208,7 +253,8 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="copyright">
-      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+      <p>&copy; 2025 版權宣告. All Rights Reserved.</p>
+      <p>為學校教學使用非營利性質之網站.This website is for educational and non-profit use only.</p>
     </div>
     <div class="social-media">
       <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -231,24 +277,58 @@
 
 
     function toggleMenu() {
-      //const menu = document.getElementById('sideMenu');
-     // menu.classList.toggle('menu-open');
-      //menu.classList.toggle('collapsed');
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('menu-open');
+      menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
 
-    btn.onclick = () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    };
+    /* 開關語言選單 */
+btn.onclick = () => {
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+};
 
-    menu.querySelectorAll('li').forEach(item => {
-     item.onclick = () => {
-     btn.textContent = item.textContent + ' ▾';
-     menu.style.display = 'none';
-     };
-     });
+/* 點語言時 */
+menu.querySelectorAll('li').forEach(item => {
+  item.onclick = () => {
+    const lang = item.dataset.lang; // zh / en / jp
+
+    /* 🔤 切換語言顯示 */
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.hidden = lang !== 'zh';
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.hidden = lang !== 'en';
+    });
+    document.querySelectorAll('[data-jp]').forEach(el => {
+      el.hidden = lang !== 'jp';
+    });
+
+    /* 改按鈕文字 */
+    btn.textContent = item.textContent + ' ▾';
+
+    /* 關閉選單 */
+    menu.style.display = 'none';
+  };
+});
+
+
+function toggleMenu() {
+  const sideMenu = document.getElementById('sideMenu');
+  const hint = document.getElementById('menuHint');
+
+  sideMenu.classList.toggle('collapsed');
+
+  if (sideMenu.classList.contains('collapsed')) {
+    hint.style.display = 'block';   // 收合 → 顯示 ← 菜單
+  } else {
+    hint.style.display = 'none';    // 展開 → 隱藏
+  }
+}
+
+
   </script>
 </body>
 </html>

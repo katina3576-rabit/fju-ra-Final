@@ -28,6 +28,12 @@
 <aside id="sideMenu" class="menu-open">
   <nav>
     <ul>
+      <li class="menu-toggle-item">
+      <button class="menu-toggle" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+      </li>
+
    <li>
     <a href="index.html">
       <img src="./images/icon/index.svg" class="menu-icon">
@@ -113,6 +119,12 @@
   <img src="images/banner.jpg" alt="頁面底圖" class="header-banner">
 <nav class="top-nav">
   <div class="nav-left">
+
+    <button id="menuHint" onclick="toggleMenu()">
+      ← 閱讀我們的菜單
+    </button>
+    
+
     <a href="begin.html">
       <img src="./images/icon/begin.svg" class="top-nav1">
       <span class="menu-text">公司起源</span>
@@ -157,9 +169,19 @@
 <div class="container">
   <main>
     <article>
-      <h1 class="article-h1">西風的慢活哲學</h1>
+      <h1 class="article-h1"data-zh>西風的慢活哲學</h1>
+      <h1 class="article-h1" data-en hidden>西風的慢活哲學</h1>
+      <h1 class="article-h1" data-jp hidden>西風的慢活哲學</h1>
       <div class="content">
-        <p class="article-subtitle">
+        <p class="article-subtitle" data-zh>
+        「願您在【西風】的時光，成為旅程中最美好、最溫柔的回憶。」
+        現在，請放慢您的呼吸，享受這趟屬於您的慢活美食之旅吧。我們已備妥佳餚，等候您的光臨。
+        </p>
+         <p class="article-subtitle" data-en hidden>
+        「願您在【西風】的時光，成為旅程中最美好、最溫柔的回憶。」
+        現在，請放慢您的呼吸，享受這趟屬於您的慢活美食之旅吧。我們已備妥佳餚，等候您的光臨。
+        </p>
+         <p class="article-subtitle" data-jp hidden>
         「願您在【西風】的時光，成為旅程中最美好、最溫柔的回憶。」
         現在，請放慢您的呼吸，享受這趟屬於您的慢活美食之旅吧。我們已備妥佳餚，等候您的光臨。
         </p>
@@ -167,16 +189,32 @@
 
       <div class="section1-list">
                             <section class="section1">
-                        <h2 class="product-name">歡迎每個來到這裡的旅人：西風的慢活哲學</h2>
+                        <h2 class="product-name" data-zh>歡迎每個來到這裡的旅人：西風的慢活哲學</h2>
+                        <h2 class="product-name" data-en hidden>歡迎每個來到這裡的旅人：西風的慢活哲學</h2>
+                        <h2 class="product-name" data-jp hidden>歡迎每個來到這裡的旅人：西風的慢活哲學</h2>
                         <div class="product-info-wrapper">
                             <img src="images/welcome.jpg" alt="歡迎來到西風" class="section1-img">
                             <hr class="dashed-line"> 
-                            <span class="price-placeholder">停駐在輔大的片刻寧靜</span>
+                            <span class="price-placeholder" data-zh>停駐在輔大的片刻寧靜</span>
+                            <span class="price-placeholder" data-en hidden>停駐在輔大的片刻寧靜</span>
+                            <span class="price-placeholder" data-jp hidden>停駐在輔大的片刻寧靜</span>
                             <div class="description">
-                                <p>
+                                <p data-zh>
                                     親愛的旅人，不論您是剛下課的輔大師生、在這座城市尋覓美味的過客，抑或是短暫放下忙碌、渴望喘息的當地居民，【西風】誠摯地歡迎您。
                                 </p>
-                                <p>
+                                <p data-zh>
+                                    我們知道，生活就像一趟不斷前行的旅程。而我們，正是您在旅途中發現的一處溫暖港灣，一個能讓您卸下行囊、放慢腳步的心靈補給站。
+                                </p>
+                                <p data-en hidden>
+                                    親愛的旅人，不論您是剛下課的輔大師生、在這座城市尋覓美味的過客，抑或是短暫放下忙碌、渴望喘息的當地居民，【西風】誠摯地歡迎您。
+                                </p>
+                                <p data-en hidden>
+                                    我們知道，生活就像一趟不斷前行的旅程。而我們，正是您在旅途中發現的一處溫暖港灣，一個能讓您卸下行囊、放慢腳步的心靈補給站。
+                                </p>
+                                <p data-jp hidden>
+                                    親愛的旅人，不論您是剛下課的輔大師生、在這座城市尋覓美味的過客，抑或是短暫放下忙碌、渴望喘息的當地居民，【西風】誠摯地歡迎您。
+                                </p>
+                                <p data-jp hidden>
                                     我們知道，生活就像一趟不斷前行的旅程。而我們，正是您在旅途中發現的一處溫暖港灣，一個能讓您卸下行囊、放慢腳步的心靈補給站。
                                 </p>
                             </div>
@@ -185,34 +223,58 @@
                     
 
                     <section class="section1">
-                        <h2 class="product-name">什麼是「西風」(West Wind)?</h2>
+                        <h2 class="product-name" data-zh>什麼是「西風」(West Wind)?</h2>
+                        <h2 class="product-name" data-en hidden>什麼是「西風」(West Wind)?</h2>
+                        <h2 class="product-name" data-jp hidden>什麼是「西風」(West Wind)?</h2>
                         <div class="product-info-wrapper">
                             <img src="images/westwind.jpg" alt="西風的意象" class="section1-img">
                             <hr class="dashed-line">
-                            <span class="price-placeholder">在希臘神話中，代表著溫柔、輕盈且和煦的微風。</span>
+                            <span class="price-placeholder" data-zh>在希臘神話中，代表著溫柔、輕盈且和煦的微風。</span>
+                            <span class="price-placeholder" data-en hidden>在希臘神話中，代表著溫柔、輕盈且和煦的微風。</span>
+                            <span class="price-placeholder" data-jp hidden>在希臘神話中，代表著溫柔、輕盈且和煦的微風。</span>
                             <div class="description">
-                                <p>這正是我們想帶給您的感受:</p>
+                                <p data-zh>這正是我們想帶給您的感受:</p>
+                                <p data-en hidden>這正是我們想帶給您的感受:</p>
+                                <p data-jp hidden>這正是我們想帶給您的感受:</p>
                                 <ul>
-                                   <p>輕柔的氛圍: 讓緊繃的心情得以放鬆。</p>
-                                    <p>和煦的款待: 讓您感受到無微不至的服務。</p>
+                                   <p data-zh>輕柔的氛圍: 讓緊繃的心情得以放鬆。</p>
+                                    <p data-zh>和煦的款待: 讓您感受到無微不至的服務。</p>
+                                    <p data-en hidden>輕柔的氛圍: 讓緊繃的心情得以放鬆。</p>
+                                    <p data-en hidden>和煦的款待: 讓您感受到無微不至的服務。</p>
+                                    <p data-jp hidden>輕柔的氛圍: 讓緊繃的心情得以放鬆。</p>
+                                    <p data-jp hidden>和煦的款待: 讓您感受到無微不至的服務。</p>
                                 </ul>
-                               <p>在這裡，沒有喧囂和倉促，只有精心準備的佳餚、令人舒緩的爵士樂，以及窗外灑落的溫暖光影。</p>
+                               <p data-zh>在這裡，沒有喧囂和倉促，只有精心準備的佳餚、令人舒緩的爵士樂，以及窗外灑落的溫暖光影。</p>
+                               <p data-en hidden>在這裡，沒有喧囂和倉促，只有精心準備的佳餚、令人舒緩的爵士樂，以及窗外灑落的溫暖光影。</p>
+                               <p data-jp hidden>在這裡，沒有喧囂和倉促，只有精心準備的佳餚、令人舒緩的爵士樂，以及窗外灑落的溫暖光影。</p>
                             </div>
                         </div>
                     </section>
                     
                     <section class="section1">
-                        <h2 class="product-name">我們的承諾:用料理療癒旅途的疲憊</h2>
+                        <h2 class="product-name" data-zh>我們的承諾:用料理療癒旅途的疲憊</h2>
+                        <h2 class="product-name" data-en hidden>我們的承諾:用料理療癒旅途的疲憊</h2>
+                        <h2 class="product-name" data-jp hidden>我們的承諾:用料理療癒旅途的疲憊</h2>
                         <div class="product-info-wrapper">
                             <img src="images/promise.jpg" alt="料理的承諾" class="section1-img">
                             <hr class="dashed-line">
-                            <span class="price-placeholder">經典歐式美味與您的專屬角落</span>
+                            <span class="price-placeholder" data-zh>經典歐式美味與您的專屬角落</span>
+                            <span class="price-placeholder" data-en hidden>經典歐式美味與您的專屬角落</span>
+                            <span class="price-placeholder" data-jp hidden>經典歐式美味與您的專屬角落</span>
                             <div class="description">
-                                <h3>經典歐式美味:</h3>
-                                <p>我們的主廚堅持使用來自臺灣的優質豬肉和澳洲嚴選的頂級牛肉，結合經典法式和義式烹飪技法，為您呈現既道地又富有層次的西餐體驗。</p>
+                                <h3 data-zh>經典歐式美味:</h3>
+                                 <h3 data-en hidden>經典歐式美味:</h3>
+                                  <h3 data-jp hidden>經典歐式美味:</h3>
+                                <p data-zh>我們的主廚堅持使用來自臺灣的優質豬肉和澳洲嚴選的頂級牛肉，結合經典法式和義式烹飪技法，為您呈現既道地又富有層次的西餐體驗。</p>
+                                <p data-en hidden>我們的主廚堅持使用來自臺灣的優質豬肉和澳洲嚴選的頂級牛肉，結合經典法式和義式烹飪技法，為您呈現既道地又富有層次的西餐體驗。</p>
+                                <p data-jp hidden>我們的主廚堅持使用來自臺灣的優質豬肉和澳洲嚴選的頂級牛肉，結合經典法式和義式烹飪技法，為您呈現既道地又富有層次的西餐體驗。</p>
                                 <ul>
-                                    <p>一杯專屬飲品: 無論您需要一杯濃郁的義式咖啡振奮精神，還是一杯精選的佐餐紅酒來配襯美味，【西風】都能滿足您。 </p>
-                                    <p>專屬您的角落: 我們的環境優雅而舒適，無論您是想享受一個人的寧靜獨處，還是與重要的人共享美好時光，都能找到最適合您的位置。</p>
+                                    <p data-zh>一杯專屬飲品: 無論您需要一杯濃郁的義式咖啡振奮精神，還是一杯精選的佐餐紅酒來配襯美味，【西風】都能滿足您。 </p>
+                                    <p data-zh>專屬您的角落: 我們的環境優雅而舒適，無論您是想享受一個人的寧靜獨處，還是與重要的人共享美好時光，都能找到最適合您的位置。</p>
+                                    <p data-en hidden>一杯專屬飲品: 無論您需要一杯濃郁的義式咖啡振奮精神，還是一杯精選的佐餐紅酒來配襯美味，【西風】都能滿足您。 </p>
+                                    <p data-en hidden>專屬您的角落: 我們的環境優雅而舒適，無論您是想享受一個人的寧靜獨處，還是與重要的人共享美好時光，都能找到最適合您的位置。</p>
+                                    <p data-jp hidden>一杯專屬飲品: 無論您需要一杯濃郁的義式咖啡振奮精神，還是一杯精選的佐餐紅酒來配襯美味，【西風】都能滿足您。 </p>
+                                    <p data-jp hidden>專屬您的角落: 我們的環境優雅而舒適，無論您是想享受一個人的寧靜獨處，還是與重要的人共享美好時光，都能找到最適合您的位置。</p>
                                 </ul>
                             </div>
                         </div>
@@ -226,7 +288,8 @@
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="copyright">
-      &copy; 2025 版權宣告. All Rights Reserved.為學校教學使用非營利性質之網站.
+      <p>&copy; 2025 版權宣告. All Rights Reserved.</p>
+      <p>為學校教學使用非營利性質之網站.This website is for educational and non-profit use only.</p>
     </div>
     <div class="social-media">
       <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
@@ -249,24 +312,58 @@
 
 
     function toggleMenu() {
-      //const menu = document.getElementById('sideMenu');
-     // menu.classList.toggle('menu-open');
-      //menu.classList.toggle('collapsed');
+      const menu = document.getElementById('sideMenu');
+      menu.classList.toggle('menu-open');
+      menu.classList.toggle('collapsed');
     }
     
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
 
-    btn.onclick = () => {
-    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-    };
+    /* 開關語言選單 */
+btn.onclick = () => {
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+};
 
-    menu.querySelectorAll('li').forEach(item => {
-     item.onclick = () => {
-     btn.textContent = item.textContent + ' ▾';
-     menu.style.display = 'none';
-     };
-     });
+/* 點語言時 */
+menu.querySelectorAll('li').forEach(item => {
+  item.onclick = () => {
+    const lang = item.dataset.lang; // zh / en / jp
+
+    /* 🔤 切換語言顯示 */
+    document.querySelectorAll('[data-zh]').forEach(el => {
+      el.hidden = lang !== 'zh';
+    });
+    document.querySelectorAll('[data-en]').forEach(el => {
+      el.hidden = lang !== 'en';
+    });
+    document.querySelectorAll('[data-jp]').forEach(el => {
+      el.hidden = lang !== 'jp';
+    });
+
+    /* 改按鈕文字 */
+    btn.textContent = item.textContent + ' ▾';
+
+    /* 關閉選單 */
+    menu.style.display = 'none';
+  };
+});
+
+
+function toggleMenu() {
+  const sideMenu = document.getElementById('sideMenu');
+  const hint = document.getElementById('menuHint');
+
+  sideMenu.classList.toggle('collapsed');
+
+  if (sideMenu.classList.contains('collapsed')) {
+    hint.style.display = 'block';   // 收合 → 顯示 ← 菜單
+  } else {
+    hint.style.display = 'none';    // 展開 → 隱藏
+  }
+}
+
+
   </script>
 </body>
 </html>
