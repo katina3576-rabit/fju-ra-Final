@@ -297,20 +297,27 @@
      const topNav = document.querySelector('.top-nav');
 
     window.addEventListener('scroll', () => {
-     if (window.scrollY <= 2) {
-     topNav.classList.add('show');
-   } else {
-     topNav.classList.remove('show');
-   }
+    if (window.scrollY <= 2) {
+      topNav.classList.add('show');
+    } else {
+      topNav.classList.remove('show');
+    }
   });
 
+  /* 側邊選單 */
+  function toggleMenu() {
+    const sideMenu = document.getElementById('sideMenu');
+    const hint = document.getElementById('menuHint');
 
+    sideMenu.classList.toggle('menu-open');
+    sideMenu.classList.toggle('collapsed');
 
-    function toggleMenu() {
-      const menu = document.getElementById('sideMenu');
-      menu.classList.toggle('menu-open');
-      menu.classList.toggle('collapsed');
+     if (sideMenu.classList.contains('collapsed')) {
+      hint.style.display = 'block';
+    } else {
+      hint.style.display = 'none';
     }
+  }
     
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
@@ -339,8 +346,8 @@ menu.querySelectorAll('li').forEach(item => {
     /* 改按鈕文字 */
     btn.textContent = item.textContent + ' ▾';
 
-    /* 關閉選單 */
-    menu.style.display = 'none';
+    /* 關閉選單 
+    menu.style.display = 'none';*/
   };
 });
 
