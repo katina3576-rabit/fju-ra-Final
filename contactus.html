@@ -327,14 +327,6 @@
    }
   });
 
-
-
-    function toggleMenu() {
-      const menu = document.getElementById('sideMenu');
-      menu.classList.toggle('menu-open');
-      menu.classList.toggle('collapsed');
-    }
-    
     const btn = document.getElementById('langBtn');
     const menu = document.getElementById('langMenu');
 
@@ -359,11 +351,39 @@ menu.querySelectorAll('li').forEach(item => {
       el.hidden = lang !== 'jp';
     });
 
+    menu.style.display = 'none';
     /* 改按鈕文字 */
     btn.textContent = item.textContent + ' ▾';
 
     /* 關閉選單 */
     menu.style.display = 'none';
+
+    // 🔤 桌機文字
+    document.querySelector('.lang-full').textContent = item.textContent;
+
+    // 📱 手機縮寫
+    const shortMap = {
+      zh: '[中]',
+      en: '[EN]',
+      jp: '[日]'
+    };
+    document.querySelector('.lang-short').textContent = shortMap[lang];
+     
+    if (lang === 'zh') {
+      full.textContent = '繁體中文';
+      short.textContent = '[中]';
+    }
+    if (lang === 'en') {
+      full.textContent = 'English';
+      short.textContent = '[EN]';
+    }
+    if (lang === 'jp') {
+      full.textContent = '日本語';
+      short.textContent = '[日]';
+    }
+
+    menu.style.display = 'none';
+    
   };
 });
 
@@ -380,6 +400,20 @@ function toggleMenu() {
     hint.style.display = 'none';    // 展開 → 隱藏
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sideMenu = document.getElementById('sideMenu');
+  const hint = document.getElementById('menuHint');
+
+  if (window.innerWidth <= 768 && sideMenu) {
+    sideMenu.classList.add('collapsed');
+    if (hint) hint.style.display = 'block';
+  }
+   if (hint) {
+      hint.style.display = 'block';
+      hint.textContent = '← 閱讀菜單';   // ⭐ 重點在這行
+    }
+});
 
 
   </script>

@@ -628,6 +628,7 @@ footer a {
 }
 
 /* 響應式設計 */
+
 @media (max-width: 768px) {
     .section1 {
         flex: 1 1 100%;
@@ -641,4 +642,116 @@ footer a {
     header, main, footer {
         margin-left: 60px;
     }
+}
+/* 📱 手機版強制歸位（不改原設計） */
+@media (max-width: 768px) {
+  body {
+    margin-left: 4 !important;
+    padding-left: 0 !important;
+    transform: none !important;
+  }
+
+  /* 所有主要容器一起拉回左邊 */
+  .container,
+  .main,
+  .content,
+  .page,
+  .wrapper,
+  .footer-inner {
+    /* margin-left: 0 !important;*/
+    /* padding-left: 0 !important;*/
+    left: 6 !important;
+    transform: none !important;
+    margin-left: 30px;     /* 跟 sidebar 寬度一致 */
+    padding-left: 12px;    /* 再補一點呼吸感 */
+  }
+}
+/* 手機版 */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 56px;          /* icon 寬度 */
+    min-width: 56px;
+  }
+
+  .sidebar .menu-text {
+    display: none;        /* 隱藏文字 */
+  }
+
+  #menuHint {
+    display: none;
+  }
+
+  /* ====== Top Nav 改成兩行 ====== */
+  .top-nav {
+    top: 0;
+
+    height: auto;
+    padding: 8px 12px 8px 56px; /* 對齊 sidebar */
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  /* LOGO 單獨一行、置中 */
+  .logo-center {
+  
+    position: static;             /* ⭐ 不要 absolute */
+    transform: none;
+
+    display: flex;
+    justify-content: center;
+    order: 4px;
+  }
+  .logo-center img {
+  width: 60px;
+  height: auto;
+}
+.music-player {
+    width: 100%;
+  }
+
+  .music-player audio {
+    width: 100%;
+  }
+
+  /* 右側 icon 一行 */
+  .nav-right {
+    order: 2;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  /* 左側文字選單 → 第二行橫向滑動 */
+  .nav-left {
+    order: 3;
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 4px 0;
+  }
+
+  .nav-left a {
+    flex-shrink: 0;
+    font-size: 14px;
+  }
+  .lang-full {
+    display: none;
+  }
+
+  .lang-short {
+    display: inline;
+    font-weight: 700;
+  }
+
+  #langBtn {
+    padding: 6px 10px;
+    font-size: 14px;
+  }
+}
+
+.lang-short {
+  display: none;
 }
