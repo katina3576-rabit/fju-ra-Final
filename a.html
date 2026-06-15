@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>虛擬餐廳 AI 客服測試</title>
+    <style>
+        /* 簡單的聊天視窗樣式 */
+        #chat-window {
+            position: fixed; bottom: 20px; right: 20px;
+            width: 380px; height: 500px; background: white;
+            border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            display: flex; flex-direction: column; font-family: sans-serif;
+        }
+        #chat-header { background: #343a40; color: white; padding: 15px; border-radius: 12px 12px 0 0; font-weight: bold; }
+        #chat-messages { flex: 1; padding: 15px; overflow-y: auto; background: #f8f9fa; display: flex; flex-direction: column; }
+        .message { margin-bottom: 12px; padding: 10px 14px; border-radius: 8px; max-width: 75%; line-height: 1.4; word-break: break-all; }
+        .bot-message { background: #e9ecef; align-self: flex-start; color: #212529; }
+        .user-message { background: #0d6efd; color: white; align-self: flex-end; }
+        #chat-input-container { display: flex; padding: 12px; border-top: 1px solid #dee2e6; }
+        #user-input { flex: 1; padding: 10px; border: 1px solid #ced4da; border-radius: 6px; outline: none; }
+        #send-btn { background: #0d6efd; color: white; border: none; padding: 0 16px; margin-left: 8px; border-radius: 6px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<div id="chat-window">
+    <div id="chat-header">🍽️ 虛擬餐廳 AI 管家 (Llama)</div>
+    <div id="chat-messages">
+        <div class="message bot-message">歡迎光臨！我是您的 AI 美食管家。今天想吃點什麼呢？不論是招牌主餐、甜點或飲料，我都可以為您介紹與推薦喔！</div>
+    </div>
+    <div id="chat-input-container">
+        <input type="text" id="user-input" placeholder="問問推薦什麼餐點..." onkeypress="handleKeyPress(event)">
+        <button id="send-btn" onclick="sendMessage()">發送</button>
+    </div>
+</div>
+
+<script>
+function handleKeyPress(e) {
+    if (e.key === 'Enter') sendMessage();
+}
+
+// 餐廳的選單資料（Prompt Engineering：餵給 Llama 的記憶庫）
+const menuData = `
+【我們虛擬餐廳的專屬菜單】
+1. 招牌椒麻雞飯：NT$180。微辣、外皮金黃酥脆、雞肉鮮嫩多汁，本店點閱率第一名。
+2. 松露野菇燉飯：NT$220。特調濃郁白醬搭配頂級松露醬，奶蛋素消費者最愛。
+3. 宇治抹茶紅豆冰：NT$120。使用日本進口宇治抹茶粉，甜點控必點。
+4. 鮮榨雙檸青茶：NT$60。選用新鮮檸檬與青茶，酸甜解膩，消暑首選。
+今日活動：凡點任何主餐（1或2），即可免費獲贈小杯青茶一杯！
+`;
+
+async function sendMessage() {
+    const inputEl = document.getElementById('user-input');
+    const messageText = inputEl.value.trim();
+    if (!messageText) return;
+
+    // 1. 顯示使用者對話泡泡
+    appendMessage(messageText, 'user-message');
+    inputEl.value = '';
+
+    // 顯示思考中狀態
+    const loadingId = appendMessage('AI 正在看菜單...', 'bot-message');
+
+    try {
+        // 2. 呼叫你電腦本地運行的 Ollama API
+        const response = await fetch('http://localhost:11434/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                model: "llama3.2:3b", // 如果你是跑 3.1 版，請改成 "llama3.1"
+                prompt: `你是一位親切、專業的餐廳 AI 客服秘書。請完全根據以下提供的菜單資訊來親切地回答客人的問題，並給予熱情的推薦。如果客人點了主餐，記得主動提醒他今天的優惠活動（送青茶）。
+                
+                ${menuData}
+                
+                客人詢問：${messageText}`,
+                stream: false // 讓它整句算完一次回傳，網頁渲染比較穩定
+            })
+        });
+
+        if (!response.ok) throw new Error('連線到 Ollama 失敗');
+
+        const data = await response.json();
+        
+        // 3. 移除思考中，顯示 Llama 的回覆
+        document.getElementById(loadingId).remove();
+        appendMessage(data.response, 'bot-message');
+
+    } catch (error) {
+        console.error(error);
+        document.getElementById(loadingId).innerText = '系統忙碌中，請確認 Ollama 是否有在後台運行喔！';
+    }
+}
+
+function appendMessage(text, className) {
+    const container = document.getElementById('chat-messages');
+    const msgDiv = document.createElement('div');
+    const id = 'msg-' + Date.now();
+    msgDiv.id = id;
+    msgDiv.className = `message ${className}`;
+    msgDiv.innerText = text;
+    container.appendChild(msgDiv);
+    container.scrollTop = container.scrollHeight;
+    return id;
+}
+</script>
+
+</body>
+</html>
